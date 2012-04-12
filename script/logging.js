@@ -1,5 +1,5 @@
 /**
- * Adds logging functions to window namespace.
+ * Cleaning up the usage of Console.log (etc.) and adds a popup version where necessary
  * @author Rob Taylor [manix84@gmail.com]
  */
 define('utils/logging', [
