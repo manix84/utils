@@ -34,7 +34,10 @@
 
                 // Some testing stuff
                 if (cookieUtil.get('debug')) {
-                    $('consoleToggle').attr('href', '#!disableConsole').text('Disable Console');
+                    $('#consoleToggle')
+                        .attr('href', '#!disableConsole');
+                    $('#consoleToggle')
+                        .text('Disable Console');
                 }
 
                 $(window).bind('hashchange', function () {
