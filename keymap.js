@@ -3,7 +3,7 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 define('utils/keymap', [
-    'jquery-1',
+    'jquery',
     'utils/core',
     'utils/array'
 ], function ($, utilsBase, arrayUtil) {

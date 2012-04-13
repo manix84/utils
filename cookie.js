@@ -18,28 +18,28 @@ define('utils/cookie', [
          * @private
          * @type {string}
          */
-        _name: config.cookie.name,
+        _name: location.hostname.replace(/\./g, '_'),
 
         /**
          * Cookie expiry time in days
          * @private
          * @type {number}
          */
-        _expires: config.cookie.expires,
+        _expires: 90,
 
         /**
          * Domain cookie should be saved too.
          * @private
          * @type {string}
          */
-        _domain: config.cookie.domain,
+        _domain: location.hostname,
 
         /**
          * Cookies path, realive to it's domain
          * @private
          * @type {string}
          */
-        _path: config.cookie.path,
+        _path: '/',
 
         /**
          * Is the cookie secure.

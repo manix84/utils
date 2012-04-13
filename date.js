@@ -3,7 +3,7 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 define('utils/date', [
-    'jquery-1',
+    'jquery',
     'utils/core',
     'utils/number'
 ], function ($, utilsBase, numberUtils) {

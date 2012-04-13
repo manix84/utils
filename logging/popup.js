@@ -158,7 +158,7 @@ define('utils/logging/popup', [
                 this._console.document.close();
             } catch (ignored) {
                 this._console.window = null;
-                throw new Error('error:' + ignored.toString());
+                throw new Error('POPUP BLOCKED! - ' + ignored.toString());
             }
         },
 
