@@ -14,9 +14,12 @@
                     "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min"
                 }
             }, [
+                'jquery',
                 'utils/cookie',
                 'utils/logging'
-            ], function (cookieUtil) {
+            ], function ($, cookieUtil) {
+
+                // Logging Tests
                 console.log('log message');
                 console.debug('debug message');
                 console.info('info message');
@@ -28,6 +31,24 @@
                 }
                 console.timeEnd('timer');
                 console.error('error message');
+
+                // Some testing stuff
+                if (cookieUtil.get('debug')) {
+                    $('consoleToggle').attr('href', '#!disableConsole').text('Disable Console');
+                }
+
+                $(window).bind('hashchange', function () {
+                    switch (window.location.hash) {
+                    case '#!enableConsole':
+                        cookieUtil.set('debug', true);
+                        location.reload();
+                        break;
+                    case '#!disableConsole':
+                        cookieUtil.set('debug', false);
+                        location.reload();
+                        break;
+                    }
+                });
             });
         </script>
     </head>
@@ -53,7 +74,7 @@
                 <p>To open your browsers console:</p>
                 [Image of console for current browser]
 
-                <p>To toggle console, click here: <a href='#!toggleConsole'>Toggle Console</a></p>
+                <p>To toggle console, click here: <a href='#!enableConsole' id='consoleToggle'>Enable Console</a></p>
             </section>
         </div>
 
