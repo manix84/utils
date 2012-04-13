@@ -13,9 +13,22 @@
                 paths: {
                     "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min"
                 }
-            },[
+            }, [
+                'utils/cookie',
                 'utils/logging'
-            ]);
+            ], function (cookieUtil) {
+                console.log('log message');
+                console.debug('debug message');
+                console.info('info message');
+                console.warn('warn message');
+                console.info('timer: starting');
+                console.time('timer');
+                for (var i = 0; i < 10; i++) {
+                    console.count('counter');
+                }
+                console.timeEnd('timer');
+                console.error('error message');
+            });
         </script>
     </head>
     <body>
