@@ -33,10 +33,9 @@
                 console.error('error message');
 
                 // Some testing stuff
-                if (cookieUtil.get('debug')) {
+                if (!!cookieUtil.get('debug')) {
                     $('#consoleToggle')
-                        .attr('href', '#!disableConsole');
-                    $('#consoleToggle')
+                        .attr('href', '#!disableConsole')
                         .text('Disable Console');
                 }
 
