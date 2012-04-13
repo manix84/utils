@@ -5,6 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="chrome=1" />
         <meta name="description" content="Utils : A set of utilities designed to make things easier for developers." />
         <link rel="stylesheet" type="text/css" media="screen" href="style/stylesheet.css">
+        <style>
+            #consoleToggleMessage {
+                display: none;
+            }
+        </style>
         <title>Utils/logging</title>
         <script src="script/require.js"></script>
         <script>
@@ -38,6 +43,7 @@
                         .attr('href', '#!disableConsole')
                         .text('Disable Console');
                 }
+                $('#consoleToggleMessage').css('display', 'block');
 
                 $(window).bind('hashchange', function () {
                     switch (window.location.hash) {
@@ -76,7 +82,7 @@
                 <p>To open your browsers console:</p>
                 [Image of console for current browser]
 
-                <p>To toggle console, click here: <a href='#!enableConsole' id='consoleToggle'>Enable Console</a></p>
+                <p id='consoleToggleMessage'>To toggle console, click here: <a href='#!enableConsole' id='consoleToggle'>Enable Console</a></p>
             </section>
         </div>
 
