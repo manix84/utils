@@ -6,6 +6,17 @@
         <meta name="description" content="Utils : A set of utilities designed to make things easier for developers." />
         <link rel="stylesheet" type="text/css" media="screen" href="style/stylesheet.css">
         <title>Utils/logging</title>
+        <script src="script/require.js"></script>
+        <script>
+            require({
+                baseUrl: 'script/',
+                paths: {
+                    "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min",
+                }
+            },[
+                'utils/logging'
+            ]);
+        </script>
     </head>
     <body>
         <!-- HEADER -->

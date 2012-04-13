@@ -101,12 +101,14 @@ define('utils/logging/popup', [
                 this._console.form = this._console.window.document.forms[0];
                 this._console.input = this._console.window.document.getElementById('consoleInput');
 
+                utils.addListener(this._console.form, 'submit', function (event) {
+                    event.preventDefault();
+                    that._executeCommand(event.srcElement, that);
+                    return false;
+                });
+
                 utils.addListener(this._console.input, 'keydown', function (event) {
                     switch (keymap.getKeyName(event)) {
-                    case 'RETURN':
-                        event.preventDefault();
-                        that._executeCommand(event.srcElement, that);
-                        return false;
                     case 'R':
                         if (modifier) {
                             window.location.reload();
@@ -158,7 +160,7 @@ define('utils/logging/popup', [
                 this._console.document.close();
             } catch (ignored) {
                 this._console.window = null;
-                throw new Error('error:' + ignored.toString());
+                throw new Error('POPUP BLOCKED! - ' + ignored.toString());
             }
         },
 

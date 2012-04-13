@@ -5,37 +5,33 @@
 define('utils/logging', [
     'utils/logging/popup'
 ], function (loggingPopup) {
-
-    var i = 0,
-        loggingMethods = [
-            "log",
-            "debug",
-            "info",
-            "warn",
-            "error",
-            "assert",
-            "clear",
-            "dir",
-            "dirxml",
-            "trace",
-            "group",
-            "groupCollapsed",
-            "groupEnd",
-            "time",
-            "timeEnd",
-            "profile",
-            "profileEnd",
-            "count",
-            "exception",
-            "table"
-        ],
-        emptyFunc = function () {};
+    var enableDebug = true;
+    var emptyFunc = function () {};
 
     if (!enableDebug) {
-        for (; i < loggingMethods.length; i++) {
-            window.console[loggingMethods[i]] = emptyFunc;
-        }
-    } else if (!!window.console) {
+        window.console = {
+            "log": emptyFunc,
+            "debug": emptyFunc,
+            "info": emptyFunc,
+            "warn": emptyFunc,
+            "error": emptyFunc,
+            "assert": emptyFunc,
+            "clear": emptyFunc,
+            "dir": emptyFunc,
+            "dirxml": emptyFunc,
+            "trace": emptyFunc,
+            "group": emptyFunc,
+            "groupCollapsed": emptyFunc,
+            "groupEnd": emptyFunc,
+            "time": emptyFunc,
+            "timeEnd": emptyFunc,
+            "profile": emptyFunc,
+            "profileEnd": emptyFunc,
+            "count": emptyFunc,
+            "exception": emptyFunc,
+            "table": emptyFunc
+        };
+    } else if (!window.console) {
         window.onerror = function (errorMessage, fileName, lineNumber) {
             loggingPopup.addMessage('error', [
                 'Error: ' + errorMessage,
@@ -45,12 +41,27 @@ define('utils/logging', [
             return false;
         };
 
-        window.console = {};
-        for (; i < loggingMethods.length; i++) {
-            window.console[loggingMethods[i]] = function () {
-                loggingPopup.addMessage(loggingMethods[i], arguments);
-            };
-        }
+        window.console = {
+            "log": function () { loggingPopup.addMessage("log", arguments); },
+            "debug": function () { loggingPopup.addMessage("debug", arguments); },
+            "info": function () { loggingPopup.addMessage("info", arguments); },
+            "warn": function () { loggingPopup.addMessage("warn", arguments); },
+            "error": function () { loggingPopup.addMessage("error", arguments); },
+            "assert": function () { loggingPopup.addMessage("assert", arguments); },
+            "clear": function () { loggingPopup.addMessage("clear", arguments); },
+            "dir": function () { loggingPopup.addMessage("dir", arguments); },
+            "dirxml": function () { loggingPopup.addMessage("dirxml", arguments); },
+            "trace": function () { loggingPopup.addMessage("trace", arguments); },
+            "group": function () { loggingPopup.addMessage("group", arguments); },
+            "groupCollapsed": function () { loggingPopup.addMessage("groupCollapsed", arguments); },
+            "groupEnd": function () { loggingPopup.addMessage("groupEnd", arguments); },
+            "time": function () { loggingPopup.addMessage("time", arguments); },
+            "timeEnd": function () { loggingPopup.addMessage("timeEnd", arguments); },
+            "profile": function () { loggingPopup.addMessage("profile", arguments); },
+            "profileEnd": function () { loggingPopup.addMessage("profileEnd", arguments); },
+            "count": function () { loggingPopup.addMessage("count", arguments); },
+            "exception": function () { loggingPopup.addMessage("exception", arguments); },
+            "table": function () { loggingPopup.addMessage("table", arguments); }
+        };
     }
-
 });
