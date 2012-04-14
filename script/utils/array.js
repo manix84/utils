@@ -1,5 +1,5 @@
 /**
- * Useful utilities for arrays.
+ * Useful utilities for arrays, missing from vanilla JavaScript and jQuery.
  * @author Rob Taylor [manix84@gmail.com]
  */
 define('utils/array', [
