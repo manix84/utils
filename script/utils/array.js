@@ -24,11 +24,11 @@ define('utils/array', [
 
         /**
          * Returns the index of the value in the array passed. If the value can't be found, the return value is -1
-         * @param {mixed} value the value that is supposed to be checked
          * @param {array} array the array to be checked
+         * @param {mixed} value the value that is supposed to be checked
          * @returns {number}
          */
-        arrayIndexOf: function (value, array) {
+        indexOf: function (array, value) {
             var i = 0;
 
             // if indexOf is supported we will use the native functionality
@@ -46,24 +46,20 @@ define('utils/array', [
         },
 
         /**
-         * Converts an array to an object with the array values as keys and empty strings as the value. Note that
-         * objects can't have duplicate keys, hence there is a chance that duplicates will be missing from the
-         * object. This function works best with array values of strings and is handy for 'for ... in ...' loops
-         * or if .... in .... style checking
-         * @example // Array
-         * arrayToObject(['hello', 'world']) // RESULT {'hello': '', 'world': ''}
-         * @param {array} array - A the array to be converted
+         * Converts an array to an object.
+         * @example toObject(['hello', 'world']) // RESULT {0: 'hello', 1: 'world'}
+         * @param {array} array - The array to be converted
          * @returns {object} The newly created object
          */
-        arrayToObject: function (array) {
+        toObject: function (array) {
             var i = 0,
-                o = {};
+                object = {};
 
             for (; i < array.length; i++) {
-                o[array[i]] = '';
+                object[i] = array[i];
             }
 
-            return o;
+            return object;
         },
 
         /**
@@ -99,11 +95,11 @@ define('utils/array', [
 
         /**
          * Checks if a value exists in an array
-         * @param {mixed} value The searched value
          * @param {array} The array to be searched
+         * @param {mixed} value The searched value
          * @returns {boolean}
          */
-        inArray: function (value, array) {
+        inArray: function (array, value) {
             var i = 0;
 
             for (; i < array.length; i++) {

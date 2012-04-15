@@ -73,24 +73,39 @@ define('utils/object', [
                         value,
                         key;
 
-                    for (key in input) {
-                        if (input.hasOwnProperty(key)) {
-                            value = input[key];
-                            switch (typeof value) {
-                            case 'object':
-                                output[output.length] = ("\"" + key + "\":{ " + parse(value).join(", ") + "}");
-                                break;
-                            case 'string':
-                                output[output.length] = ["\"" + key + "\":\"" + value.toString() + "\""];
-                                break;
-                            default:
-                                output[output.length] = ["\"" + key + "\":" + value.toString()];
+                    if (utilsBase.getType(object) === 'object') {
+                        for (key in input) {
+                            if (input.hasOwnProperty(key)) {
+                                value = input[key];
+                                switch (utilsBase.getType(value)) {
+                                case 'object': case 'array':
+                                    output[output.length] = ("\"" + key + "\": " + parse(value));
+                                    break;
+                                case 'string':
+                                    output[output.length] = ["\"" + key + "\":\"" + value.toString() + "\""];
+                                    break;
+                                default:
+                                    output[output.length] = ["\"" + key + "\":" + value.toString()];
+                                }
                             }
                         }
+                        return "{" + output.join(", ") + "}";
+                    } else if (utilsBase.getType(object) === 'array') {
+                        for (key in input) {
+                            if (input.hasOwnProperty(key)) {
+                                value = input[key];
+                                switch (utilsBase.getType(value)) {
+                                case 'string':
+                                }
+                            }
+                        }
+                        return '[' + output.join(', ') + ']';
+                    } else {
+                        console.warn('input was not an object or an array, object reported as: ', utilsBase.getType(input));
+                        return ;
                     }
-                    return output;
                 };
-                return "{" + parse(object).join(", ") + "}";
+                return parse(object);
             }
         },
 

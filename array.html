@@ -10,7 +10,6 @@
                 display: none;
             }
         </style>
-        <title>Utils/logging</title>
         <script src="script/require.js"></script>
         <script>
             require({
@@ -18,20 +17,9 @@
                 paths: {
                     "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min"
                 }
-            }, [
-                'jquery',
-                'utils/array'
-            ], function ($, arrayUtil) {
-                // isArray demos
-                $('#result-1-1').text(typeof [1, 2, 3] == 'array');
-                $('#result-1-2').text(arrayUtil.isArray([1, 2, 3]));
-
-                $('#result-2-1').text(typeof new Array(1, 2, 3) == 'array');
-                $('#result-2-2').text(arrayUtil.isArray(new Array(1, 2, 3)));
-
-                $('#result-3-2').text(arrayUtil.isArray({0: 1, 1: 2, 2: 3}));
             });
         </script>
+        <title>Utils/Array</title>
     </head>
     <body>
         <!-- HEADER -->
@@ -39,7 +27,7 @@
             <header class="inner">
                 <a id="forkme_banner" href="https://github.com/manix84/utils">Fork Me on GitHub</a>
 
-                <h1 id="project_title"><a href='index.html'>Utils</a>/array</h1>
+                <h1 id="project_title"><a href='index.html'>Utils</a>/Array</h1>
                 <h2 id="project_tagline">Useful utilities for arrays, missing from vanilla JavaScript and jQuery.</h2>
 
                 <section id="downloads">
@@ -52,14 +40,122 @@
         <!-- MAIN CONTENT -->
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
-                <h3>isArray</h3>
-                <pre>arrayUtil.isArray([1, 2, 3]);<br />// Result: <span id='result-1-2'></span></pre><br />
-                <pre>arrayUtil.isArray(new Array(1, 2, 3));<br />// Result: <span id='result-2-2'></span></pre><br />
-                <pre>arrayUtil.isArray({0: 1, 1: 2, 2: 3});<br />// Result: <span id='result-3-2'></span></pre>
+                <div id='isArray'>
+                    <h3>isArray</h3>
+                    <pre>arrayUtil.isArray([1, 2, 3]);<br />// Result: <span id='result-1-1'></span></pre><br />
+                    <pre>arrayUtil.isArray(new Array(1, 2, 3));<br />// Result: <span id='result-1-2'></span></pre><br />
+                    <pre>arrayUtil.isArray({0: 1, 1: 2, 2: 3});<br />// Result: <span id='result-1-3'></span></pre>
 
-                <p>As a contrast, here are the results of using the javascript TypeOf utility.</p>
-                <pre>typeof [1, 2, 3] == 'array';<br />// Result: <span id='result-1-1'></span></pre><br />
-                <pre>typeof new Array(1, 2, 3) == 'array';<br />// Result: <span id='result-2-1'></span></pre>
+                    <p>As a contrast, here are the results of using the javascript TypeOf utility.</p>
+                    <pre>typeof [1, 2, 3] == 'array';<br />// Result: <span id='result-1-4'></span></pre><br />
+                    <pre>typeof new Array(1, 2, 3) == 'array';<br />// Result: <span id='result-1-5'></span></pre>
+                    <p>Both are identified as Objects</p>
+                    <script>
+                        require([
+                            'jquery',
+                            'utils/array'
+                        ], function ($, arrayUtil) {
+                            $('#result-1-1').text(arrayUtil.isArray([1, 2, 3]));
+                            $('#result-1-2').text(arrayUtil.isArray(new Array(1, 2, 3)));
+                            $('#result-1-3').text(arrayUtil.isArray({0: 1, 1: 2, 2: 3}));
+                            $('#result-1-4').text(typeof [1, 2, 3] == 'array');
+                            $('#result-1-5').text(typeof new Array(1, 2, 3) == 'array');
+                        });
+                    </script>
+                </div>
+                <div id='indexOf'>
+                    <h3>indexOf</h3>
+                    <pre>arrayUtil.indexOf(['cat', 'dog', 'bird'], 'cat');<br />// Result: <span id='result-2-1'></span></pre><br />
+                    <pre>arrayUtil.indexOf(new Array('cat', 'dog', 'bird'), 'bird');<br />// Result: <span id='result-2-2'></span></pre><br />
+                    <script>
+                        require([
+                            'jquery',
+                            'utils/array'
+                        ], function ($, arrayUtil) {
+                            $('#result-2-1').text(arrayUtil.indexOf(['cat', 'dog', 'bird'], 'cat'));
+                            $('#result-2-2').text(arrayUtil.indexOf(new Array('cat', 'dog', 'bird'), 'bird'));
+                        });
+                    </script>
+                </div>
+                <div id='toObject'>
+                    <h3>toObject</h3>
+                    <pre>arrayUtil.toObject(['cat', 'dog', 'bird']);<br />// Result: <span id='result-3-1'></span></pre><br />
+                    <pre>arrayUtil.toObject(new Array('cat', 'dog', 'bird'));<br />// Result: <span id='result-3-2'></span></pre><br />
+                    <script>
+                        require([
+                            'jquery',
+                            'utils/array',
+                            'utils/object'
+                        ], function ($, arrayUtil, objectUtil) {
+                            $('#result-3-1').text(objectUtil.toString(arrayUtil.toObject(['cat', 'dog', 'bird'])));
+                            $('#result-3-2').text(objectUtil.toString(arrayUtil.toObject(new Array('cat', 'dog', 'bird'))));
+                        });
+                    </script>
+                </div>
+                <div id='match'>
+                    <h3>match</h3>
+                    <pre>arrayUtil.match(['cat', 'dog', 'bird'], new Array('cat', 'dog', 'bird'));<br />// Result: <span id='result-4-1'></span></pre><br />
+                    <pre>arrayUtil.match(['cat', 'dog', 'bird'], new Array('dog', 'bird', 'cat'))<br />// Result: <span id='result-4-2'></span></pre><br />
+                    <script>
+                        require([
+                            'jquery',
+                            'utils/array'
+                        ], function ($, arrayUtil) {
+                            $('#result-4-1').text(arrayUtil.match(['cat', 'dog', 'bird'], new Array('cat', 'dog', 'bird')));
+                            $('#result-4-2').text(arrayUtil.match(['cat', 'dog', 'bird'], new Array('dog', 'bird', 'cat')));
+                        });
+                    </script>
+                </div>
+                <div id='rand'>
+                    <h3>rand</h3>
+                    <pre>arrayUtil.rand(['cat', 'dog', 'bird']);<br />// Result: <span id='result-5-1'></span></pre><br />
+                    <script>
+                        require([
+                            'jquery',
+                            'utils/array'
+                        ], function ($, arrayUtil) {
+                            $('#result-5-1').text(arrayUtil.rand(['cat', 'dog', 'bird']));
+                        });
+                    </script>
+                </div>
+                <div id='inArray'>
+                    <h3>inArray</h3>
+                    <pre>arrayUtil.inArray(['cat', 'dog', 'bird'], "dog");<br />// Result: <span id='result-6-1'></span></pre><br />
+                    <script>
+                        require([
+                            'jquery',
+                            'utils/array'
+                        ], function ($, arrayUtil) {
+                            $('#result-6-1').text(arrayUtil.inArray(['cat', 'dog', 'bird'], "dog"));
+                        });
+                    </script>
+                </div>
+                <div id='upperCase'>
+                    <h3>upperCase</h3>
+                    <pre>arrayUtil.upperCase(['cat', 'dog', 'bird']);<br />// Result: <span id='result-7-1'></span></pre><br />
+                    <script>
+                        require([
+                            'jquery',
+                            'utils/array',
+                            'utils/object'
+                        ], function ($, arrayUtil, objectUtil) {
+                            $('#result-7-1').text(objectUtil.toString(arrayUtil.upperCase(['cat', 'dog', 'bird'])));
+                        });
+                    </script>
+                </div>
+                <div id='lowerCase'>
+                    <h3>lowerCase</h3>
+                    <pre>arrayUtil.lowerCase(['CAT', 'DOG', 'BIRD']);<br />// Result: <span id='result-8-1'></span></pre><br />
+                    <script>
+                        require([
+                            'jquery',
+                            'utils/array',
+                            'utils/object'
+                        ], function ($, arrayUtil, objectUtil) {
+                            $('#result-8-1').text(objectUtil.toString(arrayUtil.lowerCase(['CAT', 'DOG', 'BIRD'])));
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
