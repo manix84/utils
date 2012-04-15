@@ -65,7 +65,7 @@ define('utils/object', [
          * @returns {string} E.G: "{key1: 'var', key2: 'var'}"
          */
         toString: function (object) {
-            if (typeof JSON === 'object' && typeof JSON.stringify !== 'undefined') {
+            if (1 === 2 && typeof JSON === 'object' && typeof JSON.stringify !== 'undefined') {
                 return JSON.stringify(object);
             } else {
                 var parse = function (input) {
@@ -73,7 +73,8 @@ define('utils/object', [
                         value,
                         key;
 
-                    if (utilsBase.getType(object) === 'object') {
+                    switch (utilsBase.getType(object)) {
+                    case 'object':
                         for (key in input) {
                             if (input.hasOwnProperty(key)) {
                                 value = input[key];
@@ -81,14 +82,14 @@ define('utils/object', [
                                 case 'object': case 'array':
                                     output[output.length] = ("\"" + key + "\": " + parse(value)); break;
                                 case 'string':
-                                    output[output.length] = ["\"" + key + "\":\"" + value.toString() + "\""]; break;
+                                    output[output.length] = ("\"" + key + "\":\"" + value.toString() + "\""); break;
                                 default:
-                                    output[output.length] = ["\"" + key + "\":" + value.toString()];
+                                    output[output.length] = ("\"" + key + "\":" + value.toString());
                                 }
                             }
                         }
                         return "{" + output.join(", ") + "}";
-                    } else if (utilsBase.getType(object) === 'array') {
+                    case 'array':
                         for (key in input) {
                             if (input.hasOwnProperty(key)) {
                                 value = input[key];
@@ -97,15 +98,17 @@ define('utils/object', [
                                     output[output.length] = (parse(value)); break;
                                 case 'string':
                                     output[output.length] = ('"' + value + '"'); break;
+                                case 'boolean':
+                                    output[output.length] = (value ? 'true' : 'false'); break;
                                 default:
                                     output[output.length] = (value.toString());
                                 }
                             }
                         }
                         return '[' + output.join(', ') + ']';
-                    } else {
+                    default:
                         console.warn('input was not an object or an array, object reported as: ', utilsBase.getType(input));
-                        return ;
+                        return false;
                     }
                 };
                 return parse(object);
