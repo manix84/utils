@@ -79,11 +79,9 @@ define('utils/object', [
                                 value = input[key];
                                 switch (utilsBase.getType(value)) {
                                 case 'object': case 'array':
-                                    output[output.length] = ("\"" + key + "\": " + parse(value));
-                                    break;
+                                    output[output.length] = ("\"" + key + "\": " + parse(value)); break;
                                 case 'string':
-                                    output[output.length] = ["\"" + key + "\":\"" + value.toString() + "\""];
-                                    break;
+                                    output[output.length] = ["\"" + key + "\":\"" + value.toString() + "\""]; break;
                                 default:
                                     output[output.length] = ["\"" + key + "\":" + value.toString()];
                                 }
@@ -95,7 +93,12 @@ define('utils/object', [
                             if (input.hasOwnProperty(key)) {
                                 value = input[key];
                                 switch (utilsBase.getType(value)) {
+                                case 'object': case 'array':
+                                    output[output.length] = (parse(value)); break;
                                 case 'string':
+                                    output[output.length] = ('"' + value + '"'); break;
+                                default:
+                                    output[output.length] = (value.toString());
                                 }
                             }
                         }
