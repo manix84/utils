@@ -3,12 +3,10 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 define('utils/array', [
-    'jquery',
     'utils/core'
-], function ($, utilsBase) {
+], function (utilsBase) {
     /**
      * @exports utils/array
-     * @requires jquery
      * @requires utils/core
      */
     var array = {

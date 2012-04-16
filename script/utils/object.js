@@ -1,5 +1,5 @@
 /**
- * Object utilities which should be useful to all.
+ * Useful utilities for objects, missing from vanilla JavaScript and jQuery.
  * @author Rob Taylor [manix84@gmail.com]
  */
 
