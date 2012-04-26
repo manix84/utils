@@ -113,6 +113,26 @@ define('utils/core', function () {
                 attachTo.attachEvent('on' + eventName, callback);
             }
             attachTo['on' + eventName] = callback;
+        },
+
+        /**
+         * Takes the Query/Search String, and parses it into an object.
+         * @return {Object} An object, containing all query keys and values.
+         */
+        readQueries: function () {
+            var query = [],
+                output = {},
+                i = 0,
+                queries;
+
+            if (window.location.search) {
+                queries = window.location.search.substring(1).split('&');
+                for (; i < queries.length; i++) {
+                    query = queries[i].split('=');
+                    output[query[0]] = query[1] || '';
+                }
+            }
+            return output;
         }
     };
 
