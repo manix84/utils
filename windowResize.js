@@ -20,15 +20,13 @@ define('utils/windowResize', [
                 isResizing = false,
                 defaultInterval, resizeInterval;
 
-            if (
-                    !!this.browser.chrome ||
+            if (!!this.browser.chrome ||
                     parseInt(this.browser.firefox, 10) >= 2 ||
                     parseInt(this.browser.msie, 10) >= 9
             ) {
                 // Wait for a tenth of a second
                 defaultInterval = 100;
-            } else if (
-                    !!this.browser.safari ||
+            } else if (!!this.browser.safari ||
                     !!this.browser.firefox ||
                     parseInt(this.engine.trident, 10) >= 4 || // Trident 4 === IE 8
                     !!this.browser.opera
@@ -49,14 +47,15 @@ define('utils/windowResize', [
 
             this.g_prevSize = this._getViewportSize();
 
-            setInterval(function() {
+            setInterval(function () {
                 that._resize();
             }, interval);
         },
 
-        _resize: function() {
+        _resize: function () {
             var currentSize = this._getViewportSize();
-            if (currentSize[0] != this.g_prevSize[0] || currentSize[1] != this.g_prevSize[1]) {
+            if (currentSize[0] !== this.g_prevSize[0] ||
+                    currentSize[1] !== this.g_prevSize[1]) {
                 this.g_prevSize = currentSize;
 
                 this._triggerResizeEvent({
@@ -65,15 +64,15 @@ define('utils/windowResize', [
             }
         },
 
-        _getViewportSize: function() {
+        _getViewportSize: function () {
             var size = [0, 0];
-            if (typeof window.innerWidth != 'undefined') {
+            if (typeof window.innerWidth !== 'undefined') {
                 size = [
                     window.innerWidth,
                     window.innerHeight
                 ];
-            } else if (typeof document.documentElement != 'undefined' &&
-                typeof document.documentElement.clientWidth != 'undefined' &&
+            } else if (typeof document.documentElement !== 'undefined' &&
+                typeof document.documentElement.clientWidth !== 'undefined' &&
                 document.documentElement.clientWidth !== 0) {
                 size = [
                     document.documentElement.clientWidth,
