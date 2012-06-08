@@ -121,7 +121,7 @@ define('utils/core', function () {
          */
         readQueries: function () {
             var query = [],
-                output = {},
+                outputObj = {},
                 i = 0,
                 queries;
 
@@ -129,10 +129,10 @@ define('utils/core', function () {
                 queries = window.location.search.substring(1).split('&');
                 for (; i < queries.length; i++) {
                     query = queries[i].split('=');
-                    output[query[0]] = query[1] || '';
+                    outputObj[query[0]] = query[1] || '';
                 }
             }
-            return output;
+            return outputObj;
         }
     };
 
