@@ -38,7 +38,7 @@ define('utils/date/convert/toDate', function () {
                 return new Date(date[0], date[1], date[2], date[3], date[4], date[5]);
             }
             // Else assume it's a number ...
-            return parseInt(value, 10);
+            return parseInt(toDate(value), 10);
         case 'number':
         case 'epoch':
         case 'timestamp':
