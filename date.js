@@ -15,25 +15,6 @@ define('utils/date', [
     var date = {
 
         /**
-         * Ante meridiem and Post meridiem
-         * @param {date object|number} dateValue - Date class|24 Hour EG: 16.  If not set, it assumes you mean 'now'.
-         * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
-         * @return {string} EG: "am" or "pm"
-         */
-        getHourPostfix: function (dateValue, convert) {
-
-            var hour = dateValue;
-            if (!!convert || (!isNaN(hour) && hour > 23)) {
-                hour = this.convertToDate(dateValue).getHours();
-            }
-
-            if (hour < 12) {
-                return 'am';
-            }
-            return 'pm';
-        },
-
-        /**
          * 12-hour format of an hour without leading zeros
          * @param {date object|number} dateValue - Date object|24 Hour EG: 16.  If not set, it assumes you mean 'now'.
          * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
