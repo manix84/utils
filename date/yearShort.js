@@ -16,6 +16,6 @@ define('utils/date/yearShort', function () {
         year = year.split('');
         return year[2] + String() + year[3];
     };
-    return yearShort;
 
+    return yearShort;
 });

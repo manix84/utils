@@ -11,7 +11,7 @@ define('utils/date/monthName', function () {
      */
     var monthName = function (dateValue, short) {
 
-        switch (month.getMonth()) {
+        switch (dateValue.getMonth()) {
         case 0:
             return (!!short ? 'Jan' : 'January');
         case 1:
@@ -38,5 +38,6 @@ define('utils/date/monthName', function () {
             return (!!short ? 'Dec' : 'December');
         }
     };
-    return monthName
+
+    return monthName;
 });

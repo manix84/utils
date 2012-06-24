@@ -23,4 +23,5 @@ define('utils/date/meridiem', function () {
         }
         return output;
     };
+    return meridiem;
 });
