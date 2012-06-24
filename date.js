@@ -15,35 +15,6 @@ define('utils/date', [
     var date = {
 
         /**
-         * English ordinal suffix for the day of the month, 2 characters
-         * @param {date object|number} dateValue - Date class|Day 1-28/31.  If not set, it assumes you mean 'now'.
-         * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
-         * @return {string} EG: "th"
-         */
-        getDayOrdinal: function (dateValue, convert) {
-
-            var date = dateValue;
-            if (!!convert || (!isNaN(date) && date > 31)) {
-                date = this.convertToDate(dateValue).getDate();
-            }
-
-            switch (date) {
-            case 1:
-            case 21:
-            case 31:
-                return 'st';
-            case 2:
-            case 22:
-                return 'nd';
-            case 3:
-            case 23:
-                return 'rd';
-            default:
-                return 'th';
-            }
-        },
-
-        /**
          * A short textual representation of a month, three letters
          * @param {date object|number} dateValue - Date class|Month 1-12.  If not set, it assumes you mean 'now'.
          * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
