@@ -15,33 +15,6 @@ define('utils/date', [
     var date = {
 
         /**
-         * Difference to Greenwich time (E.G: +0200 or +02:00)
-         * @param {date object|number} dateValue - Date object or timezone offset in minutes.
-         * @param {boolean} addDelimiter - Should the Colon ":" be added between the hours and minutes.
-         * @returns {date object}
-         */
-        getReadableTimezone: function (dateValue, addDelimiter) {
-
-            var offset = dateValue,
-                hours,
-                minutes;
-
-            if (utilsBase.getType(dateValue) === 'date') {
-                offset = -dateValue.getTimezoneOffset();
-            }
-
-            hours = Math.floor(offset / 60);
-            minutes = (offset - (hours * 60));
-
-            addDelimiter = addDelimiter || false;
-
-            return ((hours > 0) ? '+' : '-') +
-                numberUtils.pad(hours) +
-                (addDelimiter ? ':' : '') +
-                numberUtils.pad(minutes);
-        },
-
-        /**
          * Whether or not the date is in daylight saving time
          * @param {date object} dateValue - Date object.
          * @example .getDSTIdentifier(new Date());  RESULTS: 1 or 0
