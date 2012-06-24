@@ -14,24 +14,6 @@ define('utils/object', [
     var object = {
 
         /**
-         * Gather an array of object keys.
-         * @param {object} object - Object to be converted
-         * @example object.keys({key1: 'var', key2: 'var'}); // RETURNS: ['key1' 'key2']
-         * @returns {array} (EG: ['key', 'key', 'key']
-         */
-        keys: function (object) {
-            var key,
-                output = [];
-
-            for (key in object) {
-                if (object.hasOwnProperty(key) && key !== prototype) {
-                    output.push(key);
-                }
-            }
-            return output;
-        },
-
-        /**
          * Turns an object into a string
          * @param {object} object - Object to be converted to a string
          * @example object.toString({key1: 'var', key2: 'var'}); // RETURNS: "{key1: 'var', key2: 'var'}"
