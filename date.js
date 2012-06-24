@@ -15,68 +15,6 @@ define('utils/date', [
     var date = {
 
         /**
-         * A textual representation of a day, three letters.
-         * @param {date object|number} dateValue Date class|Day 0-6.  If not set, it assumes you mean 'now'.
-         * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
-         * @return {string} "Sun"
-         */
-        getDayShort: function (dateValue, convert) {
-
-            var day = dateValue;
-            if (!!convert || (!isNaN(day) && day > 7)) {
-                day = this.convertToDate(dateValue).getDay();
-            }
-
-            switch (day) {
-            case 0:
-                return 'Sun';
-            case 1:
-                return 'Mon';
-            case 2:
-                return 'Tue';
-            case 3:
-                return 'Wed';
-            case 4:
-                return 'Thu';
-            case 5:
-                return 'Fri';
-            case 6:
-                return 'Sat';
-            }
-        },
-
-        /**
-         * A full textual representation of the day of the week
-         * @param {date object|number} dateValue - Date class|Day 0-6.  If not set, it assumes you mean 'now'.
-         * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
-         * @return {string} EG: "Sunday"
-         */
-        getDayFull: function (dateValue, convert) {
-
-            var day = dateValue;
-            if (!!convert || (!isNaN(day) && day > 7)) {
-                day = this.convertToDate(dateValue).getDay();
-            }
-
-            switch (day) {
-            case 0:
-                return 'Sunday';
-            case 1:
-                return 'Monday';
-            case 2:
-                return 'Tuesday';
-            case 3:
-                return 'Wednesday';
-            case 4:
-                return 'Thursday';
-            case 5:
-                return 'Friday';
-            case 6:
-                return 'Saturday';
-            }
-        },
-
-        /**
          * English ordinal suffix for the day of the month, 2 characters
          * @param {date object|number} dateValue - Date class|Day 1-28/31.  If not set, it assumes you mean 'now'.
          * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
