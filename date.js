@@ -15,24 +15,6 @@ define('utils/date', [
     var date = {
 
         /**
-         * A two digit representation of a year
-         * @param {date object|number} dateValue - Date class|Full Year, EG: 2003. If not set, it assumes you mean 'now'.
-         * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
-         * @return {string} 99 or 01
-         */
-        getYearShort: function (dateValue, convert) {
-
-            var year = dateValue;
-            if (!!convert || (!isNaN(year) && year > 9999)) {
-                year = this.convertToDate(dateValue).getFullYear();
-            }
-
-            year = String(year);
-            year = year.split('');
-            return year[2] + String() + year[3];
-        },
-
-        /**
          * Ante meridiem and Post meridiem
          * @param {date object|number} dateValue - Date class|24 Hour EG: 16.  If not set, it assumes you mean 'now'.
          * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
