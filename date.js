@@ -15,25 +15,6 @@ define('utils/date', [
     var date = {
 
         /**
-         * 12-hour format of an hour without leading zeros
-         * @param {date object|number} dateValue - Date object|24 Hour EG: 16.  If not set, it assumes you mean 'now'.
-         * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
-         * @return {number} EG: 1-12
-         */
-        get12Hours: function (dateValue, convert) {
-
-            var hour = dateValue;
-            if (!!convert || (!isNaN(hour) && hour > 23)) {
-                hour = this.convertToDate(dateValue).getHours();
-            }
-
-            if (hour > 12) {
-                hour += -12;
-            }
-            return hour;
-        },
-
-        /**
          * Difference to Greenwich time (E.G: +0200 or +02:00)
          * @param {date object|number} dateValue - Date object or timezone offset in minutes.
          * @param {boolean} addDelimiter - Should the Colon ":" be added between the hours and minutes.
