@@ -9,8 +9,8 @@ define('utils/object/isObject', function () {
      * @example object.isObject(['key1', 'key2']); // RETURNS: false
      * @returns {boolean}
      */
-    var isObject = function (object) {
-        return utilsBase.getType(object) === 'object';
+    var isObject = function (objectObj) {
+        return (Object.prototype.toString.call(objectObj) === '[object Object]');
     };
 
     return isObject;

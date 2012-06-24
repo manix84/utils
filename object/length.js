@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/object/isObject', function () {
+define('utils/object/length', function () {
 
     /**
      * Checks the length of the passed object
