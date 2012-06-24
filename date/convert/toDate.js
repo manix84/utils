@@ -10,15 +10,13 @@ define('utils/date/convert/toDate', function () {
      * @param {string|number|date object} value - Value taken, to be converted to a Date Object.
      * @returns {date object}
      */
-    var toDate = function (value) {
+    var convertToDate = function (value) {
         var date,
             dateYMD,
             offSet;
 
-        switch (utilsBase.getType(value)) {
+        switch (typeof value) {
         case 'string':
-        case 'iso':
-        case 'iso8601':
             if (isNaN(value)) {
                 date = value.split('T');
                 dateYMD = date[0].split('-');
@@ -38,15 +36,13 @@ define('utils/date/convert/toDate', function () {
                 return new Date(date[0], date[1], date[2], date[3], date[4], date[5]);
             }
             // Else assume it's a number ...
-            return parseInt(toDate(value), 10);
+            return parseInt(convertToDate(value), 10);
         case 'number':
-        case 'epoch':
-        case 'timestamp':
             if (value > 9999999999) {
                 return new Date(value);
             }
             return new Date(value * 1000);
-        case 'date':
+        case 'object':
             return value;
         default:
             // Return current timedate
@@ -54,5 +50,5 @@ define('utils/date/convert/toDate', function () {
         }
     };
 
-    return toDate;
+    return convertToDate;
 });
