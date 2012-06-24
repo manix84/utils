@@ -15,18 +15,6 @@ define('utils/date', [
     var date = {
 
         /**
-         * Converts strings, numbers and date objects into a Timestamp.
-         * @param {string|number|date object} value - Value taken, to be converted to a Timestamp.
-         * @returns {number} EG: 12345678910
-         */
-        convertToTimestamp: function (value) {
-            var dateValue = this.convertToDate(value),
-                output = (dateValue.getTime() - dateValue.getMilliseconds()) / 1000;
-
-            return output;
-        },
-
-        /**
          * Converts strings, numbers and date objects into an ISO formated date.
          * @param {string|number|date object} value - Value taken, to be converted to an ISO formatted date.
          * @returns {string} EG: "2010-10-19T13:51:29Z"
