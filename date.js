@@ -15,23 +15,6 @@ define('utils/date', [
     var date = {
 
         /**
-         * Converts strings, numbers and date objects into an ISO formated date.
-         * @param {string|number|date object} value - Value taken, to be converted to an ISO formatted date.
-         * @returns {string} EG: "2010-10-19T13:51:29Z"
-         */
-        convertToIso: function (value) {
-            var dateValue = this.convertToDate(value),
-                output = dateValue.getUTCFullYear() + '-' +
-                    numberUtils.pad(dateValue.getUTCMonth() + 1) + '-' +
-                    numberUtils.pad(dateValue.getUTCDate()) + 'T' +
-                    numberUtils.pad(dateValue.getUTCHours()) + ':' +
-                    numberUtils.pad(dateValue.getUTCMinutes()) + ':' +
-                    numberUtils.pad(dateValue.getUTCSeconds()) + 'Z';
-
-            return output;
-        },
-
-        /**
          * Converts strings, numbers and date objects into an ISO8601 formated date.
          * @param {string|number|date object} value - Value taken, to be converted to an ISO8601 formatted date.
          * @returns {string} EG: "2010-10-19T13:51:29+01:00"
