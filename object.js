@@ -14,7 +14,6 @@ define('utils/object', [
     var object = {
 
         /**
-         */
          * Gather an array of object keys.
          * @param {object} object - Object to be converted
          * @example object.keys({key1: 'var', key2: 'var'}); // RETURNS: ['key1' 'key2']
