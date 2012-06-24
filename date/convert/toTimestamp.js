@@ -1,8 +1,8 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/convert/toEpoch', [
-    'utils/date/convert/toTimestamp'
+define('utils/date/convert/toTimestamp', [
+    'utils/date/convert/toDate'
 ], function (convertToDate) {
 
     /**
