@@ -15,24 +15,6 @@ define('utils/date', [
     var date = {
 
         /**
-         * Whether or not the date is in daylight saving time
-         * @param {date object} dateValue - Date object.
-         * @example .getDSTIdentifier(new Date());  RESULTS: 1 or 0
-         * @returns {date object}
-         */
-        getDSTIdentifier: function (dateValue) {
-            dateValue = this.convertToDate(dateValue);
-
-            var curOffset = dateValue.getTimezoneOffset(),
-                normalOffset = new Date(dateValue.getFullYear(), 1, 1).getTimezoneOffset();
-
-            if (normalOffset === curOffset) {
-                return 0;
-            }
-            return 1;
-        },
-
-        /**
          * Converts strings and numbers into date objects.  Strings are assumed to be ISO8601's and
          * numbers are assumed to be epochs. If it's found to be anything else, the function will
          * return the current date.
