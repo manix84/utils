@@ -15,27 +15,6 @@ define('utils/date', [
     var date = {
 
         /**
-         * Convert a javascript Date to a Swatch Internet Time (Beat Time).
-         * @param {date object} dateValue Date class.  If not set, it assumes you mean 'now'.
-         * @return {number} 0-1000
-         */
-        getBeatTime: function (dateValue) {
-            dateValue = this.convertToDate(dateValue);
-
-            var dayStartEpoch = new Date(
-                dateValue.getFullYear(),
-                dateValue.getMonth(),
-                dateValue.getDate(),
-                0,
-                0,
-                0,
-                0
-            ).getTime();
-
-            return Math.round(((dateValue - dayStartEpoch) / 1000) / (86400 / 1000));
-        },
-
-        /**
          * A textual representation of a day, three letters.
          * @param {date object|number} dateValue Date class|Day 0-6.  If not set, it assumes you mean 'now'.
          * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
