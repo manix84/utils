@@ -14,23 +14,6 @@ define('utils/object', [
     var object = {
 
         /**
-         * Checks whether the passed object is empty
-         * @param {object} object - object to be checked
-         * @example object.isEmpty({key1: 'var', key2: 'var'}); // RETURNS: false
-         * @example object.isEmpty({); // RETURNS: true
-         * @returns {boolean}
-         */
-        isEmpty: function (object) {
-            var prop;
-            for (prop in object) {
-                if (object.hasOwnProperty(prop)) {
-                    return false;
-                }
-            }
-            return true;
-        },
-
-        /**
          * Compare two objects to each-other.
          * @param {object} objectA - first object to be compared to second
          * @param {object} objectB - second object to be compared to first
