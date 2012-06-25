@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/twelveHour', function () {
+define('utils/date/twelveHourTime', function () {
 
     /**
      * 12-hour format of an hour without leading zeros
@@ -9,7 +9,7 @@ define('utils/date/twelveHour', function () {
      * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
      * @return {number} EG: 1-12
      */
-    var twelveHour = function (dateValue, convert) {
+    var twelveHourTime = function (dateValue, convert) {
 
         var hour = dateValue;
         if (!!convert || (!isNaN(hour) && hour > 23)) {
@@ -21,5 +21,5 @@ define('utils/date/twelveHour', function () {
         }
         return hour;
     };
-    return twelveHour;
+    return twelveHourTime;
 });
