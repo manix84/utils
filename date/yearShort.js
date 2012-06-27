@@ -12,9 +12,7 @@ define('utils/date/yearShort', function () {
 
         var year = dateValue.getFullYear();
 
-        year = String(year);
-        year = year.split('');
-        return year[2] + String() + year[3];
+        return Number(String(year).substr(2, 2));
     };
 
     return yearShort;
