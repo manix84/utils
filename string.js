@@ -15,15 +15,6 @@ define('utils/string', [
     var string = {
 
         /**
-         * Capitalise the first letter of the string.
-         * @param {string} string - String to be capitalised
-         * @returns {string}
-         */
-        upperCaseFirst: function (string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        },
-
-        /**
          * Capitalise the first letter each word.
          * @param {string} string - String to be capitalised
          * @returns {string}
