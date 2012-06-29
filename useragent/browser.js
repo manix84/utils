@@ -24,14 +24,13 @@ define('utils/useragent/browser', function () {
                 opera: false
             },
             useragent = window.navigator.userAgent.toLowerCase(),
-            versionRegex = /version\/([0-9]+(\.[0-9]*)*)/i,
-            regex, version, browserName, versionArray, browserArray;
+            versionArray = useragent.match(/version\/([0-9]+(\.[0-9]*)*)/i),
+            regex, version, browserName, browserArray;
 
         for (browserName in browser) {
             if (browser.hasOwnProperty(browserName)) {
                 regex = new RegExp(browserName + "\/([0-9]+(\\.[0-9]*)*)", "i");
                 if (regex.exec(useragent)) {
-                    versionArray = useragent.match(versionRegex);
                     browserArray = useragent.match(regex);
 
                     browser[browserName] =
