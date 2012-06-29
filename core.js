@@ -19,20 +19,6 @@ define('utils/core', function () {
         _rscript: '<script[^>]*>(?!\\s*<\\/script>)([\\s\\S]*?)<\\/script>',
 
         /**
-         * Remove all inline scripts from a html string.
-         * @params {string} string - A string of html which may or may not contain a script tag.
-         * @returns {string} returns the html without any script tags.
-         */
-        removeInlineScripts: function (string) {
-            // regular expression that searches for script tags and gets the content
-            // this regular expression is only supposed to match script tags that contain inline scripts
-            var rscript = new RegExp(this._rscript, 'gi');
-            string = string.replace(rscript, '');
-
-            return string;
-        },
-
-        /**
          * Evals an array of scripts. This is a companion function to be used with the getScripts function.
          * @params {array} scripts - An array of script strings to be evaled
          * @returns {array} An array of return values from the individual scripts
