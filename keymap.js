@@ -3,10 +3,9 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 define('utils/keymap', [
-    'jquery',
     'utils/core',
     'utils/array'
-], function ($, utilsBase, arrayUtil) {
+], function (utilsBase, arrayUtil) {
     /**
      * @exports utils/keymap
      * @requires jquery
