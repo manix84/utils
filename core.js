@@ -10,30 +10,6 @@ define('utils/core', function () {
     var utils = {
 
         /**
-         * Regular expression that searches for script tags and gets the content.
-         * This regular expression is only supposed to match script tags that contain inline scripts.
-         * The regular expression is defined as a string since we need different flags for different use cases.
-         * @private
-         * @type {string}
-         */
-        _rscript: '<script[^>]*>(?!\\s*<\\/script>)([\\s\\S]*?)<\\/script>',
-
-        /**
-         * Evals an array of scripts. This is a companion function to be used with the getScripts function.
-         * @params {array} scripts - An array of script strings to be evaled
-         * @returns {array} An array of return values from the individual scripts
-         */
-        evalScripts: function (scripts) {
-            var returns = [],
-                i = 0;
-            for (; i < scripts.length; i++) {
-                returns.push(eval(scripts[i]));
-            }
-
-            return returns;
-        },
-
-        /**
          * Finds and reports the object type, rather than just
          *   - This is based heavily on the code by Douglas Crockford.
          * @params {mixed} item - Anything.
