@@ -24,16 +24,19 @@ define('utils/useragent/browser', function () {
                 opera: false
             },
             useragent = window.navigator.userAgent.toLowerCase(),
-            versionRegex = /version\/([0-9]+.[0-9]*)/i,
-            regex, version, browserName;
+            versionRegex = /version\/([0-9]+(\.[0-9]*)*)/i,
+            regex, version, browserName, versionArray, browserArray;
 
         for (browserName in browser) {
             if (browser.hasOwnProperty(browserName)) {
-                regex = new RegExp(browserName + "\/([0-9]+.[0-9]*)", "i");
+                regex = new RegExp(browserName + "\/([0-9]+(\\.[0-9]*)*)", "i");
                 if (regex.exec(useragent)) {
+                    versionArray = useragent.match(versionRegex);
+                    browserArray = useragent.match(regex);
+
                     browser[browserName] =
-                        parseFloat(useragent.match(versionRegex)[1]) ||
-                        parseFloat(useragent.match(regex)[1]) ||
+                        (versionArray ? versionArray[1] : false) ||
+                        (browserArray ? browserArray[1] : false) ||
                         true;
                     break;
                 }
