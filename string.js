@@ -15,18 +15,6 @@ define('utils/string', [
     var string = {
 
         /**
-         * Trim whitespace from the beginning and end of a string, for when trim() is unavailable
-         * @param {string} string - String with excessive whitespace
-         * @returns {string}
-         */
-        trim: function (string) {
-            if (typeof String.prototype.trim !== 'function') {
-                return string.replace(/\s+[.\^\s]+\s+/g, '');
-            }
-            return string.trim();
-        },
-
-        /**
          * Remove HTML tags from string
          * @param {string} string - String with xml tags
          * @param  {string} tag - Tag to replace, optional
