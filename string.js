@@ -15,17 +15,6 @@ define('utils/string', [
     var string = {
 
         /**
-         * Repeat the given string as many times as requested.
-         * @param {string} string - String to be repeated
-         * @param {number} width - Number of times the string should be repeated.
-         * @returns {string}
-         */
-        repeat: function (string, num) {
-            num = (isNaN(num) ? 1 : (num > 0 ? num : 1));
-            return new Array(num + 1).join(string);
-        },
-
-        /**
          * Truncating strings based on their length
          * @param {string} string - String truncated
          * @param {number} [maxWidth] - Maximum number of character before cut
