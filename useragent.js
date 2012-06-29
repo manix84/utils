@@ -35,14 +35,6 @@ define('utils/useragent', [
                     opera: ($.browser.opera ? $.browser.version : false)
                 };
                 return browser;
-            }()),
-
-            isTouchEnabled: (function () {
-                if ('ontouchstart' in window || typeof window.Touch !== 'undefined') {
-                    // $('body').removeClass('no-touch').addClass('touch');
-                    return true;
-                }
-                return false;
             }())
         };
 
