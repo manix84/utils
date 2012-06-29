@@ -15,68 +15,6 @@ define('utils/string', [
     var string = {
 
         /**
-         * @param {string} string - String to be wrapped
-         * @param {number} width - Maximum number of lines
-         * @param {string} brake - String added between breaks
-         * @return {string}
-         *
-         * @todo This needs css propert white-space set to nowrap
-         */
-        interpolate: function (template, data, opts) {
-
-            var placeHolderRx,
-                leftDelimiter,
-                rightDelimiter,
-                regexEscape = '', // TODO: THIS NEEDS DEFINING!!!!
-                // div used for html escaping
-                div;
-
-            opts = opts || {};
-
-            // make sure the dom module is around
-            if (opts.escapeHtml) {
-                div = $('<div></div>');
-            }
-
-            if (opts.delimiter === undefined) {
-                placeHolderRx = /\{[^{}]+\}/g;
-            } else {
-                leftDelimiter = opts.delimiter.substr(0, 1).replace(regexEscape, "\\$1");
-                rightDelimiter = opts.delimiter.substr(1, 1).replace(regexEscape, "\\$1") || leftDelimiter;
-                placeHolderRx = new RegExp(leftDelimiter + "[^" + leftDelimiter + rightDelimiter + "]+" + rightDelimiter, "g");
-            }
-
-            return template.replace(placeHolderRx, function (placeholder) {
-
-                var key = placeholder.slice(1, -1),
-                    keyParts = key.split("."),
-                    val,
-                    i = 0,
-                    len = keyParts.length;
-
-                if (data.hasOwnProperty(key)) {
-                    // need to be backwards compatible with "flattened" data.
-                    val = data[key];
-                } else {
-                    // look up the chain
-                    val = data;
-                    for (; i < len; i++) {
-                        if (val.hasOwnProperty(keyParts[i])) {
-                            val = val[keyParts[i]];
-                        } else {
-                            return placeholder;
-                        }
-                    }
-                }
-
-                if (opts.escapeHtml) {
-                    val = div.TEXT(val).html();
-                }
-                return val;
-            });
-        },
-
-        /**
          * Repeat the given string as many times as requested.
          * @param {string} string - String to be repeated
          * @param {number} width - Number of times the string should be repeated.
