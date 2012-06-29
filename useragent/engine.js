@@ -24,7 +24,7 @@ define('utils/useragent/engine', function () {
                 htmlayout: false, // Windows and Windows Mobile embeded browser
                 boxely: false   // AOL
             },
-            useragent = window.navigator.userAgent,
+            useragent = window.navigator.userAgent.toLowerCase(),
             regex,
             engineName;
 
