@@ -13,16 +13,6 @@ define('utils/string', [
      * @requires utils/core
      */
     var string = {
-        /**
-         * Checks whether argument passed is a string
-         * @param {mixed} object - Item to be tested
-         * @example object.isObject({key1: 'var', key2: 'var'}); // RETURNS: true
-         * @example object.isObject(['key1', 'key2']); // RETURNS: false
-         * @returns {boolean}
-         */
-        isString: function (string) {
-            return utilsBase.getType(string) === 'string';
-        },
 
         /**
          * Wrapping strings based on their length
