@@ -3,9 +3,10 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 define('utils/cookie', [
-    'jquery',
-    'utils/object'
-], function ($, objectUtil) {
+    'utils/object/toString',
+    'utils/object/compare',
+    'utils/object/empty'
+], function (objectToString, objectCompare, objectIsEmpty) {
 
     /**
      * @exports utils/cookie
@@ -88,14 +89,14 @@ define('utils/cookie', [
             time.setTime(time.getTime() + (1000 * 60 * 60 * 24 * this._expires));
 
             document.cookie = [
-                encodeURIComponent(this._name) + '=' + window.escape(objectUtil.toString(cookieObject)),
+                encodeURIComponent(this._name) + '=' + window.escape(objectToString(cookieObject)),
                 this._expires ? 'expires=' + time.toUTCString() : '',
                 this._path ? 'path=' + this._path : '',
                 this._domain ? 'domain=' + this._domain : '',
                 this._secure ? 'secure' : ''
             ].join('; ');
 
-            return (objectUtil.compare(cookieObject, this._getCookieObject()));
+            return (objectCompare(cookieObject, this._getCookieObject()));
         },
 
         /**
@@ -167,7 +168,7 @@ define('utils/cookie', [
         clearAll: function () {
             this._setCookieObject({});
 
-            return objectUtil.isEmpty(this._getCookieObject());
+            return objectIsEmpty(this._getCookieObject());
         }
     };
 
