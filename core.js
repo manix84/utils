@@ -11,22 +11,19 @@ define('utils/core', function () {
 
         /**
          * Finds and reports the object type, rather than just
-         *   - This is based heavily on the code by Douglas Crockford.
-         * @params {mixed} item - Anything.
+         *   - This is based on code by Douglas Crockford.
+         * @params {mixed} mixedObj - Anything.
          * @returns {string} Name of the object type.
          * @example utils.getType(new Date());      // RESULT: "date"
          * @example utils.getType(new String());    // RESULT: "string"
          * @example utils.getType(true);            // RESULT: "boolean"
          */
-        getType: function (item) {
-            if (item === null) {
-                return 'Null';
-            }
+        getType: function (mixedObj) {
             // Get object type
             return Object.prototype.toString
-                .call(item)
-                .match(/^\[object\s(.*)\]$/)[1]
-                .toLowerCase();
+                .call(mixedObj) // turn called object to a string
+                .match(/^\[object\s(.*)\]$/)[1] // Loose the "[object " and "]" from and only pass the object type.
+                .toLowerCase(); // Lowercase the name, because it comes out as "Date" or "String"
         },
 
         /**
