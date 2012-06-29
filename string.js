@@ -15,17 +15,6 @@ define('utils/string', [
     var string = {
 
         /**
-         * Capitalise the first letter each word.
-         * @param {string} string - String to be capitalised
-         * @returns {string}
-         */
-        upperCaseWords: function (string) {
-            return (string + String()).replace(/^([a-z])|\s+([a-z])/g, function ($1) {
-                return $1.toUpperCase();
-            });
-        },
-
-        /**
          * Trim whitespace from the beginning and end of a string, for when trim() is unavailable
          * @param {string} string - String with excessive whitespace
          * @returns {string}
