@@ -15,20 +15,6 @@ define('utils/string', [
     var string = {
 
         /**
-         * Remove HTML tags from string
-         * @param {string} string - String with xml tags
-         * @param  {string} tag - Tag to replace, optional
-         * @returns {string}
-         */
-        stripTags: function (string, tag) {
-            if (tag) {
-                var regex = new RegExp('<' + tag + '>([.\\s\\S])*?</' + tag + '>', 'g');
-                return string.replace(regex, '');
-            }
-            return string.replace(/<[^>]+>/ig, '');
-        },
-
-        /**
          * Return a formatted string (Replicating sprintf behaviour from PHP)
          * @param {string} string - String with xml tags
          * @param {array} values - Array of values to be converted in the string
