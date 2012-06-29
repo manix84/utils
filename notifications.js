@@ -5,13 +5,10 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 
-define('utils/notifications', [
-    'jquery'
-], function ($) {
+define('utils/notifications', function () {
 
     /**
      * @exports utils/notifications
-     * @requires jquery
      */
     var notifications = {
 
@@ -59,32 +56,21 @@ define('utils/notifications', [
          */
         sendMessage: function (title, body, user_options) {
             user_options = user_options || {};
-            var message = null,
-                options = {
+            var options = {
                     iconUrl: '../img/logo.png',
                     html: false,
                     timeout: 8
-                };
+                },
+                property, message;
 
-            $.extend(options, user_options);
+            for (property in user_options) {
+                if (user_options.hasOwnProperty(property) && options.hasOwnProperty(property)) {
+                    options[property] = user_options[property];
+                }
+            }
 
             if (window.webkitNotifications && this.checkPermission()) {
-                switch (options.html) {
-                case true:
-                    info('options.html: true');
-                    // the PHP/JS notifications page needs setting up, as it'll require styling
-                    // message = window.webkitNotifications.createHTMLNotification(
-                        // 'notifications.html?' +
-                        //      'iconUrl=' + options.iconUrl +
-                        //      '&title=' + title +
-                        //      '&body=' + body
-                    // );
-                    break;
-                case false:
-                    info('options.html: false');
-                    message = window.webkitNotifications.createNotification(options.iconUrl, title, body);
-                    break;
-                }
+                message = window.webkitNotifications.createNotification(options.iconUrl, title, body);
                 message.show();
 
                 window.setTimeout(function () {
