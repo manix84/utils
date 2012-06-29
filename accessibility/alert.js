@@ -17,9 +17,11 @@ define('utils/accessibility/alert', function () {
         }
 
         var attachTo = (typeof attachToId === 'string') ? document.getElementById(attachToId) : document.documentElement,
-            alertElement = document.createElement('h3')
-                .setAttribute('role', 'alert')
-                .setAttribute('style', "position: absolute; left: -2500px; width: 1px; overflow: hidden");
+            alertElement = document.createElement('h3');
+
+        alertElement.innerText = message;
+        alertElement.setAttribute('role', 'alert');
+        alertElement.setAttribute('style', "position: absolute; left: -2500px; width: 1px; overflow: hidden");
 
         attachTo.appendChild(alertElement);
 
