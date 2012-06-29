@@ -4,20 +4,21 @@
 define('utils/useragent/operatingSystem', function () {
 
     /**
-     * @property os.win {boolean|string}
-     * @property os.mac {boolean}
-     * @property os.linux {boolean}
-     * @property os.unix {boolean}
-     * @property os.ios {boolean|string}
+     * @exports utils/useragent/operatingSystem
+     * @property windows {Boolean|String}
+     * @property linux {Boolean}
+     * @property unix {Boolean}
+     * @property ios {Boolean|String}
+     * @property osx {Boolean}
      */
     return (function () {
         var useragent = window.navigator.userAgent.toLowerCase(),
             operatingSystem = {
-                win: /windows/.test(useragent),
-                mac: /mac/.test(useragent),
+                windows: /windows/.test(useragent),
                 linux: /linux/.test(useragent),
                 unix: /x11/.test(useragent),
-                ios: /like mac os x/.test(useragent)
+                ios: /like mac os x/.test(useragent),
+                osx: /mac os x/.test(useragent)
             };
 
         if (operatingSystem.win) {

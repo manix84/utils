@@ -4,15 +4,14 @@
 define('utils/useragent/engine', function () {
 
     /**
-     * This may return all "false"'s, and a version of 0, because the browser engine is not always reported.
-     * @property engine {object}
-     * @property engine.trident {float|boolean} Internet Explorer
-     * @property engine.webkit {float|boolean} Chrome & Safari
-     * @property engine.gecko {float|boolean} Firefox & Opera =< 6
-     * @property engine.presto {float|boolean} Opera => 7
-     * @property engine.khtml {float|boolean} Konqueror
-     * @property engine.htmlayout {float|boolean} Windows and Windows Mobile embeded browser
-     * @property engine.boxely {float|boolean} AOL
+     * @exports utils/useragent/engine
+     * @property trident {String|Boolean} Internet Explorer
+     * @property webkit {String|Boolean} Chrome & Safari
+     * @property gecko {String|Boolean} Firefox & Opera =< 6
+     * @property presto {String|Boolean} Opera => 7
+     * @property khtml {String|Boolean} Konqueror
+     * @property htmlayout {String|Boolean} Windows and Windows Mobile embeded browser
+     * @property boxely {String|Boolean} AOL
      */
     return (function () {
         var engine = {
