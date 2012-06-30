@@ -14,7 +14,7 @@ define('utils/events/addListener', function () {
         if (typeof attachTo.addEventListener === 'function') {
             attachTo.addEventListener(eventName, callback, false);
         }
-        if (typeof attachTo.attachEvent === 'object') {
+        if (!!attachTo.attachEvent) {
             attachTo.attachEvent('on' + eventName, callback);
         }
         attachTo['on' + eventName] = callback;
