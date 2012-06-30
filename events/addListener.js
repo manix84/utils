@@ -10,6 +10,8 @@ define('utils/events/addListener', function () {
      * @param {Function} callback - The function to be called when the event fires.
      */
     var addListener = function (element, eventName, callback) {
+        element.events = element.events || {};
+
         if (typeof element.addEventListener === 'function') {
             element.addEventListener(eventName, callback, false);
         } else if (!!element.attachEvent) {
@@ -19,7 +21,7 @@ define('utils/events/addListener', function () {
         }
 
         // Attaching callback event to the prototype for easy recall.
-        element.prototype.events[eventName] = callback;
+        element.events[eventName] = callback;
     };
 
     return addListener;
