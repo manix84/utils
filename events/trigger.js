@@ -7,14 +7,14 @@ define('utils/events/trigger', function () {
      * Trigger an event listener to a DOM Element.
      * @param {HTMLElement} attachTo - The object to attach the event listener to.
      * @param {String} name - The event name.
-     * @param {Object} objectData - The function to be called when the event fires. NOTE: I'm still figuring this out.
+     * @param {Object} objectData - The function to be called when the event fires. NOTE: I'm still working on this.
      */
     var trigger = function (element, eventName, objectData) {
         var event;
         if (!!document.createEvent) {
             event = document.createEvent('HTMLEvents');
             event.initEvent(eventName, true, true);
-        } else if (!!document.createEventObject) {// IE < 9
+        } else if (!!document.createEventObject) {
             event = document.createEventObject();
             event.eventType = eventName;
         }
