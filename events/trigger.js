@@ -3,7 +3,13 @@
  */
 define('utils/events/trigger', function () {
 
-    var trigger = function trigger(element, eventName, object) {
+    /**
+     * Trigger an event listener to a DOM Element.
+     * @param {HTMLElement} attachTo - The object to attach the event listener to.
+     * @param {String} name - The event name.
+     * @param {Object} objectData - The function to be called when the event fires. NOTE: I'm still figuring this out.
+     */
+    var trigger = function (element, eventName, objectData) {
         var event;
         if (!!document.createEvent) {
             event = document.createEvent('HTMLEvents');
@@ -15,13 +21,13 @@ define('utils/events/trigger', function () {
 
         event.eventName = eventName;
         if (!!element.dispatchEvent) {
-            element.dispatchEvent(event);
+            return element.dispatchEvent(event);
         } else if (!!element.fireEvent) {
-            element.fireEvent('on' + event.eventType, event);
+            return element.fireEvent('on' + event.eventType, event);
         } else if (!!element[eventName]) {
-            element[eventName]();
+            return element[eventName](objectData);
         } else if (!!element['on' + eventName]) {
-            element['on' + eventName]();
+            return element['on' + eventName](objectData);
         }
     };
 
