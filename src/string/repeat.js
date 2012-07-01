@@ -8,11 +8,11 @@ define('string/repeat', function () {
      * @exports string/repeat
      *
      * @param {String} string - String to be repeated
-     * @param {Number} width - Number of times the string should be repeated.
+     * @param {Number} num - Number of times the string should be repeated.
      * @returns {String}
      */
     var repeat = function (string, num) {
-        num = (isNaN(num) ? 1 : (num > 0 ? num : 1));
+        num = num || 0;
         return new Array(num + 1).join(string);
     };
 

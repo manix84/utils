@@ -9,7 +9,8 @@ define([
     module('string/repeat');
 
     test('repeat', function () {
-        // equal(repeat("-=", 0), "", 'A String Repeated Once');
+        equal(repeat("-="), "", 'A String Repeated, With No Repeats Specified.');
+        equal(repeat("-=", 0), "", 'A String Repeated Zero Times');
         equal(repeat("-=", 1), "-=", 'A String Repeated Once');
         equal(repeat("-=", 2), "-=-=", 'A String Repeated Twice');
         equal(repeat("-=", 3), "-=-=-=", 'A String Repeated Twice');
