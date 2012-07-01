@@ -2,14 +2,15 @@
  * KeyMap utilities giving the ability to check which key has been pressed without needing to know the key's id number.
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/keyboard/map', [
-    'utils/array'
-], function (arrayUtil) {
+define('keyboard/map', [
+    'array/inArray',
+    'array/upperCase'
+], function (inArray, arrayUpperCase) {
     /**
      * @exports keyboard/map
-     * @requires jquery
-     * @requires utils/core
-     * @requires utils/array
+     *
+     * @requires array/inArray
+     * @requires array/upperCase
      */
     var keyboardMap = {
         /**
@@ -133,7 +134,7 @@ define('utils/keyboard/map', [
         isOneOf: function (eventKey, keys) {
             eventKey = this._getKeyId(eventKey);
 
-            if (arrayUtil.inArray(this._theMap[eventKey], arrayUtil.upperCase(keys))) {
+            if (inArray(this._theMap[eventKey], arrayUpperCase(keys))) {
                 return true;
             }
             return false;
