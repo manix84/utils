@@ -17,11 +17,18 @@ define('utils/date/convert/toIso8601', [
                 dateValue.getDate() + ' ' +
                 this.getMonthShort(dateValue) + ' ' +
                 dateValue.getUTCFullYear() + ' ' +
-                numberUtils.pad(dateValue.getUTCHours()) + ':' +
-                numberUtils.pad(dateValue.getUTCMinutes()) + ':' +
-                numberUtils.pad(dateValue.getUTCSeconds()) + ' ' +
+                pad(dateValue.getUTCHours()) + ':' +
+                pad(dateValue.getUTCMinutes()) + ':' +
+                pad(dateValue.getUTCSeconds()) + ' ' +
                 this.getReadableTimezone(dateValue);
 
+        return output;
+    },
+    pad = function (input) {
+        var output = String(input);
+        while (output.length < 2) {
+            output = "0" + output;
+        }
         return output;
     };
 
