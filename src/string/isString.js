@@ -1,9 +1,11 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/string/isString', function () {
+define('string/isString', function () {
     /**
      * Checks whether argument passed is a string
+     * @exports string/isString
+     *
      * @param {Mixed} object - Item to be tested
      * @example isString("a string"); // RETURNS: true
      * @example isString(String("a string")); // RETURNS: true
