@@ -1,9 +1,11 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/object/isObject', function () {
+define('object/isObject', function () {
     /**
      * Checks whether argument passed is an object
+     * @exports object/isObject
+     *
      * @param {mixed} object - Item to be tested
      * @example object.isObject({key1: 'var', key2: 'var'}); // RETURNS: true
      * @example object.isObject(['key1', 'key2']); // RETURNS: false
