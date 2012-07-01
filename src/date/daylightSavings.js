@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/daylightSavings', function () {
+define('date/daylightSavings', function () {
 
     /**
      * Whether or not the date is in daylight saving time

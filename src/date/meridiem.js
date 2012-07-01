@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/meridiem', function () {
+define('date/meridiem', function () {
 
     /**
      * Ante meridiem and Post meridiem

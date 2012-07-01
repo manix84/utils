@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/beatTime', function () {
+define('date/beatTime', function () {
     /**
      * Convert a javascript Date to a Swatch Internet Time (Beat Time).
      * @param {date object} dateValue Date class.  If not set, it assumes you mean 'now'.

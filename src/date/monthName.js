@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/monthName', function () {
+define('date/monthName', function () {
 
     /**
      * A short textual representation of a month, three letters

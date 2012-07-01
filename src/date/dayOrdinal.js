@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/dayOrdinal', function () {
+define('date/dayOrdinal', function () {
 
     /**
      * English ordinal suffix for the day of the month, 2 characters

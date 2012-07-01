@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/gmtOffset', function () {
+define('date/gmtOffset', function () {
 
     /**
      * Difference to Greenwich Time (E.G: +0200 or +02:00)

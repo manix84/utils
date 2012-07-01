@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/yearShort', function () {
+define('date/yearShort', function () {
 
     /**
      * A two digit representation of a year

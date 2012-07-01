@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/twelveHourTime', function () {
+define('date/twelveHourTime', function () {
 
     /**
      * 12-hour format of an hour without leading zeros

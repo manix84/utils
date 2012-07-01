@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/dayName', function () {
+define('date/dayName', function () {
 
     /**
      * A textual representation of a day, three letters.

@@ -1,8 +1,8 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/convert/toIso8601', [
-    'utils/date/convert/toDate'
+define('date/convert/toIso8601', [
+    'date/convert/toDate'
 ], function (convertToDate) {
 
     /**

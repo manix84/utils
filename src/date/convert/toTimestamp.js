@@ -1,8 +1,8 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/convert/toTimestamp', [
-    'utils/date/convert/toDate'
+define('date/convert/toTimestamp', [
+    'date/convert/toDate'
 ], function (convertToDate) {
 
     /**

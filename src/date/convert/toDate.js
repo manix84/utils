@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/date/convert/toDate', function () {
+define('date/convert/toDate', function () {
 
     /**
      * Converts strings and numbers into date objects.  Strings are assumed to be ISO8601's and
