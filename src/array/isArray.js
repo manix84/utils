@@ -2,10 +2,10 @@
  * Useful utilities for arrays.
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/array/isArray', function () {
+define('array/isArray', function () {
     /**
      * Finds and reports the object type, rather than just
-     * @exports utils/array/isArray
+     * @exports array/isArray
      * @params {Mixed} item - Anything.
      * @returns {Boolean} - Is Array?
      */
