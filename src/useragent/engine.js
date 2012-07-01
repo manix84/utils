@@ -1,10 +1,11 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/useragent/engine', function () {
+define('useragent/engine', function () {
 
     /**
-     * @exports utils/useragent/engine
+     * @exports useragent/engine
+     *
      * @property trident {String|Boolean} Internet Explorer
      * @property webkit {String|Boolean} Chrome & Safari
      * @property gecko {String|Boolean} Firefox & Opera =< 6

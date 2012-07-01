@@ -1,10 +1,11 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/useragent/browser', function () {
+define('useragent/browser', function () {
 
     /**
-     * @exports utils/useragent/browser
+     * @exports useragent/browser
+     *
      * @property chrome {String|Boolean}
      * @property firefox {String|Boolean}
      * @property msie {String|Boolean}

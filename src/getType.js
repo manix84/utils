@@ -1,11 +1,13 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/string/toObject', function () {
+define('getType', function () {
 
     /**
      * Finds and reports the object type, rather than just
      *   - This is based on code by Douglas Crockford.
+     * @exports getType
+     *
      * @params {Mixed} mixedObj - Anything.
      * @returns {String} Name of the object type.
      * @example getType(new Date());      // RESULT: "date"

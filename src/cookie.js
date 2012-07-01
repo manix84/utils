@@ -2,12 +2,10 @@
  * Cookie utilities
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/cookie', function () {
+define('cookie', function () {
 
     /**
-     * @exports utils/cookie
-     * @requires jquery
-     * @requires utils/object
+     * @exports cookie
      */
     var cookie = {
         /**

@@ -3,22 +3,34 @@
  * @see http://php.net/manual/en/function.date.php
  * @author Rob Taylor [manix84@gmail.com]
  *
- * @exports utils/date
- * @requires utils/core
+ * @exports date
+ *
+ * @requires date/beatTime
+ * @requires date/daylightSavings
+ * @requires date/dayName
+ * @requires date/dayOrdinal
+ * @requires date/gmtOffset
+ * @requires date/meridiem
+ * @requires date/monthName
+ * @requires date/twelveHourTime
+ * @requires date/yearShort
+ * @requires date/convert/toIso8601
+ * @requires date/convert/toRFC2822
+ * @requires date/convert/toTimestamp
  */
-define('utils/date', [
-    'utils/date/beatTime',
-    'utils/date/daylightSavings',
-    'utils/date/dayName',
-    'utils/date/dayOrdinal',
-    'utils/date/gmtOffset',
-    'utils/date/meridiem',
-    'utils/date/monthName',
-    'utils/date/twelveHourTime',
-    'utils/date/yearShort',
-    'utils/date/convert/toIso8601',
-    'utils/date/convert/toRFC2822',
-    'utils/date/convert/toTimestamp'
+define('date', [
+    'date/beatTime',
+    'date/daylightSavings',
+    'date/dayName',
+    'date/dayOrdinal',
+    'date/gmtOffset',
+    'date/meridiem',
+    'date/monthName',
+    'date/twelveHourTime',
+    'date/yearShort',
+    'date/convert/toIso8601',
+    'date/convert/toRFC2822',
+    'date/convert/toTimestamp'
 ], function (
     beatTime,
     daylightSavings,
@@ -42,14 +54,14 @@ define('utils/date', [
      * @returns {string} Formatted date, using "mask" (EG: 'Mon, 31 Oct 2001 15:05:02')
      */
     var pad = function (input) {
-            input = String(input);
+        input = String(input);
 
-            while (input.length < 2) {
-                input = "0" + input;
-            }
-            return input;
-        },
-        date = function (mask, dateValue) {
+        while (input.length < 2) {
+            input = "0" + input;
+        }
+        return input;
+    },
+    date = function (mask, dateValue) {
         var maskArray = '',
             no_support = function (character) {
                 warn('Date.Format: ' + character + ', is currently not a supported format.');

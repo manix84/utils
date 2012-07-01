@@ -2,10 +2,12 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 
-define('utils/queryToObject', function () {
+define('queryToObject', function () {
 
     /**
      * Takes the Query/Search String, and parses it into an object.
+     * @exports queryToObject
+     *
      * @return {Object} An object, containing all query keys and values.
      */
     var queryToObject = function () {

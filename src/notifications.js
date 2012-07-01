@@ -5,10 +5,10 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 
-define('utils/notifications', function () {
+define('notifications', function () {
 
     /**
-     * @exports utils/notifications
+     * @exports notifications
      */
     var notifications = {
 

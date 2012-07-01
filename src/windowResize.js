@@ -6,11 +6,11 @@
  */
 /*jslint evil: true */
 
-define('utils/windowResize', [
+define('windowResize', [
     'jquery'
 ], function ($) {
     /**
-     * @exports utils/windowResize
+     * @exports windowResize
      * @requires jquery
      */
     var windowResize = {

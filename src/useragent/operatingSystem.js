@@ -1,10 +1,11 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/useragent/operatingSystem', function () {
+define('useragent/operatingSystem', function () {
 
     /**
-     * @exports utils/useragent/operatingSystem
+     * @exports useragent/operatingSystem
+     *
      * @property windows {Boolean|String}
      * @property linux {Boolean}
      * @property unix {Boolean}

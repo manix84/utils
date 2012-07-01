@@ -1,10 +1,14 @@
 /**
  * Cleaning up the usage of Console.log (etc.) and adds a popup version where necessary
  * @author Rob Taylor [manix84@gmail.com]
+ * @exports logging
+ *
+ * @requires logging/popup
+ * @requires cookie
  */
-define('utils/logging', [
-    'utils/logging/popup',
-    'utils/cookie'
+define('logging', [
+    'logging/popup',
+    'cookie'
 ], function (loggingPopup, cookieUtil) {
     var emptyFunc = function () {};
 
