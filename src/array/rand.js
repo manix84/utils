@@ -1,10 +1,10 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/array/rand', function () {
+define('array/rand', function () {
     /**
      * Pick one or more random entries out of an array (multiple values not implimented yet)
-     * @exports utils/array/rand
+     * @exports array/rand
      * @param {array} array the array to have items randomly retreieved from
      * //@param {mixed} reqNum the number of array items wanted back
      * @returns {mixed}
