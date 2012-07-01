@@ -1,10 +1,12 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/object/isEmpty', function () {
+define('object/isEmpty', function () {
 
     /**
      * Checks whether the passed object is empty
+     * @exports object/isEmpty
+     *
      * @param {object} object - object to be checked
      * @example object.isEmpty({key1: 'var', key2: 'var'}); // RETURNS: false
      * @example object.isEmpty({); // RETURNS: true
