@@ -1,10 +1,12 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/style/vendorSupport', function () {
+define('style/vendorSupport', function () {
 
     /**
      * Test whether browser vendor supports the given CSS property.
+     * @exports style/vendorSupport
+     *
      * @param {String} property - Name of CSS property to test. Must be in CamelCase i.e. "borderRadius".
      * @return {Boolean}
      */

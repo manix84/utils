@@ -6,6 +6,7 @@ define('useragent/browser', function () {
     /**
      * @exports useragent/browser
      *
+     * @type {Object}
      * @property chrome {String|Boolean}
      * @property firefox {String|Boolean}
      * @property msie {String|Boolean}

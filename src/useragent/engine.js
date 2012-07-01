@@ -6,6 +6,7 @@ define('useragent/engine', function () {
     /**
      * @exports useragent/engine
      *
+     * @type {Object}
      * @property trident {String|Boolean} Internet Explorer
      * @property webkit {String|Boolean} Chrome & Safari
      * @property gecko {String|Boolean} Firefox & Opera =< 6

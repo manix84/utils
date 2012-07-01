@@ -6,6 +6,7 @@ define('useragent/operatingSystem', function () {
     /**
      * @exports useragent/operatingSystem
      *
+     * @type {Object}
      * @property windows {Boolean|String}
      * @property linux {Boolean}
      * @property unix {Boolean}
