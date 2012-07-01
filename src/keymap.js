@@ -3,9 +3,8 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 define('utils/keymap', [
-    'utils/core',
     'utils/array'
-], function (utilsBase, arrayUtil) {
+], function (arrayUtil) {
     /**
      * @exports utils/keymap
      * @requires jquery
@@ -81,12 +80,13 @@ define('utils/keymap', [
          * @returns {number} Otherwise false on failure
          */
         _getKeyId: function (eventKey) {
-            if (utilsBase.getType(eventKey) === 'object') {
-                if (utilsBase.getType(eventKey.which) === 'number') {
+
+            if (Object.prototype.toString.call(eventKey) === '[object Object]') {
+                if (Object.prototype.toString.call(eventKey.which) === '[object Number]') {
                     eventKey = eventKey.which;
-                } else if (utilsBase.getType(eventKey.charCode) === 'number') {
+                } else if (Object.prototype.toString.call(eventKey.charCode) === '[object Number]') {
                     eventKey = eventKey.charCode;
-                } else if (utilsBase.getType(eventKey.keyCode) === 'number') {
+                } else if (Object.prototype.toString.call(eventKey.keyCode) === '[object Number]') {
                     eventKey = eventKey.keyCode;
                 }
             }
