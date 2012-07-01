@@ -2,9 +2,11 @@
  * Accessibility utility, providing accessibility functions to users.
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/accessibility/alert', function () {
+define('accessibility/alert', function () {
     /**
      * Adding an Aria alert message to the page, and removing it after 1 second
+     * @exports accessibility/alert
+     *
      * @param {String} message - Message to be entered into the Aria alert.
      * @param {String} [attachToId] - Dom ID to attach the Aria alert message to. If not specified, body is used.
      * @param {Number} [time] - How long the message should be attached to the page before deletion (in seconds)
