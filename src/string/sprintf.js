@@ -7,10 +7,10 @@ define('string/sprintf', function () {
      * Return a formatted string (Replicating sprintf behaviour from PHP)
      * @exports string/sprintf
      *
-     * @param {string} string - String with xml tags
-     * @param {array} values - Array of values to be converted in the string
-     * @returns {string}
-     * @todo Add support for escaping characters (EG: "some /%d text" shouldn't be replace)
+     * @param {String} string - String with xml tags
+     * @param {Array} values - Array of values to be converted in the string
+     * @returns {String}
+     * @todo Add support for escaping characters (EG: "some \%d text" shouldn't be replace)
      */
     var sprintf = function (string, values) {
         var i = 0;
