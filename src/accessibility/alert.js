@@ -8,27 +8,27 @@ define('accessibility/alert', function () {
      * @exports accessibility/alert
      *
      * @param {String} message - Message to be entered into the Aria alert.
-     * @param {String} [attachToId] - Dom ID to attach the Aria alert message to. If not specified, body is used.
+     * @param {HTMLElement} [element] - Dom element to attach the Aria alert message to. If not specified, body is used.
      * @param {Number} [time] - How long the message should be attached to the page before deletion (in seconds)
      * @return {Boolean}
      */
-    var alert = function (message, attachToId, time) {
+    var alert = function (message, element, time) {
         time = time || 1;
+        element = element || document.documentElement;
         if (typeof message !== 'string') {
             return false;
         }
 
-        var attachTo = (typeof attachToId === 'string') ? document.getElementById(attachToId) : document.documentElement,
-            alertElement = document.createElement('h3');
+        var alertElement = document.createElement('h3');
 
         alertElement.innerText = message;
         alertElement.setAttribute('role', 'alert');
         alertElement.setAttribute('style', "position: absolute; left: -2500px; width: 1px; overflow: hidden");
 
-        attachTo.appendChild(alertElement);
+        element.appendChild(alertElement);
 
         window.setTimeout(function () {
-            attachTo.removeChild(alertElement);
+            element.removeChild(alertElement);
         }, time * 1000);
     };
 
