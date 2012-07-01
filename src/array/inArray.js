@@ -1,10 +1,10 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/array/inArray', function () {
+define('array/inArray', function () {
     /**
      * Checks if a value exists in an array
-     * @exports utils/array/inArray
+     * @exports array/inArray
      * @param {mixed} value The searched value
      * @param {array} The array to be searched
      * @returns {boolean}
