@@ -2,10 +2,10 @@
  * Useful utilities for arrays.
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/array/isArray', function () {
+define('array/isArray', function () {
     /**
      * Returns the index of the value in the array passed. If the value can't be found, the return value is -1
-     * @exports utils/array/indexOf
+     * @exports array/indexOf
      * @param {mixed} value the value that is supposed to be checked
      * @param {array} array the array to be checked
      * @returns {number}
