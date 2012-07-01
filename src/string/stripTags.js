@@ -1,13 +1,15 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/string/stripTags', function () {
+define('string/stripTags', function () {
 
     /**
      * Remove HTML tags from string
-     * @param {string} string - String with xml tags
-     * @param  {string} tag - Tag to replace, optional
-     * @returns {string}
+     * @exports string/stripTags
+     *
+     * @param {String} string - String with xml tags
+     * @param  {String} [tag] - Tag to replace
+     * @returns {String}
      */
     var stripTags = function (string, tag) {
         if (tag) {
