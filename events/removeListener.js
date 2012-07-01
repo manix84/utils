@@ -11,7 +11,7 @@ define('utils/events/removeListener', function () {
      *                              If event.addListener is used to attach the listener, this param is not necessary.
      */
     var removeListener = function (element, eventName, callback) {
-        callback = callback || (!!element.events ? element.events[eventName] : false);
+        callback = callback || (!!element.eventStore ? element.eventStore[eventName] : false);
         if (!!callback) {
             if (element.removeEventListener) {
                 element.removeEventListener(eventName, callback, false);
@@ -19,7 +19,7 @@ define('utils/events/removeListener', function () {
                 element.detachEvent('on' + eventName, callback);
             }
             element['on' + eventName] = null;
-            element.events[eventName] = null;
+            element.eventStore[eventName] = null;
         } else {
             // console.warn('"' + eventName + '" not attached to specified element.', element);
         }
