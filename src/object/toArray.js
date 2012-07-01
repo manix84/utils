@@ -1,11 +1,12 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/object/toArray', function () {
+define('object/toArray', function () {
     /**
      * Converts an object to an array, disgarding of the keys.
-     * @exports utils/object/toArray
-     * @param {Object} objectObj -
+     * @exports object/toArray
+     *
+     * @param {Object} objectObj - Object to be converted to an array.
      * @returns {Array} The newly created array
      */
     var toArray = function (objectObj) {
@@ -14,7 +15,9 @@ define('utils/object/toArray', function () {
             property;
 
         for (property in objectObj) {
-            outputArray[outputArray.length] = objectObj[property];
+            if (objectObj.hasOwnProperty(property)) {
+                outputArray[outputArray.length] = objectObj[property];
+            }
         }
 
         return outputArray;
