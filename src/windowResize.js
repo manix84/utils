@@ -45,7 +45,7 @@ define('utils/windowResize', [
                 width: this._getClientWidth()
             };
 
-            this.g_prevSize = this._getViewportSize();
+            this._prevSize = this._getViewportSize();
 
             setInterval(function () {
                 that._resize();
@@ -54,9 +54,9 @@ define('utils/windowResize', [
 
         _resize: function () {
             var currentSize = this._getViewportSize();
-            if (currentSize[0] !== this.g_prevSize[0] ||
-                    currentSize[1] !== this.g_prevSize[1]) {
-                this.g_prevSize = currentSize;
+            if (currentSize[0] !== this._prevSize[0] ||
+                    currentSize[1] !== this._prevSize[1]) {
+                this._prevSize = currentSize;
 
                 this._triggerResizeEvent({
                     "state": "finished"
