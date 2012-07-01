@@ -1,10 +1,10 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/array/lowerCase', function () {
+define('array/lowerCase', function () {
     /**
      * Change all array string values to lower case.
-     * @exports utils/array/lowerCase
+     * @exports array/lowerCase
      * @param {array} The array to be lower case
      * @returns {array}
      */
