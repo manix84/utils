@@ -2,11 +2,11 @@
  * KeyMap utilities giving the ability to check which key has been pressed without needing to know the key's id number.
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/keymap', [
+define('utils/keyboard/map', [
     'utils/array'
 ], function (arrayUtil) {
     /**
-     * @exports utils/keymap
+     * @exports keyboard/map
      * @requires jquery
      * @requires utils/core
      * @requires utils/array
