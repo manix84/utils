@@ -2,11 +2,7 @@
  * Cookie utilities
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/cookie', [
-    'utils/object/toString',
-    'utils/object/compare',
-    'utils/object/empty'
-], function (objectToString, objectCompare, objectIsEmpty) {
+define('utils/cookie', function () {
 
     /**
      * @exports utils/cookie
@@ -65,7 +61,7 @@ define('utils/cookie', [
                 if (this._name === cookies[i].substr(0, cookies[i].indexOf('=')).replace(/^\s+|\s+$/g, '')) {
                     cookieString = window.unescape(cookies[i].substr(cookies[i].indexOf('=') + 1));
 
-                    return $.parseJSON(cookieString);
+                    return JSON.parse(cookieString);
                 }
             }
             return {};
@@ -89,14 +85,14 @@ define('utils/cookie', [
             time.setTime(time.getTime() + (1000 * 60 * 60 * 24 * this._expires));
 
             document.cookie = [
-                encodeURIComponent(this._name) + '=' + window.escape(objectToString(cookieObject)),
+                encodeURIComponent(this._name) + '=' + window.escape(JSON.stringify(cookieObject)),
                 this._expires ? 'expires=' + time.toUTCString() : '',
                 this._path ? 'path=' + this._path : '',
                 this._domain ? 'domain=' + this._domain : '',
                 this._secure ? 'secure' : ''
             ].join('; ');
 
-            return (objectCompare(cookieObject, this._getCookieObject()));
+            return (JSON.stringify(cookieObject) === JSON.stringify(this._getCookieObject()));
         },
 
         /**
@@ -168,7 +164,7 @@ define('utils/cookie', [
         clearAll: function () {
             this._setCookieObject({});
 
-            return objectIsEmpty(this._getCookieObject());
+            return (JSON.stringify(this._getCookieObject()) === "{}");
         }
     };
 
