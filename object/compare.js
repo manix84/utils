@@ -2,7 +2,6 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 define('utils/object/compare', function () {
-
     /**
      * Compare two objects to each-other.
      * @param {object} objectA - first object to be compared to second
