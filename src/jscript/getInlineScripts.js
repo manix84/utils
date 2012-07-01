@@ -2,11 +2,13 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 
-define('utils/jscript/getInlineScripts', function () {
+define('jscript/getInlineScripts', function () {
 
     /**
      * Takes a string and parses it for all inline script tags. It returns an array of all the
      * scripts found and removes them from the string. If no scripts are found, it returns an empty array.
+     * @exports jscript/getInlineScripts
+     *
      * @params {string} string - The string that is supposed to be parsed
      * @returns {Array} Array of scripts to be evaled. If no scripts are found, it returns
      *          an empty array.
