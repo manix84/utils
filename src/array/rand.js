@@ -10,7 +10,7 @@ define('array/rand', function () {
      * @returns {mixed}
      * @todo Add functionality for the second parameter.
      */
-    var rand = function (arrayObj) {
+    var rand = function (arrayObj, reqNum) {
         var index = Math.floor(Math.random() * arrayObj.length);
 
         return arrayObj[index];
