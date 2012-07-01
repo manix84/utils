@@ -1,10 +1,12 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/object/toString', function () {
+define('object/toString', function () {
 
     /**
      * Turns an object into a string
+     * @exports object/toString
+     *
      * @param {object} object - Object to be converted to a string
      * @example object.toString({key1: 'var', key2: 'var'}); // RETURNS: "{key1: 'var', key2: 'var'}"
      * @returns {string} E.G: "{key1: 'var', key2: 'var'}"
