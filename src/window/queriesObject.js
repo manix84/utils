@@ -2,15 +2,15 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 
-define('queryToObject', function () {
+define('window/queriesObject', function () {
 
     /**
      * Takes the Query/Search String, and parses it into an object.
-     * @exports queryToObject
+     * @exports window/queriesObject
      *
      * @return {Object} An object, containing all query keys and values.
      */
-    var queryToObject = function () {
+    var queriesObject = function () {
         var query = [],
             outputObj = {},
             i = 0,
@@ -26,5 +26,5 @@ define('queryToObject', function () {
         return outputObj;
     };
 
-    return queryToObject;
+    return queriesObject;
 });

@@ -33,7 +33,7 @@ define('string/truncate', function () {
             } else {
                 bits = string.split('');
 
-                for(i = bits.length - 1; i > -1; --i) {
+                for (i = bits.length - 1; i > -1; --i) {
                     // Chop the string to the maximum limit length regardess of boundary
                     if (i > maxWidth - brakeLen) {
                         bits.length = i;
