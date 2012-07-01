@@ -20,14 +20,19 @@ define('utils/events/trigger', function () {
         }
 
         event.eventName = eventName;
+        event.data = objectData || {};
         if (!!element.dispatchEvent) {
             return element.dispatchEvent(event);
         } else if (!!element.fireEvent) {
             return element.fireEvent('on' + event.eventType, event);
         } else if (!!element[eventName]) {
-            return element[eventName](objectData);
+            return element[eventName]({
+                data: objectData
+            });
         } else if (!!element['on' + eventName]) {
-            return element['on' + eventName](objectData);
+            return element['on' + eventName]({
+                data: objectData
+            });
         }
     };
 
