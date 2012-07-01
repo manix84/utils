@@ -1,10 +1,10 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/array/upperCase', function () {
+define('array/upperCase', function () {
     /**
      * Change all array string values to uppercase.
-     * @exports utils/array/upperCase
+     * @exports array/upperCase
      * @param {array} The array to be uppercased
      * @returns {array}
      */
