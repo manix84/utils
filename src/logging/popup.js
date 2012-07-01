@@ -3,29 +3,27 @@
  * Adds console logging to browsers that don't have a console (EG: IE 6, 7 & 8, Safari 2).
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/logging/popup', [
-    'utils/core',
-    'utils/keymap'
-], function (utils, keymap) {
+define('logging/popup', [
+    'events/addListener',
+    'keyboard/map'
+], function (eventListener, keymap) {
     /**
-     * @exports utils/logging/popup
-     * @requires utils/core
+     * @exports logging/popup
+     *
+     * @requires events/addListener
+     * @requires keyboard/map
      */
     var popup = {
-
-        _options: {
-            staticRoot: '/'
-        },
 
         /**
          * Console window elements regestry
          * @private
-         * @property {boolean} _console.exists - Has an attempt been started to make the popup.
-         * @property {window object} _console.window - A reference to popup window.
-         * @property {document object} _console.document - A reference to the popup windows document namespace.
-         * @property {dom object} _console.message - A reference to the popup windows message container.
-         * @property {dom object} _console.form - A reference to the popup windows input form.
-         * @property {dom object} _console.input - A reference to the popup windows text input box.
+         * @property {Boolean} _console.exists - Has an attempt been started to make the popup.
+         * @property {Window Object} _console.window - A reference to popup window.
+         * @property {Document Object} _console.document - A reference to the popup windows document namespace.
+         * @property {HTML Object} _console.message - A reference to the popup windows message container.
+         * @property {HTML Object} _console.form - A reference to the popup windows input form.
+         * @property {HTML Object} _console.input - A reference to the popup windows text input box.
          */
         _console: {
             exists: false,
@@ -57,12 +55,12 @@ define('utils/logging/popup', [
                     that = this;
 
                 if (/MSIE ([6|7].\d+);/.test(window.navigator.userAgent)) {
-                    warnImg  = this._options.staticRoot + 'img/utils/logging/warn.gif';
-                    infoImg  = this._options.staticRoot + 'img/utils/logging/info.gif';
-                    errorImg = this._options.staticRoot + 'img/utils/logging/error.gif';
-                    runImg = this._options.staticRoot + 'img/utils/logging/run.gif';
-                    arrowsSprite = this._options.staticRoot + 'img/utils/logging/arrowsSprite.gif';
-                    consoleInput = this._options.staticRoot + 'img/utils/logging/consoleInput.gif';
+                    warnImg  = 'img/utils/logging/warn.gif';
+                    infoImg  = 'img/utils/logging/info.gif';
+                    errorImg = 'img/utils/logging/error.gif';
+                    runImg = 'img/utils/logging/run.gif';
+                    arrowsSprite = 'img/utils/logging/arrowsSprite.gif';
+                    consoleInput = 'img/utils/logging/consoleInput.gif';
                 }
 
                 this._console.window.document.write(
@@ -101,7 +99,7 @@ define('utils/logging/popup', [
                 this._console.form = this._console.window.document.forms[0];
                 this._console.input = this._console.window.document.getElementById('consoleInput');
 
-                utils.addListener(this._console.input, 'keydown', function (event) {
+                eventListener(this._console.input, 'keydown', function (event) {
                     switch (keymap.getKeyName(event)) {
                     case 'RETURN':
                         event.preventDefault();
@@ -120,7 +118,7 @@ define('utils/logging/popup', [
                     }
                 });
 
-                utils.addListener(this._console.document, 'keydown', function (event) {
+                eventListener(this._console.document, 'keydown', function (event) {
                     switch (keymap.getKeyName(event)) {
                     case 'F5':
                         window.location.reload();
@@ -143,7 +141,7 @@ define('utils/logging/popup', [
                     }
                 });
 
-                utils.addListener(this._console.document, 'keyup', function (event) {
+                eventListener(this._console.document, 'keyup', function (event) {
                     switch (keymap.getKeyName(event)) {
                     case 'CTRL':
                     case 'SUPER':
