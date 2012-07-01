@@ -1,14 +1,16 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/number/pad', function () {
+define('number/pad', function () {
 
-     /**
-      * Adds a repeating string to the start of a number. The number is converted to a string to accomplish this.
-      * @param  {[type]} input - Number to be padded.
-      * @param  {[type]} [padLength] - The length you want the number to be outputted at. Defaults to "2"
-      * @return {string} (EG: "01")
-      */
+    /**
+     * Adds a repeating string to the start of a number. The number is converted to a string to accomplish this.
+     * @exports number/pad
+     *
+     * @param  {Number} input - Number to be padded.
+     * @param  {Number} [padLength] - The length you want the number to be outputted at. Defaults to "2"
+     * @return {String} (EG: "01")
+     */
     var pad = function (input, padLength) {
         input = String(input);
         padLength = padLength || 2;
