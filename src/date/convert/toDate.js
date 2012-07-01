@@ -32,6 +32,7 @@ define('date/convert/toDate', function () {
                     // Therefore BST will be GMT - -1
                     date[3] = parseInt(date[3], 10) - offSet;
                 }
+                console.log(date[0], date[1], date[2], date[3], date[4], date[5]);
 
                 return new Date(date[0], date[1], date[2], date[3], date[4], date[5]);
             }
