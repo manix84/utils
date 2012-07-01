@@ -1,11 +1,11 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/array/match', function () {
+define('array/match', function () {
 
     /**
      * Are the arrays matching
-     * @exports utils/array/match
+     * @exports array/match
      * @param {array} arrayA The first array to check against the second
      * @param {array} arrayB The second array to check against the first
      * @returns {boolean}
