@@ -1,10 +1,12 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/events/trigger', function () {
+define('events/trigger', function () {
 
     /**
      * Trigger an event listener to a DOM Element.
+     * @exports events/trigger
+     *
      * @param {HTMLElement} element - The object to attach the event listener to.
      * @param {String} eventName - The event name.
      * @param {Object} objectData - The function to be called when the event fires. NOTE: I'm still working on this.
