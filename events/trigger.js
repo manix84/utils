@@ -5,8 +5,8 @@ define('utils/events/trigger', function () {
 
     /**
      * Trigger an event listener to a DOM Element.
-     * @param {HTMLElement} attachTo - The object to attach the event listener to.
-     * @param {String} name - The event name.
+     * @param {HTMLElement} element - The object to attach the event listener to.
+     * @param {String} eventName - The event name.
      * @param {Object} objectData - The function to be called when the event fires. NOTE: I'm still working on this.
      */
     var trigger = function (element, eventName, objectData) {
