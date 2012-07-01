@@ -1,11 +1,12 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/object/keys', function () {
-
+define('object/keys', function () {
 
     /**
      * Gather an array of object keys.
+     * @exports object/keys
+     *
      * @param {object} object - Object to be converted
      * @example object.keys({key1: 'var', key2: 'var'}); // RETURNS: ['key1' 'key2']
      * @returns {array} (EG: ['key', 'key', 'key']
