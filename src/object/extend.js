@@ -1,10 +1,10 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/object/extend', function () {
+define('object/extend', function () {
     /**
      * Copies the prototype of one object to another. The 'subclass' can also access the 'base class' via subclass.base
-     * @exports utils/object/extend
+     * @exports object/extend
      *
      * @param {Function} subClass - Class which inherits properties.
      * @param {Function} baseClass - Class to inherit from.
