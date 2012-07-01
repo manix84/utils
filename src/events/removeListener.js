@@ -1,10 +1,12 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/events/removeListener', function () {
+define('events/removeListener', function () {
 
     /**
      * Removes an event listener from a DOM Element.
+     * @exports events/removeListener
+     *
      * @param {HTMLElement} element - The element the event is attached too.
      * @param {String} name - The name of the event you wish to remove.
      * @param {Function} [callback] - Function you with to remove from the event.
