@@ -14,12 +14,11 @@ define('utils/date/gmtOffset', function () {
 
         var offset = -dateValue.getTimezoneOffset(),
             hours = Math.floor(offset / 60),
-            minutes = (offset - (hours * 60));
-
-        output = ((hours > 0) ? '+' : '-') +
-            pad(hours) +
-            (addDelimiter ? ':' : '') +
-            pad(minutes);
+            minutes = (offset - (hours * 60)),
+            output = ((hours > 0) ? '+' : '-') +
+                pad(hours) +
+                (addDelimiter ? ':' : '') +
+                pad(minutes);
 
         return output;
     },
