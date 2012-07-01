@@ -1,10 +1,12 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/object/length', function () {
+define('object/length', function () {
 
     /**
      * Checks the length of the passed object
+     * @exports object/length
+     *
      * @param {object} object - Object to be checked
      * @example object.length({key1: 'var', key2: 'var'}); // RETURNS: 2
      * @returns {number}
