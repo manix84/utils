@@ -2,10 +2,12 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 
-define('utils/jscript/removeInlineScripts', function () {
+define('jscript/removeInlineScripts', function () {
 
     /**
      * Remove all inline scripts from a html string.
+     * @exports jscript/removeInlineScripts
+     *
      * @params {string} string - A string of html which may or may not contain a script tag.
      * @returns {string} returns the html without any script tags.
      */
