@@ -1,12 +1,14 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/string/upperCaseFirst', function () {
+define('string/upperCaseFirst', function () {
 
     /**
      * Capitalise the first letter of the string.
-     * @param {string} string - String to be capitalised
-     * @returns {string}
+     * @exports string/upperCaseFirst
+     *
+     * @param {String} string - String to be capitalised
+     * @returns {String}
      */
     var upperCaseFirst = function (string) {
         return string.charAt(0).toUpperCase() + string.slice(1);

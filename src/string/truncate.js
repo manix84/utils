@@ -1,15 +1,17 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/string/truncate', function () {
+define('string/truncate', function () {
 
     /**
      * Truncating strings based on their length
-     * @param {string} string - String truncated
-     * @param {number} [maxWidth] - Maximum number of character before cut
-     * @param {string} [brakeStr] - String added after break
-     * @param {boolean} [cutWords] - String added after break
-     * @returns {string}
+     * @exports string/truncate
+     *
+     * @param {String} string - String truncated
+     * @param {Number} [maxWidth] - Maximum number of character before cut
+     * @param {String} [brakeStr] - String added after break
+     * @param {Boolean} [cutWords] - String added after break
+     * @returns {String}
      */
     var truncate = function (string, maxWidth, brakeStr, cutWords) {
         var i = 0,

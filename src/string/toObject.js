@@ -1,10 +1,12 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/string/toObject', function () {
+define('string/toObject', function () {
 
     /**
      * Turns an string into an object
+     * @exports string/toObject
+     *
      * @param {String} string - String to be converted to an object
      */
     var toObject = function (string) {

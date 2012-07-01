@@ -1,12 +1,14 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('utils/string/trim', function () {
+define('string/trim', function () {
 
     /**
      * Trim whitespace from the beginning and end of a string, for when trim() is unavailable
-     * @param {string} string - String with excessive whitespace
-     * @returns {string}
+     * @exports string/trim
+     *
+     * @param {String} string - String with excessive whitespace
+     * @returns {String}
      */
     var trim = function (string) {
         if (typeof String.prototype.trim !== 'function') {
