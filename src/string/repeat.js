@@ -9,7 +9,7 @@ define('string/repeat', function () {
      *
      * @param {String} string - String to be repeated
      * @param {Number} width - Number of times the string should be repeated.
-     * @returns {string}
+     * @returns {String}
      */
     var repeat = function (string, num) {
         num = (isNaN(num) ? 1 : (num > 0 ? num : 1));
