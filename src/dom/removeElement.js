@@ -7,10 +7,10 @@ define('utils/dom/removeElement', function () {
         /**
          * Remove element from the dom.
          * @exports utils/dom/removeElement
-         * @param {String} elementId - Dom element ID.
+         * @param {HMTLElement} element - Dom element object you wish to remove.
          */
-        removeElement = function (elementId) {
-            trash.appendChild(document.getElementById(elementId));
+        removeElement = function (element) {
+            trash.appendChild(element);
             trash.innerHTML = '';
         };
 
