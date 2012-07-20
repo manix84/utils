@@ -15,8 +15,8 @@ define('date/convert/toDate', function () {
             dateYMD,
             offSet;
 
-        switch (typeof value) {
-        case 'string':
+        switch (Object.prototype.toString.call(value)) {
+        case '[object String]':
             if (isNaN(value)) {
                 date = value.split('T');
                 dateYMD = date[0].split('-');
@@ -32,18 +32,17 @@ define('date/convert/toDate', function () {
                     // Therefore BST will be GMT - -1
                     date[3] = parseInt(date[3], 10) - offSet;
                 }
-                console.log(date[0], date[1], date[2], date[3], date[4], date[5]);
 
                 return new Date(date[0], date[1], date[2], date[3], date[4], date[5]);
             }
             // Else assume it's a number ...
-            return parseInt(convertToDate(value), 10);
-        case 'number':
+            return convertToDate(parseInt(value, 10));
+        case '[object Number]':
             if (value > 9999999999) {
                 return new Date(value);
             }
             return new Date(value * 1000);
-        case 'object':
+        case '[object Date]':
             return value;
         default:
             // Return current timedate
