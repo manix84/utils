@@ -185,19 +185,23 @@
                         });
                     </script>
                 </div>
-                <div id='convert_toDate'>
+                <div id='convertToDate'>
                     <h3>convert/toDate</h3>
-                    <pre>toDate(1320892242000);<br />// Result: <span id='result-11-1'></span></pre><br />
-                    <pre>toDate(1320892242);<br />// Result: <span id='result-11-2'></span></pre><br />
-                    <pre>toDate(new Date(1320892242000));<br />// Result: <span id='result-11-3'></span></pre>
+                    <pre>toDate(1320892242);<br />// Result: <span id='result-11-1'></span></pre><br />
+                    <pre>toDate(1320892242000);<br />// Result: <span id='result-11-2'></span></pre><br />
+                    <pre>toDate(new Date(1320892242000));<br />// Result: <span id='result-11-3'></span></pre><br />
+                    <pre>toDate('2011-11-10T02:30:42Z')));<br />// Result: <span id='result-11-4'></span></pre><br />
+                    <pre>toDate('2011-11-10T02:30:42+00:00')));<br />// Result: <span id='result-11-5'></span></pre>
                     <script>
                         require([
                             'jquery',
                             'date/convert/toDate'
                         ], function ($, convertToDate) {
-                            $('#result-11-1').text(convertToDate(1320892242000));
-                            $('#result-11-2').text(convertToDate(1320892242));
-                            $('#result-11-3').text(convertToDate(new Date(1320892242000)));
+                            $('#result-11-1').text(String(convertToDate(1320892242)));
+                            $('#result-11-2').text(String(convertToDate(1320892242000)));
+                            $('#result-11-3').text(String(convertToDate(new Date(1320892242000))));
+                            $('#result-11-4').text(String(convertToDate('2011-11-10T02:30:42Z')));
+                            $('#result-11-5').text(String(convertToDate('2011-11-10T02:30:42+00:00')));
                         });
                     </script>
                 </div>
