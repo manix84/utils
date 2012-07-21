@@ -40,11 +40,22 @@
         <!-- MAIN CONTENT -->
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
-                <p>To open your browsers console:</p>
-                [Image of console for current browser]
+                <p>The following code is running on the page.  Open your console up to see the results.</p>
+                <pre>// Logging Tests
+console.log('log message');
+console.debug('debug message');
+console.info('info message');
+console.warn('warn message');
+console.info('timer: starting');
+console.time('timer');
+for (var i = 0; i < 10; i++) {
+    console.count('counter');
+}
+console.timeEnd('timer');
+console.error('error message');</pre>
+
 
                 <p id='consoleToggleMessage'>To toggle console, click here: <a href='#!enableConsole' id='consoleToggle'>Enable Console</a></p>
-
                 <p id='ieMessage'>IE Users: Their are 18 Console messages on this page, and their should be no errors.</p>
                 <script>
                     require([
