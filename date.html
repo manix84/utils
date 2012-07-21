@@ -285,6 +285,26 @@
                         });
                     </script>
                 </div>
+                <div id='convertToTimestamp'>
+                    <h3>convert/toTimestamp</h3>
+                    <pre>toTimestamp(1320892242);<br />// Result: <span id='result-16-1'></span></pre><br />
+                    <pre>toTimestamp(1320892242000);<br />// Result: <span id='result-16-2'></span></pre><br />
+                    <pre>toTimestamp(new Date(1320892242000));<br />// Result: <span id='result-16-3'></span></pre><br />
+                    <pre>toTimestamp('2011-11-10T02:30:42Z');<br />// Result: <span id='result-16-4'></span></pre><br />
+                    <pre>toTimestamp('2011-11-10T02:30:42+00:00');<br />// Result: <span id='result-16-5'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/convert/toTimestamp'
+                        ], function ($, convertToTimestamp) {
+                            $('#result-16-1').text(String(convertToTimestamp(1320892242)));
+                            $('#result-16-2').text(String(convertToTimestamp(1320892242000)));
+                            $('#result-16-3').text(String(convertToTimestamp(new Date(1320892242000))));
+                            $('#result-16-4').text(String(convertToTimestamp('2011-11-10T02:30:42Z')));
+                            $('#result-16-5').text(String(convertToTimestamp('2011-11-10T02:30:42+00:00')));
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
