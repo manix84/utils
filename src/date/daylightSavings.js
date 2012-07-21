@@ -5,10 +5,11 @@ define('date/daylightSavings', function () {
 
     /**
      * Whether or not the date is in daylight saving time
-     * @param {date object} dateObj - Date object.
+     * @param {Date} [dateObj] - Date object.
      * @returns {Boolean}
      */
     var daylightSavings = function (dateObj) {
+        dateObj = dateObj || new Date();
 
         var curOffset = dateObj.getTimezoneOffset(),
             normalOffset = new Date(dateObj.getFullYear(), 1, 1).getTimezoneOffset();

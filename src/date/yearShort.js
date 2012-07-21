@@ -5,12 +5,13 @@ define('date/yearShort', function () {
 
     /**
      * A two digit representation of a year
-     * @param {Date Object} dateValue - The date object which you want the year from.
-     * @return {string} 99 or 01
+     * @param {Date} [dateObj] - Date object.
+     * @return {Number} 99 or 01
      */
-    var yearShort = function (dateValue) {
+    var yearShort = function (dateObj) {
+        dateObj = dateObj || new Date();
 
-        var year = dateValue.getFullYear();
+        var year = dateObj.getFullYear();
 
         return Number(String(year).substr(2, 2));
     };

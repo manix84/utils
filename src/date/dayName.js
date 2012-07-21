@@ -5,12 +5,14 @@ define('date/dayName', function () {
 
     /**
      * A textual representation of a day, three letters.
-     * @param {Date Object} dateValue Date class|Day 0-6.  If not set, it assumes you mean 'now'.
+     * @param {Date} dateObj Date class|Day 0-6.  If not set, it assumes you mean 'now'.
      * @param {Boolean} [short] Shorthand version of day name.
-     * @return {string} "Sun" or "Sundar"
+     * @return {String} "Sun" or "Sundar"
      */
-    var dayName = function (dateValue, short) {
-        switch (dateValue.getDay()) {
+    var dayName = function (dateObj, short) {
+        dateObj = dateObj || new Date();
+
+        switch (dateObj.getDay()) {
         case 0:
             return (!!short ? 'Sun' : 'Sunday');
         case 1:

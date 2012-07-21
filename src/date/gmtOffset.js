@@ -5,14 +5,15 @@ define('date/gmtOffset', function () {
 
     /**
      * Difference to Greenwich Time (E.G: +0200 or +02:00)
-     * @param {date object} dateValue - Date object or timezone offset in minutes.
-     * @param {boolean} addDelimiter - Should the Colon ":" be added between the hours and minutes.
-     * @returns {date object}
+     * @param {Date} [dateObj] - Date object.
+     * @param {Boolean} [addDelimiter] - Should the Colon ":" be added between the hours and minutes.
+     * @returns {String}
      */
-    var gmtOffset = function (dateValue, addDelimiter) {
+    var gmtOffset = function (dateObj, addDelimiter) {
+        dateObj = dateObj || new Date();
         addDelimiter = addDelimiter || false;
 
-        var offset = -dateValue.getTimezoneOffset(),
+        var offset = -dateObj.getTimezoneOffset(),
             hours = Math.floor(offset / 60),
             minutes = (offset - (hours * 60)),
             output = ((hours > 0) ? '+' : '-') +
