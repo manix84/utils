@@ -36,20 +36,59 @@
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
                 <div id='removeElement'>
-                    <h3>removeElement</h3>
+                    <h3>removeElement 1</h3>
                     <strong>Example Code</strong>
                     <pre>removeElement(document.getElementById('someId'));</pre><br />
                     <strong>Example HTML</strong>
                     <pre>&lt;p&gt;Hello World, how are you&lt;span id='someId'&gt; today&lt;/span&gt;?&lt;/p&gt;</pre><br />
                     <strong>Result</strong>
                     <pre><p>Hello World, how are you<span id='someId'> today</span>?</p></pre>
+
+
+                    <h3>removeElement 2</h3>
+                    <strong>Example Code</strong>
+                    <pre>var timer = 0,
+    i = 0,
+    timesToRun = 100000,
+    spanElem, start;
+
+for (; i < timesToRun; i++) {
+    spanElem = document.createElement('span');
+    document.getElementById('removeElement-2').appendChild(spanElem);
+
+    start = new Date();
+    removeElement(spanElem);
+    timer += (new Date() - start);
+}</pre><br />
+                    <strong>Time taken</strong>
+                    <pre id='timeTaken'></pre>
                     <script>
                         require([
                             'dom/removeElement'
                         ], function (removeElement) {
                             removeElement(document.getElementById('someId'));
+
+                            var timer = 0,
+                                i = 0,
+                                timesToRun = 100000,
+                                spanElem, start;
+
+                            for (; i < timesToRun; i++) {
+                                spanElem = document.createElement('span');
+                                document.getElementById('removeElement-2').appendChild(spanElem);
+
+                                start = new Date();
+                                removeElement(spanElem);
+                                timer += (new Date() - start);
+                            }
+
+                            document.getElementById('timeTaken').innerHTML =
+                                'Times Run: ' + timesToRun + '<br />' +
+                                'Timer: ' + timer + 'ms<br />' +
+                                'Execultions per millisecond: ' + Math.round(timesToRun / timer);
                         });
                     </script>
+                    <div id='removeElement-2'></div>
                 </div>
             </section>
         </div>
