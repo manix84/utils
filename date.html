@@ -265,6 +265,26 @@
                         });
                     </script>
                 </div>
+                <div id='convertToRFC2822'>
+                    <h3>convert/toRFC2822</h3>
+                    <pre>toRFC2822(1320892242);<br />// Result: <span id='result-15-1'></span></pre><br />
+                    <pre>toRFC2822(1320892242000);<br />// Result: <span id='result-15-2'></span></pre><br />
+                    <pre>toRFC2822(new Date(1320892242000));<br />// Result: <span id='result-15-3'></span></pre><br />
+                    <pre>toRFC2822('2011-11-10T02:30:42Z');<br />// Result: <span id='result-15-4'></span></pre><br />
+                    <pre>toRFC2822('2011-11-10T02:30:42+00:00');<br />// Result: <span id='result-15-5'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/convert/toRFC2822'
+                        ], function ($, convertToRFC2822) {
+                            $('#result-15-1').text(String(convertToRFC2822(1320892242)));
+                            $('#result-15-2').text(String(convertToRFC2822(1320892242000)));
+                            $('#result-15-3').text(String(convertToRFC2822(new Date(1320892242000))));
+                            $('#result-15-4').text(String(convertToRFC2822('2011-11-10T02:30:42Z')));
+                            $('#result-15-5').text(String(convertToRFC2822('2011-11-10T02:30:42+00:00')));
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
