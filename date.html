@@ -38,28 +38,166 @@
                 <div id='date_root'>
                     <h3>date (root)</h3>
                     <pre>date('D, d M Y H:i:s');<br />// Result: <span id='result-1-1'></span></pre><br />
-                    <pre>date('D, d M Y H:i:s', new Date(1340892242000));<br />// Result: <span id='result-1-2'></span></pre>
+                    <pre>date('D, d M Y H:i:s', new Date(1320892242000));<br />// Result: <span id='result-1-2'></span></pre>
                     <script>
                         require([
                             'jquery',
                             'date'
                         ], function ($, dateUtil) {
                             $('#result-1-1').text(dateUtil('D, d M Y H:i:s'));
-                            $('#result-1-2').text(dateUtil('D, d M Y H:i:s', new Date(1340892242000)));
+                            $('#result-1-2').text(dateUtil('D, d M Y H:i:s', new Date(1320892242000)));
                         });
                     </script>
                 </div>
                 <div id='beatTime'>
                     <h3>beatTime</h3>
                     <pre>beatTime();<br />// Result: <span id='result-2-1'></span></pre><br />
-                    <pre>beatTime(new Date(1340892242000));<br />// Result: <span id='result-2-2'></span></pre>
+                    <pre>beatTime(new Date(1320892242000));<br />// Result: <span id='result-2-2'></span></pre>
                     <script>
                         require([
                             'jquery',
                             'date/beatTime'
                         ], function ($, beatTime) {
                             $('#result-2-1').text(beatTime());
-                            $('#result-2-2').text(beatTime(new Date(1340892242000)));
+                            $('#result-2-2').text(beatTime(new Date(1320892242000)));
+                        });
+                    </script>
+                </div>
+                <div id='daylightSavings'>
+                    <h3>daylightSavings</h3>
+                    <pre>daylightSavings();<br />// Result: <span id='result-3-1'></span></pre><br />
+                    <pre>daylightSavings(new Date(1320892242000));<br />// Result: <span id='result-3-2'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/daylightSavings'
+                        ], function ($, daylightSavings) {
+                            $('#result-3-1').text(daylightSavings());
+                            $('#result-3-2').text(daylightSavings(new Date(1320892242000)));
+                        });
+                    </script>
+                </div>
+                <div id='dayName'>
+                    <h3>dayName</h3>
+                    <pre>dayName();<br />// Result: <span id='result-4-1'></span></pre><br />
+                    <pre>dayName(new Date(1320892242000));<br />// Result: <span id='result-4-2'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/dayName'
+                        ], function ($, dayName) {
+                            $('#result-4-1').text(dayName());
+                            $('#result-4-2').text(dayName(new Date(1320892242000)));
+                        });
+                    </script>
+                </div>
+                <div id='dayOrdinal'>
+                    <h3>dayOrdinal</h3>
+                    <pre>dayOrdinal();<br />// Result: <span id='result-5-1'></span></pre><br />
+                    <pre>dayOrdinal(new Date(1320892242000));<br />// Result: <span id='result-5-2'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/dayOrdinal'
+                        ], function ($, dayOrdinal) {
+                            $('#result-5-1').text(dayOrdinal());
+                            $('#result-5-2').text(dayOrdinal(new Date(1320892242000)));
+                        });
+                    </script>
+                </div>
+                <div id='gmtOffset'>
+                    <h3>gmtOffset</h3>
+                    <pre>gmtOffset();<br />// Result: <span id='result-6-1'></span></pre><br />
+                    <pre>gmtOffset(new Date(1320892242000));<br />// Result: <span id='result-6-2'></span></pre><br />
+                    <pre>gmtOffset(new Date(1320892242000), true);<br />// Result: <span id='result-6-3'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/gmtOffset'
+                        ], function ($, gmtOffset) {
+                            $('#result-6-1').text(gmtOffset());
+                            $('#result-6-2').text(gmtOffset(new Date(1320892242000)));
+                            $('#result-6-3').text(gmtOffset(new Date(1320892242000), true));
+                        });
+                    </script>
+                </div>
+                <div id='meridiem'>
+                    <h3>meridiem</h3>
+                    <pre>meridiem();<br />// Result: <span id='result-7-1'></span></pre><br />
+                    <pre>meridiem(new Date(1320892242000));<br />// Result: <span id='result-7-2'></span></pre><br />
+                    <pre>meridiem(new Date(1320892242000), true);<br />// Result: <span id='result-7-3'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/meridiem'
+                        ], function ($, meridiem) {
+                            $('#result-7-1').text(meridiem());
+                            $('#result-7-2').text(meridiem(new Date(1320892242000)));
+                            $('#result-7-3').text(meridiem(new Date(1320892242000), true));
+                        });
+                    </script>
+                </div>
+                <div id='monthName'>
+                    <h3>monthName</h3>
+                    <pre>monthName();<br />// Result: <span id='result-8-1'></span></pre><br />
+                    <pre>monthName(new Date(1320892242000));<br />// Result: <span id='result-8-2'></span></pre><br />
+                    <pre>monthName(new Date(1320892242000), true);<br />// Result: <span id='result-8-3'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/monthName'
+                        ], function ($, monthName) {
+                            $('#result-8-1').text(monthName());
+                            $('#result-8-2').text(monthName(new Date(1320892242000)));
+                            $('#result-8-3').text(monthName(new Date(1320892242000), true));
+                        });
+                    </script>
+                </div>
+                <div id='twelveHourTime'>
+                    <h3>twelveHourTime</h3>
+                    <pre>twelveHourTime();<br />// Result: <span id='result-9-1'></span></pre><br />
+                    <pre>twelveHourTime(new Date(1320892242000));<br />// Result: <span id='result-9-2'></span></pre><br />
+                    <pre>twelveHourTime(new Date(1320892242000), true);<br />// Result: <span id='result-9-3'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/twelveHourTime'
+                        ], function ($, twelveHourTime) {
+                            $('#result-9-1').text(twelveHourTime());
+                            $('#result-9-2').text(twelveHourTime(new Date(1320892242000)));
+                            $('#result-9-3').text(twelveHourTime(new Date(1320892242000), true));
+                        });
+                    </script>
+                </div>
+                <div id='yearShort'>
+                    <h3>yearShort</h3>
+                    <pre>yearShort();<br />// Result: <span id='result-10-1'></span></pre><br />
+                    <pre>yearShort(new Date(1320892242000));<br />// Result: <span id='result-10-2'></span></pre><br />
+                    <pre>yearShort(new Date(1320892242000), true);<br />// Result: <span id='result-10-3'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/yearShort'
+                        ], function ($, yearShort) {
+                            $('#result-10-1').text(yearShort());
+                            $('#result-10-2').text(yearShort(new Date(1320892242000)));
+                            $('#result-10-3').text(yearShort(new Date(1320892242000), true));
+                        });
+                    </script>
+                </div>
+                <div id='convert_toDate'>
+                    <h3>convert/toDate</h3>
+                    <pre>toDate(1320892242000);<br />// Result: <span id='result-11-1'></span></pre><br />
+                    <pre>toDate(1320892242);<br />// Result: <span id='result-11-2'></span></pre><br />
+                    <pre>toDate(new Date(1320892242000));<br />// Result: <span id='result-11-3'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/convert/toDate'
+                        ], function ($, convertToDate) {
+                            $('#result-11-1').text(convertToDate(1320892242000));
+                            $('#result-11-2').text(convertToDate(1320892242));
+                            $('#result-11-3').text(convertToDate(new Date(1320892242000)));
                         });
                     </script>
                 </div>
