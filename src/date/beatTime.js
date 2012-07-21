@@ -4,10 +4,11 @@
 define('date/beatTime', function () {
     /**
      * Convert a javascript Date to a Swatch Internet Time (Beat Time).
-     * @param {date object} dateValue Date class.  If not set, it assumes you mean 'now'.
+     * @param {date object} [dateValue] - Date class.  If not set, it assumes you mean 'now'.
      * @return {number} 0-1000
      */
     var beatTime = function (dateValue) {
+        dateValue = dateValue || new Date();
 
         var dayStartEpoch = new Date(
             dateValue.getFullYear(),
