@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('date/convert/toIso8601', [
+define('date/convert/toRFC2822', [
     'date/convert/toDate',
     'date/dayName',
     'date/monthName'
