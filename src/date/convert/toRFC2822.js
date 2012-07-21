@@ -2,8 +2,10 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 define('date/convert/toIso8601', [
-    'date/convert/toDate'
-], function (convertToDate) {
+    'date/convert/toDate',
+    'date/dayName',
+    'date/monthName'
+], function (convertToDate, dayName, monthName) {
 
     /**
      * Converts strings, numbers and date objects into an RFC 2822 formated date.
@@ -12,15 +14,15 @@ define('date/convert/toIso8601', [
      * @returns {string} EG: "Tue, 19 Oct 2010 13:51:29 +0100"
      */
     var convertToRFC2822 = function (value) {
-        var dateValue = this.convertToDate(value),
-            output = this.getDayShort(dateValue) + ', ' +
+        var dateValue = convertToDate(value),
+            output = dayName(dateValue, true) + ', ' +
                 dateValue.getDate() + ' ' +
-                this.getMonthShort(dateValue) + ' ' +
+                monthName(dateValue, true) + ' ' +
                 dateValue.getUTCFullYear() + ' ' +
                 pad(dateValue.getUTCHours()) + ':' +
                 pad(dateValue.getUTCMinutes()) + ':' +
                 pad(dateValue.getUTCSeconds()) + ' ' +
-                this.getReadableTimezone(dateValue);
+                offset(dateValue);
 
         return output;
     },
@@ -30,6 +32,13 @@ define('date/convert/toIso8601', [
             output = "0" + output;
         }
         return output;
+    },
+    offset = function (dateObj) {
+        var offset = -dateObj.getTimezoneOffset(),
+            hours = Math.floor(offset / 60),
+            minutes = (offset - (hours * 60));
+        return ((hours >= 0) ? '+' : '-') +
+            pad(hours) + pad(minutes);
     };
 
     return convertToRFC2822;
