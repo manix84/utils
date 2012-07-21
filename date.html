@@ -225,6 +225,26 @@
                         });
                     </script>
                 </div>
+                <div id='convertToIso'>
+                    <h3>convert/toIso</h3>
+                    <pre>toIso(1320892242);<br />// Result: <span id='result-13-1'></span></pre><br />
+                    <pre>toIso(1320892242000);<br />// Result: <span id='result-13-2'></span></pre><br />
+                    <pre>toIso(new Date(1320892242000));<br />// Result: <span id='result-13-3'></span></pre><br />
+                    <pre>toIso('2011-11-10T02:30:42Z')));<br />// Result: <span id='result-13-4'></span></pre><br />
+                    <pre>toIso('2011-11-10T02:30:42+00:00')));<br />// Result: <span id='result-13-5'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/convert/toIso'
+                        ], function ($, convertToIso) {
+                            $('#result-13-1').text(String(convertToIso(1320892242)));
+                            $('#result-13-2').text(String(convertToIso(1320892242000)));
+                            $('#result-13-3').text(String(convertToIso(new Date(1320892242000))));
+                            $('#result-13-4').text(String(convertToIso('2011-11-10T02:30:42Z')));
+                            $('#result-13-5').text(String(convertToIso('2011-11-10T02:30:42+00:00')));
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
