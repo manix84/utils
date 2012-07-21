@@ -2,7 +2,7 @@
  * Useful utilities for arrays.
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('array/isArray', function () {
+define('array/indexOf', function () {
     /**
      * Returns the index of the value in the array passed. If the value can't be found, the return value is -1
      * @exports array/indexOf
@@ -14,7 +14,7 @@ define('array/isArray', function () {
         var i = 0;
 
         // if indexOf is supported we will use the native functionality
-        if (arrayObj.indexOf) {
+        if (!!arrayObj.indexOf) {
             return arrayObj.indexOf(value);
         }
 
