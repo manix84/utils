@@ -6,12 +6,20 @@
         <meta name="description" content="Utils : A set of utilities designed to make things easier for developers." />
         <link rel="stylesheet" type="text/css" media="screen" href="style/stylesheet.css">
         <style>
-            .unfinished {
+            .missing {
                 opacity: 0.3;
             }
-            .unfinished:before {
-                content: "[todo] ";
+            .missing:before {
+                content: "[missing] ";
             }
+            .unfinished {
+                opacity: 0.7;
+            }
+            .unfinished:before {
+                content: "[in progress] ";
+            }
+            .missing:hover,
+            .missing:focus,
             .unfinished:hover,
             .unfinished:focus {
                 opacity: 1;
@@ -43,17 +51,17 @@
                     <li><a href='accessibility.html'>Utils/Accessibility</a></li>
                     <li><a href='array.html'>Utils/Array</a></li>
                     <li><a href='date.html' class='unfinished'>Utils/Date</a></li>
-                    <li><a href='dom.html' class='unfinished'>Utils/Dom</a></li>
-                    <li><a href='events.html' class='unfinished'>Utils/Events</a></li>
-                    <li><a href='jscript.html' class='unfinished'>Utils/JScript</a></li>
-                    <li><a href='keyboard.html' class='unfinished'>Utils/Keyboard</a></li>
+                    <li><a href='dom.html' class='missing'>Utils/Dom</a></li>
+                    <li><a href='events.html' class='missing'>Utils/Events</a></li>
+                    <li><a href='jscript.html' class='missing'>Utils/JScript</a></li>
+                    <li><a href='keyboard.html' class='missing'>Utils/Keyboard</a></li>
                     <li><a href='logging.html'>Utils/Logging</a></li>
-                    <li><a href='number.html' class='unfinished'>Utils/Number</a></li>
-                    <li><a href='object.html' class='unfinished'>Utils/Object</a></li>
-                    <li><a href='string.html' class='unfinished'>Utils/String</a></li>
-                    <li><a href='style.html' class='unfinished'>Utils/Style</a></li>
-                    <li><a href='useragent.html' class='unfinished'>Utils/UserAgent</a></li>
-                    <li><a href='window.html' class='unfinished'>Utils/Window</a></li>
+                    <li><a href='number.html' class='missing'>Utils/Number</a></li>
+                    <li><a href='object.html' class='missing'>Utils/Object</a></li>
+                    <li><a href='string.html' class='missing'>Utils/String</a></li>
+                    <li><a href='style.html' class='missing'>Utils/Style</a></li>
+                    <li><a href='useragent.html' class='missing'>Utils/UserAgent</a></li>
+                    <li><a href='window.html' class='missing'>Utils/Window</a></li>
                 </ul>
             </section>
         </div>
