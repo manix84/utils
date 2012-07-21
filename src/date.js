@@ -14,6 +14,7 @@
  * @requires date/monthName
  * @requires date/twelveHourTime
  * @requires date/yearShort
+ * @requires date/convert/toDate
  * @requires date/convert/toIso8601
  * @requires date/convert/toRFC2822
  * @requires date/convert/toTimestamp
@@ -28,6 +29,7 @@ define('date', [
     'date/monthName',
     'date/twelveHourTime',
     'date/yearShort',
+    'date/convert/toDate',
     'date/convert/toIso8601',
     'date/convert/toRFC2822',
     'date/convert/toTimestamp'
@@ -41,6 +43,7 @@ define('date', [
     monthName,
     twelveHourTime,
     yearShort,
+    convertToDate,
     convertToIso8601,
     convertToRFC2822,
     convertToTimestamp
@@ -65,13 +68,13 @@ define('date', [
         var maskArray = '',
             no_support = function (character) {
                 if (!!window.console && 'warn' in window.console) {
-                    window.console.warn('Date.Format: ' + character + ', is currently not a supported format.');
+                    window.console.warn('Date.Format: "' + character + '", is currently not a supported format.');
                 }
             },
             o = '',
             i = 0;
 
-        dateValue = date.convertToDate(dateValue);
+        dateValue = convertToDate(dateValue);
 
         maskArray = mask.split('');
 
