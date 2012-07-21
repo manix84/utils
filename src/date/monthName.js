@@ -5,13 +5,15 @@ define('date/monthName', function () {
 
     /**
      * A short textual representation of a month, three letters
-     * @param {Date Object} dateValue - Date class|Month 1-12.  If not set, it assumes you mean 'now'.
+     * @param {Date} dateObj - Date class|Month 1-12.  If not set, it assumes you mean 'now'.
      * @param {Boolean} [short] -
      * @return {String} EG: "Jan"
      */
-    var monthName = function (dateValue, short) {
+    var monthName = function (dateObj, short) {
+        dateObj = dateObj || new Date();
+        short = short || false;
 
-        switch (dateValue.getMonth()) {
+        switch (dateObj.getMonth()) {
         case 0:
             return (!!short ? 'Jan' : 'January');
         case 1:

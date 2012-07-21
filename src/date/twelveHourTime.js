@@ -5,10 +5,11 @@ define('date/twelveHourTime', function () {
 
     /**
      * 12-hour format of an hour without leading zeros
-     * @param {date object} dateObj - Date object|24 Hour EG: 16.  If not set, it assumes you mean 'now'.
-     * @return {number} EG: 1-12
+     * @param {Date} [dateObj] - Date object.
+     * @return {Number} EG: 1-12
      */
     var twelveHourTime = function (dateObj) {
+        dateObj = dateObj || new Date();
 
         var hour = dateObj.getHours();
 

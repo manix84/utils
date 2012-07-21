@@ -5,13 +5,14 @@ define('date/meridiem', function () {
 
     /**
      * Ante meridiem and Post meridiem
-     * @param {date object|number} dateValue - Date class|24 Hour EG: 16.  If not set, it assumes you mean 'now'.
-     * @param {boolean} [upper] - Should return in UPPER case.
-     * @return {string} EG: "am" or "pm"
+     * @param {Date} [dateObj] - Date object.
+     * @param {Boolean} [upper] - Should return in UPPER case.
+     * @return {String} EG: "am" or "pm"
      */
-    var meridiem = function (dateValue, upper) {
+    var meridiem = function (dateObj, upper) {
+        dateObj = dateObj || new Date();
 
-        var hour = dateValue.getHours(),
+        var hour = dateObj.getHours(),
             output = 'pm';
 
         if (hour < 12) {

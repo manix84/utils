@@ -5,13 +5,14 @@ define('date/dayOrdinal', function () {
 
     /**
      * English ordinal suffix for the day of the month, 2 characters
-     * @param {date object|number} dateValue - Date class|Day 1-28/31.  If not set, it assumes you mean 'now'.
-     * @param {boolean} [convert] - does the value being sent needs to be converted to a date.
-     * @return {string} EG: "th"
+     * @param {Date} [dateObj] - Date object.
+     * @param {Boolean} [convert] - does the value being sent needs to be converted to a date.
+     * @return {String} EG: "th"
      */
-    var dayOrdinal = function (dateValue) {
+    var dayOrdinal = function (dateObj) {
+        dateObj = dateObj || new Date();
 
-        switch (dateValue.getDate()) {
+        switch (dateObj.getDate()) {
         case 1:
         case 21:
         case 31:
