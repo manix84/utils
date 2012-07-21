@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8' />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+        <meta name="description" content="Utils : A set of utilities designed to make things easier for developers." />
+        <link rel="stylesheet" type="text/css" media="screen" href="style/stylesheet.css" />
+        <script src="script/require.js"></script>
+        <script>
+            require({
+                baseUrl: 'src/',
+                paths: {
+                    "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min"
+                }
+            });
+        </script>
+        <title>Utils/Accessibility</title>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <div id="header_wrap" class="outer">
+            <header class="inner">
+                <a id="forkme_banner" href="https://github.com/manix84/utils">Fork Me on GitHub</a>
+
+                <h1 id="project_title"><a href='index.html'>Utils</a>/Accessibility</h1>
+                <h2 id="project_tagline">Accessibility utility, providing accessibility functions to users.</h2>
+
+                <section id="downloads">
+                    <a class="zip_download_link" href="https://github.com/manix84/utils/zipball/master">Download this project as a .zip file</a>
+                    <a class="tar_download_link" href="https://github.com/manix84/utils/tarball/master">Download this project as a tar.gz file</a>
+                </section>
+            </header>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div id="main_content_wrap" class="outer">
+            <section id="main_content" class="inner">
+                <div id='alert'>
+                    <h3>alert</h3>
+                    <p>These elements have an Aria role of &quot;alert&quot; attached, meaning users of accessiblity software will get an audio alert reading out the message you send.  Normally they are completely invisible to everyone.</p>
+                    <p><strong>Please Note</strong>: I'm taking off the styles from these alerts so that you can see them attached to the page.</p>
+                    <pre>alert('Alerting the user, test 1', document.getElementById('result-1-1'));<br />// Result: <code id='result-1-1'></code></pre><br />
+                    <pre>alert('Alerting the user, test 2', document.getElementById('result-1-2'), 2);<br />// Result: <code id='result-1-2'></code></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'accessibility/alert'
+                        ], function ($, accessibilityAlert) {
+                            accessibilityAlert('Alerting the user, test 1', document.getElementById('result-1-1'));
+                            accessibilityAlert('Alerting the user, test 2', document.getElementById('result-1-2'), 2);
+                        });
+                    </script>
+                    <style>
+
+                        #alert pre textarea {
+                            width: 99%;
+                            height: 50px;
+                        }
+                        #alert pre h3 {
+                            position: static !important;
+                            left: auto !important;
+                            width: auto !important;
+                            overflow: auto !important
+                        }
+                    </style>
+                </div>
+            </section>
+        </div>
+
+        <!-- FOOTER  -->
+        <div id="footer_wrap" class="outer">
+            <footer class="inner">
+                <p class="copyright">Utils maintained by <a href="https://github.com/manix84">manix84</a></p>
+                <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+            </footer>
+        </div>
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            try {
+                var pageTracker = _gat._getTracker("UA-30459282-1");
+                pageTracker._trackPageview();
+            } catch(err) {}
+        </script>
+    </body>
+</html>
