@@ -11,14 +11,14 @@ define('date/convert/toIso8601', [
      * @returns {string} EG: "2010-10-19T13:51:29+01:00"
      */
     var convertToIso8601 = function (value) {
-        var dateValue = this.convertToDate(value),
+        var dateValue = convertToDate(value),
             output = dateValue.getUTCFullYear() + '-' +
                 pad(dateValue.getUTCMonth() + 1) + '-' +
                 pad(dateValue.getUTCDate()) + 'T' +
                 pad(dateValue.getUTCHours()) + ':' +
                 pad(dateValue.getUTCMinutes()) + ':' +
                 pad(dateValue.getUTCSeconds()) +
-                this.getReadableTimezone(dateValue, true);
+                offset(dateValue);
 
         return output;
     },
@@ -28,6 +28,13 @@ define('date/convert/toIso8601', [
             output = "0" + output;
         }
         return output;
+    },
+    offset = function (dateObj) {
+        var offset = -dateObj.getTimezoneOffset(),
+            hours = Math.floor(offset / 60),
+            minutes = (offset - (hours * 60));
+        return ((hours >= 0) ? '+' : '-') +
+            pad(hours) + ':' + pad(minutes);
     };
 
     return convertToIso8601;

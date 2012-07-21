@@ -11,7 +11,7 @@ define('date/convert/toIso', [
      * @returns {string} EG: "2010-10-19T13:51:29Z"
      */
     var convertToIso = function (value) {
-        var dateValue = this.convertToDate(value),
+        var dateValue = convertToDate(value),
             output = dateValue.getUTCFullYear() + '-' +
                 pad(dateValue.getUTCMonth() + 1) + '-' +
                 pad(dateValue.getUTCDate()) + 'T' +

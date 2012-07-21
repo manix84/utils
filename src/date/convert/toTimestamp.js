@@ -11,7 +11,7 @@ define('date/convert/toTimestamp', [
      * @returns {number} EG: 12345678910
      */
     var convertToTimestamp = function (value) {
-        var dateValue = this.convertToDate(value),
+        var dateValue = convertToDate(value),
             output = (dateValue.getTime() - dateValue.getMilliseconds()) / 1000;
 
         return output;
