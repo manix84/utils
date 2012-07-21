@@ -23,7 +23,7 @@
                 <a id="forkme_banner" href="https://github.com/manix84/utils">Fork Me on GitHub</a>
 
                 <h1 id="project_title"><a href='index.html'>Utils</a>/Date</h1>
-                <h2 id="project_tagline">Date utility extention, adding format. (based on PHP's date function)</h2>
+                <h2 id="project_tagline">Date utility extentions.</h2>
 
                 <section id="downloads">
                     <a class="zip_download_link" href="https://github.com/manix84/utils/zipball/master">Download this project as a .zip file</a>
@@ -46,6 +46,20 @@
                         ], function ($, dateUtil) {
                             $('#result-1-1').text(dateUtil('D, d M Y H:i:s'));
                             $('#result-1-2').text(dateUtil('D, d M Y H:i:s', new Date(1340892242000)));
+                        });
+                    </script>
+                </div>
+                <div id='beatTime'>
+                    <h3>beatTime</h3>
+                    <pre>beatTime();<br />// Result: <span id='result-2-1'></span></pre><br />
+                    <pre>beatTime(new Date(1340892242000));<br />// Result: <span id='result-2-2'></span></pre>
+                    <script>
+                        require([
+                            'jquery',
+                            'date/beatTime'
+                        ], function ($, beatTime) {
+                            $('#result-2-1').text(beatTime());
+                            $('#result-2-2').text(beatTime(new Date(1340892242000)));
                         });
                     </script>
                 </div>
