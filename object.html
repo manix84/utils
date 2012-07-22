@@ -47,6 +47,20 @@
                         });
                     </script>
                 </div>
+                <div id='compare'>
+                    <h3>compare</h3>
+                    <pre>compare({'cat': 'Felix'}, {'cat': 'Felix'});<br />// Result: <span id='result-2-1'></span></pre><br />
+                    <pre>compare({'cat': 'Felix'}, {'dog': 'Rex'});<br />// Result: <span id='result-2-2'></span></pre>
+
+                    <script>
+                        require([
+                            'object/compare'
+                        ], function (compare) {
+                            document.getElementById('result-2-1').innerText = compare({'cat': 'Felix'}, {'cat': 'Felix'});
+                            document.getElementById('result-2-2').innerText = compare({'cat': 'Felix'}, {'dog': 'Rex'});
+                        });
+                    </script>
+                </div>
                 <div id='isObject'>
                     <h3>isObject</h3>
                     <p>working on this...</p>
