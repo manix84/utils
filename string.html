@@ -67,6 +67,18 @@
                         });
                     </script>
                 </div>
+                <div id='sprintf'>
+                    <h3>sprintf</h3>
+                    <pre>sprintf('Felix');<br />// Result: <span id='result-3-1'></span></pre>
+
+                    <script>
+                        require([
+                            'string/sprintf'
+                        ], function (sprintf) {
+                            document.getElementById('result-3-1').innerText = sprintf("Integer: %d, Not A Float: \\%f, String: %s, Float: %f", ["String", 1.2, 3]);
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
