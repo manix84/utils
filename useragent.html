@@ -59,6 +59,18 @@
                         });
                     </script>
                 </div>
+                <div id='isTouchEnabled'>
+                    <h3>isTouchEnabled</h3>
+                    <pre>isTouchEnabled<br />// Result: <span id='result-3-1'></span></pre><br />
+
+                    <script>
+                        require([
+                            'useragent/isTouchEnabled'
+                        ], function (isTouchEnabled) {
+                            document.getElementById('result-3-1').innerText = JSON.stringify(isTouchEnabled);
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
