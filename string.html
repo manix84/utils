@@ -148,6 +148,18 @@
                         });
                     </script>
                 </div>
+                <div id='upperCaseFirst'>
+                    <h3>upperCaseFirst</h3>
+                    <pre>upperCaseFirst("lorem ipsum dolor sit amet.");<br />// Result: <span id='result-9-1'></span></pre>
+
+                    <script>
+                        require([
+                            'string/upperCaseFirst'
+                        ], function (upperCaseFirst) {
+                            document.getElementById('result-9-1').innerText = upperCaseFirst('lorem ipsum dolor sit amet.');
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
