@@ -67,6 +67,7 @@
                         require([
                             'useragent/isTouchEnabled'
                         ], function (isTouchEnabled) {
+                            document.getElementById('result-3-1').innerText = isTouchEnabled;
                             document.getElementById('result-3-1').innerText = JSON.stringify(isTouchEnabled);
                         });
                     </script>
