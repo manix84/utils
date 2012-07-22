@@ -122,6 +122,20 @@ example.getProperty(); // Returns: "cat"</pre>
                         });
                     </script>
                 </div>
+                <div id='isEmpty'>
+                    <h3>isEmpty</h3>
+                    <pre>isEmpty({})<br />// Result: <span id='result-4-1'></span></pre><br />
+                    <pre>isEmpty({'cat': 'Felix'})<br />// Result: <span id='result-4-2'></span></pre>
+
+                    <script>
+                        require([
+                            'object/isEmpty'
+                        ], function (isEmpty) {
+                            document.getElementById('result-4-1').innerText = isEmpty({});
+                            document.getElementById('result-4-2').innerText = isEmpty({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'});
+                        });
+                    </script>
+                </div>
                 <div id='isObject'>
                     <h3>isObject</h3>
                     <p>working on this...</p>
