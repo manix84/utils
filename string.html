@@ -91,6 +91,18 @@
                         });
                     </script>
                 </div>
+                <div id='toObject'>
+                    <h3>toObject</h3>
+                    <pre>toObject('{"cat": "Felix", "dog": "Rex", "bird": "Polly"}');<br />// Result: <span id='result-5-1'></span></pre>
+
+                    <script>
+                        require([
+                            'string/toObject'
+                        ], function (toObject) {
+                            document.getElementById('result-5-1').innerText = JSON.stringify(toObject('{"cat": "Felix", "dog": "Rex", "bird": "Polly"}'));
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
