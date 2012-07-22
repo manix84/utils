@@ -5,27 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="chrome=1" />
         <meta name="description" content="Utils : A set of utilities designed to make things easier for developers." />
         <link rel="stylesheet" type="text/css" media="screen" href="style/stylesheet.css">
-        <style>
-            .missing {
-                opacity: 0.3;
-            }
-            .missing:before {
-                content: "[missing] ";
-            }
-            .unfinished {
-                opacity: 0.7;
-            }
-            .unfinished:before {
-                content: "[in progress] ";
-            }
-            .missing:hover,
-            .missing:focus,
-            .unfinished:hover,
-            .unfinished:focus {
-                opacity: 1;
-            }
-        </style>
-        <title>Utils</title>
+        <script src="script/require.js"></script>
+        <script>
+            require({
+                baseUrl: 'src/',
+                paths: {
+                    "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min"
+                }
+            });
+        </script>
+        <title>Utils/Useragent</title>
     </head>
     <body>
         <!-- HEADER -->
@@ -33,8 +22,8 @@
             <header class="inner">
                 <a id="forkme_banner" href="https://github.com/manix84/utils">Fork Me on GitHub</a>
 
-                <h1 id="project_title">Utils</h1>
-                <h2 id="project_tagline">A set of utilities designed to make things easier for developers.</h2>
+                <h1 id="project_title"><a href='index.html'>Utils</a>/Useragent</h1>
+                <h2 id="project_tagline">Useful utilities for detecting browser information more easily.</h2>
 
                 <section id="downloads">
                     <a class="zip_download_link" href="https://github.com/manix84/utils/zipball/master">Download this project as a .zip file</a>
@@ -46,22 +35,24 @@
         <!-- MAIN CONTENT -->
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
-                <p>I'm working on these, but they're taking me some time to finish up. If you have any questions about something I've missed, or I haven't finished here, feel free to contact me though <a href='https://github.com/manix84/utils'>GitHub</a>.</p>
-                <ul>
-                    <li><a href='accessibility.html'>Utils/Accessibility</a></li>
-                    <li><a href='array.html'>Utils/Array</a></li>
-                    <li><a href='date.html'>Utils/Date</a></li>
-                    <li><a href='dom.html'>Utils/Dom</a></li>
-                    <li><a href='events.html'>Utils/Events</a></li>
-                    <li><a href='keyboard.html' class='missing'>Utils/Keyboard</a></li>
-                    <li><a href='logging.html'>Utils/Logging</a></li>
-                    <li><a href='number.html'>Utils/Number</a></li>
-                    <li><a href='object.html'>Utils/Object</a></li>
-                    <li><a href='string.html'>Utils/String</a></li>
-                    <li><a href='style.html'>Utils/Style</a></li>
-                    <li><a href='useragent.html' class='unfinished'>Utils/UserAgent</a></li>
-                    <li><a href='window.html' class='missing'>Utils/Window</a></li>
-                </ul>
+                <div id='vendorSupport'>
+                    <h3>vendorSupport</h3>
+                    <pre>vendorSupport('border-radius');<br />// Result: <span id='result-1-1'></span></pre><br />
+                    <pre>vendorSupport('border-image');<br />// Result: <span id='result-1-2'></span></pre><br />
+                    <pre>vendorSupport('text-overflow');<br />// Result: <span id='result-1-3'></span></pre><br />
+                    <pre>vendorSupport('voice-family');<br />// Result: <span id='result-1-4'></span></pre>
+
+                    <script>
+                        require([
+                            'style/vendorSupport'
+                        ], function (vendorSupport) {
+                            document.getElementById('result-1-1').innerText = vendorSupport('border-radius');
+                            document.getElementById('result-1-2').innerText = vendorSupport('border-image');
+                            document.getElementById('result-1-3').innerText = vendorSupport('text-overflow');
+                            document.getElementById('result-1-4').innerText = vendorSupport('voice-family');
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
