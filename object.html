@@ -164,6 +164,18 @@ example.getProperty(); // Returns: "cat"</pre>
                         });
                     </script>
                 </div>
+                <div id='length'>
+                    <h3>length</h3>
+                    <pre>length({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-7-1'></span></pre>
+
+                    <script>
+                        require([
+                            'object/length'
+                        ], function (length) {
+                            document.getElementById('result-7-1').innerText = JSON.stringify(length({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'}));
+                        });
+                    </script>
+                </div>
                         });
                     </script>
                 </div>
