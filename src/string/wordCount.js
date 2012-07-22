@@ -40,4 +40,6 @@ define('string/wordCount', function () {
         }
         return stringArray.length;
     };
+
+    return wordCount;
 });
