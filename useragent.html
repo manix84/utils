@@ -68,7 +68,18 @@
                             'useragent/isTouchEnabled'
                         ], function (isTouchEnabled) {
                             document.getElementById('result-3-1').innerText = isTouchEnabled;
-                            document.getElementById('result-3-1').innerText = JSON.stringify(isTouchEnabled);
+                        });
+                    </script>
+                </div>
+                <div id='operatingSystem'>
+                    <h3>operatingSystem</h3>
+                    <pre>operatingSystem<br />// Result: <span id='result-4-1'></span></pre><br />
+
+                    <script>
+                        require([
+                            'useragent/operatingSystem'
+                        ], function (operatingSystem) {
+                            document.getElementById('result-4-1').innerText = JSON.stringify(operatingSystem);
                         });
                     </script>
                 </div>
