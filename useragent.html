@@ -47,6 +47,18 @@
                         });
                     </script>
                 </div>
+                <div id='engine'>
+                    <h3>engine</h3>
+                    <pre>engine<br />// Result: <span id='result-2  -1'></span></pre><br />
+
+                    <script>
+                        require([
+                            'useragent/engine'
+                        ], function (engine) {
+                            document.getElementById('result-2-1').innerText = JSON.stringify(engine);
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
