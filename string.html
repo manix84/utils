@@ -103,6 +103,18 @@
                         });
                     </script>
                 </div>
+                <div id='trim'>
+                    <h3>trim</h3>
+                    <pre>trim('     Felix the Cat.  ');<br />// Result: <span id='result-6-1'></span></pre>
+
+                    <script>
+                        require([
+                            'string/trim'
+                        ], function (trim) {
+                            document.getElementById('result-6-1').innerText = trim('     Felix the Cat.  ');
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
