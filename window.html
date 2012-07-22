@@ -35,6 +35,18 @@
         <!-- MAIN CONTENT -->
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
+                <div id='queriesObject'>
+                    <h3>queriesObject</h3>
+                    <pre>queriesObject();<br />// Result: <span id='result-1-1'></span></pre>
+
+                    <script>
+                        require([
+                            'window/queriesObject'
+                        ], function (queriesObject) {
+                            document.getElementById('result-1-1').innerText = JSON.stringify(queriesObject());
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
