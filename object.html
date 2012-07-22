@@ -138,15 +138,20 @@ example.getProperty(); // Returns: "cat"</pre>
                 </div>
                 <div id='isObject'>
                     <h3>isObject</h3>
-                    <p>working on this...</p>
-                    <pre>isObject({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-1-1'></span></pre>
+                    <pre>isObject({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-5-1'></span></pre><br />
+                    <pre>isObject(['Felix', 'Rex', 'Polly'])<br />// Result: <span id='result-5-2'></span></pre><br />
+                    <pre>isObject(new Date())<br />// Result: <span id='result-5-3'></span></pre>
 
                     <script>
                         require([
-                            'jquery',
                             'object/isObject'
-                        ], function ($, isObject) {
-                            $('#result-1-1').text(isObject({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'}));
+                        ], function (isObject) {
+                            document.getElementById('result-5-1').innerText = isObject({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'});
+                            document.getElementById('result-5-2').innerText = isObject(['Felix', 'Rex', 'Polly']);
+                            document.getElementById('result-5-3').innerText = isObject(new Date());
+                        });
+                    </script>
+                </div>
                         });
                     </script>
                 </div>
