@@ -136,6 +136,18 @@
                         });
                     </script>
                 </div>
+                <div id='upperCaseWords'>
+                    <h3>upperCaseWords</h3>
+                    <pre>upperCaseWords("lorem ipsum dolor sit amet.");<br />// Result: <span id='result-8-1'></span></pre>
+
+                    <script>
+                        require([
+                            'string/upperCaseWords'
+                        ], function (upperCaseWords) {
+                            document.getElementById('result-8-1').innerText = upperCaseWords('lorem ipsum dolor sit amet.');
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
