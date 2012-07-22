@@ -129,10 +129,11 @@
                         require([
                             'string/truncate'
                         ], function (truncate) {
-                            document.getElementById('result-7-1').innerText = truncate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque tempus mauris quis amet.');
-                            document.getElementById('result-7-2').innerText = truncate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque tempus mauris quis amet.', 10);
-                            document.getElementById('result-7-3').innerText = truncate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque tempus mauris quis amet.', 10, '>>>');
-                            document.getElementById('result-7-4').innerText = truncate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque tempus mauris quis amet.', 10, '>>>', true);
+                            var string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque tempus mauris quis amet.";
+                            document.getElementById('result-7-1').innerText = truncate(string);
+                            document.getElementById('result-7-2').innerText = truncate(string, 10);
+                            document.getElementById('result-7-3').innerText = truncate(string, 10, '>>>');
+                            document.getElementById('result-7-4').innerText = truncate(string, 10, '>>>', true);
                         });
                     </script>
                 </div>
