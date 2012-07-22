@@ -51,6 +51,22 @@
                         });
                     </script>
                 </div>
+                <div id='repeat'>
+                    <h3>repeat</h3>
+                    <pre>repeat('Felix');<br />// Result: <span id='result-2-1'></span></pre><br />
+                    <pre>repeat('Felix', 1);<br />// Result: <span id='result-2-2'></span></pre><br />
+                    <pre>repeat('Felix', 10);<br />// Result: <span id='result-2-3'></span></pre>
+
+                    <script>
+                        require([
+                            'string/repeat'
+                        ], function (repeat) {
+                            document.getElementById('result-2-1').innerText = repeat('Felix');
+                            document.getElementById('result-2-2').innerText = repeat('Felix', 1);
+                            document.getElementById('result-2-3').innerText = repeat('Felix', 10);
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
