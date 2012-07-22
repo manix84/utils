@@ -35,19 +35,21 @@
         <!-- MAIN CONTENT -->
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
-                <div id='isString'>
-                    <h3>isString</h3>
-                    <pre>isString('Felix');<br />// Result: <span id='result-1-1'></span></pre><br />
-                    <pre>isString(String('Felix'));<br />// Result: <span id='result-1-2'></span></pre><br />
-                    <pre>isString({'cat': 'Felix'});<br />// Result: <span id='result-1-3'></span></pre>
+                <div id='vendorSupport'>
+                    <h3>vendorSupport</h3>
+                    <pre>vendorSupport('border-radius');<br />// Result: <span id='result-1-1'></span></pre><br />
+                    <pre>vendorSupport('border-image');<br />// Result: <span id='result-1-2'></span></pre><br />
+                    <pre>vendorSupport('text-overflow');<br />// Result: <span id='result-1-3'></span></pre><br />
+                    <pre>vendorSupport('voice-family');<br />// Result: <span id='result-1-4'></span></pre>
 
                     <script>
                         require([
-                            'string/isString'
-                        ], function (isString) {
-                            document.getElementById('result-1-1').innerText = isString('Felix');
-                            document.getElementById('result-1-2').innerText = isString(String('Felix'));
-                            document.getElementById('result-1-3').innerText = isString({'cat': 'Felix'});
+                            'style/vendorSupport'
+                        ], function (vendorSupport) {
+                            document.getElementById('result-1-1').innerText = vendorSupport('border-radius');
+                            document.getElementById('result-1-2').innerText = vendorSupport('border-image');
+                            document.getElementById('result-1-3').innerText = vendorSupport('text-overflow');
+                            document.getElementById('result-1-4').innerText = vendorSupport('voice-family');
                         });
                     </script>
                 </div>
