@@ -180,6 +180,7 @@ example.getProperty(); // Returns: "cat"</pre>
                     <h3>toArray</h3>
                     <pre>toArray({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-8-1'></span></pre>
 
+                    <script>
                         require([
                             'object/toArray'
                         ], function (toArray) {
@@ -187,6 +188,15 @@ example.getProperty(); // Returns: "cat"</pre>
                         });
                     </script>
                 </div>
+                <div id='toString'>
+                    <h3>toString</h3>
+                    <pre>toString({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-9-1'></span></pre>
+
+                    <script>
+                        require([
+                            'object/toString'
+                        ], function (toString) {
+                            document.getElementById('result-9-1').innerText = toString({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'});
                         });
                     </script>
                 </div>
