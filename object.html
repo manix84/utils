@@ -35,6 +35,18 @@
         <!-- MAIN CONTENT -->
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
+                <div id='apply'>
+                    <h3>apply</h3>
+                    <pre>apply({'cat': 'Felix'}, {'dog': 'Rex', 'bird': 'Polly'});<br />// Result: <span id='result-1-1'></span></pre>
+
+                    <script>
+                        require([
+                            'object/apply'
+                        ], function (apply) {
+                            document.getElementById('result-1-1').innerText = JSON.stringify(apply({'cat': 'Felix'}, {'dog': 'Rex', 'bird': 'Polly'}));
+                        });
+                    </script>
+                </div>
                 <div id='isObject'>
                     <h3>isObject</h3>
                     <p>working on this...</p>
