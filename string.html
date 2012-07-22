@@ -35,6 +35,22 @@
         <!-- MAIN CONTENT -->
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
+                <div id='isString'>
+                    <h3>isString</h3>
+                    <pre>isString('Felix');<br />// Result: <span id='result-1-1'></span></pre><br />
+                    <pre>isString(String('Felix'));<br />// Result: <span id='result-1-2'></span></pre><br />
+                    <pre>isString({'cat': 'Felix'});<br />// Result: <span id='result-1-3'></span></pre>
+
+                    <script>
+                        require([
+                            'string/isString'
+                        ], function (isString) {
+                            document.getElementById('result-1-1').innerText = isString('Felix');
+                            document.getElementById('result-1-2').innerText = isString(String('Felix'));
+                            document.getElementById('result-1-3').innerText = isString({'cat': 'Felix'});
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
