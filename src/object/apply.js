@@ -21,6 +21,7 @@ define('object/apply', function () {
                 destination[property] = source[property];
             }
         }
+        return destination;
     };
 
     return apply;
