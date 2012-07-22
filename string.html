@@ -161,6 +161,18 @@
                         });
                     </script>
                 </div>
+                <div id='wordCount'>
+                    <h3>wordCount</h3>
+                    <pre>wordCount("lorem ipsum dolor sit amet.");<br />// Result: <span id='result-10-1'></span></pre>
+
+                    <script>
+                        require([
+                            'string/wordCount'
+                        ], function (wordCount) {
+                            document.getElementById('result-10-1').innerText = wordCount('lorem ipsum dolor sit amet.');
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
