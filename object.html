@@ -38,24 +38,14 @@
                 <div id='isObject'>
                     <h3>isObject</h3>
                     <p>working on this...</p>
-                    <pre>arrayUtil.isArray([1, 2, 3]);<br />// Result: <span id='result-1-1'></span></pre><br />
-                    <pre>arrayUtil.isArray(new Array(1, 2, 3));<br />// Result: <span id='result-1-2'></span></pre><br />
-                    <pre>arrayUtil.isArray({0: 'cat', 1: 'dog', 2: 'bird'});<br />// Result: <span id='result-1-3'></span></pre>
+                    <pre>isObject({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-1-1'></span></pre>
 
-                    <p>As a contrast, here are the results of using the javascript TypeOf utility.</p>
-                    <pre>typeof [1, 2, 3] == 'array';<br />// Result: <span id='result-1-4'></span></pre><br />
-                    <pre>typeof new Array(1, 2, 3) == 'array';<br />// Result: <span id='result-1-5'></span></pre>
-                    <p>Both are identified as Objects</p>
                     <script>
                         require([
                             'jquery',
-                            'utils/array'
-                        ], function ($, arrayUtil) {
-                            $('#result-1-1').text(arrayUtil.isArray([1, 2, 3]));
-                            $('#result-1-2').text(arrayUtil.isArray(new Array(1, 2, 3)));
-                            $('#result-1-3').text(arrayUtil.isArray({0: 1, 1: 2, 2: 3}));
-                            $('#result-1-4').text(typeof [1, 2, 3] == 'array');
-                            $('#result-1-5').text(typeof new Array(1, 2, 3) == 'array');
+                            'object/isObject'
+                        ], function ($, isObject) {
+                            $('#result-1-1').text(isObject({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'}));
                         });
                     </script>
                 </div>
