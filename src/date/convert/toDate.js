@@ -19,25 +19,11 @@ define('date/convert/toDate', function () {
         case '[object String]':
             if (isNaN(value)) {
                 date = value.match(isoCheck);
-                if (date[8]) {
-                    switch (date[8].charAt(0)) {
-                    case 'Z':
-                        // Get local time offset from user
-                        offset = (new Date(date[1], (date[2] - 1), date[3]).getTimezoneOffset() / 60);
-                        break;
-                    case '+':
-                    case '-':
-                        offsetTmp = date[8].slice(1, 8).split(':');
-                        offset = parseInt(offsetTmp[0], 10);
-                        offset = (date[8].charAt(0) === '-') ? offset : -offset;
-                        break;
-                    }
-                }
                 return new Date(
                     parseInt(date[1], 10),
                     (parseInt(date[2], 10) - 1),
                     parseInt(date[3], 10),
-                    (parseInt(date[4], 10) - offset),
+                    parseInt(date[4], 10),
                     parseInt(date[5], 10),
                     parseInt(date[6], 10),
                     (date[7] || 0)
