@@ -35,21 +35,15 @@
         <!-- MAIN CONTENT -->
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
-                <div id='vendorSupport'>
-                    <h3>vendorSupport</h3>
-                    <pre>vendorSupport('border-radius');<br />// Result: <span id='result-1-1'></span></pre><br />
-                    <pre>vendorSupport('border-image');<br />// Result: <span id='result-1-2'></span></pre><br />
-                    <pre>vendorSupport('text-overflow');<br />// Result: <span id='result-1-3'></span></pre><br />
-                    <pre>vendorSupport('voice-family');<br />// Result: <span id='result-1-4'></span></pre>
+                <div id='browser'>
+                    <h3>browser</h3>
+                    <pre>browser<br />// Result: <span id='result-1-1'></span></pre><br />
 
                     <script>
                         require([
-                            'style/vendorSupport'
-                        ], function (vendorSupport) {
-                            document.getElementById('result-1-1').innerText = vendorSupport('border-radius');
-                            document.getElementById('result-1-2').innerText = vendorSupport('border-image');
-                            document.getElementById('result-1-3').innerText = vendorSupport('text-overflow');
-                            document.getElementById('result-1-4').innerText = vendorSupport('voice-family');
+                            'useragent/browser'
+                        ], function (browser) {
+                            document.getElementById('result-1-1').innerText = JSON.stringify(browser);
                         });
                     </script>
                 </div>
