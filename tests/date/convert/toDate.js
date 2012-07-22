@@ -1,10 +1,10 @@
 /**
  * Tests for date/convert/toDate
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/convert/toDate
+ * @requires date/convert/toDate
  */
 define([
-    'src/date/convert/toDate'
+    'date/convert/toDate'
 ], function (toDate) {
     module('date/convert/toDate');
 

@@ -1,10 +1,10 @@
 /**
  * Tests for string/isString
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/string/isString
+ * @requires string/isString
  */
 define([
-    'src/string/isString'
+    'string/isString'
 ], function (isString) {
     module('string/isString');
 

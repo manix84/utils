@@ -1,10 +1,10 @@
 /**
  * Tests for string/wordwrap
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/string/wordwrap
+ * @requires string/wordwrap
  */
 define([
-    'src/string/wordwrap'
+    'string/wordwrap'
 ], function (wordwrap) {
     module('string/wordwrap');
 

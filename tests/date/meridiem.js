@@ -1,10 +1,10 @@
 /**
  * Tests for date/meridiem
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/meridiem
+ * @requires date/meridiem
  */
 define([
-    'src/date/meridiem'
+    'date/meridiem'
 ], function (meridiem) {
     module('date/meridiem');
 

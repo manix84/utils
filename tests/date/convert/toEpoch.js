@@ -1,10 +1,10 @@
 /**
  * Tests for date/convert/toEpoch
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/convert/toEpoch
+ * @requires date/convert/toEpoch
  */
 define([
-    'src/date/convert/toEpoch'
+    'date/convert/toEpoch'
 ], function (toEpoch) {
     module('date/convert/toEpoch');
 

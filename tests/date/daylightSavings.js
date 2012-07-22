@@ -1,10 +1,10 @@
 /**
  * Tests for date/daylightSavings
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/daylightSavings
+ * @requires date/daylightSavings
  */
 define([
-    'src/date/daylightSavings'
+    'date/daylightSavings'
 ], function (daylightSavings) {
     module('date/daylightSavings');
 

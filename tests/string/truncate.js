@@ -1,10 +1,10 @@
 /**
  * Tests for string/truncate
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/string/truncate
+ * @requires string/truncate
  */
 define([
-    'src/string/truncate'
+    'string/truncate'
 ], function (truncate) {
     module('string/truncate');
 

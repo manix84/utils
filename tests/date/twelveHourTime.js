@@ -1,10 +1,10 @@
 /**
  * Tests for date/twelveHourTime
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/twelveHourTime
+ * @requires date/twelveHourTime
  */
 define([
-    'src/date/twelveHourTime'
+    'date/twelveHourTime'
 ], function (twelveHourTime) {
     module('date/twelveHourTime');
 

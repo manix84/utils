@@ -1,10 +1,10 @@
 /**
  * Tests for date/beatTime
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/beatTime
+ * @requires date/beatTime
  */
 define([
-    'src/date/beatTime'
+    'date/beatTime'
 ], function (beatTime) {
     module('date/beatTime');
 

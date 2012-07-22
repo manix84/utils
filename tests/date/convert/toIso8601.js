@@ -1,10 +1,10 @@
 /**
  * Tests for date/convert/toIso8601
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/convert/toIso8601
+ * @requires date/convert/toIso8601
  */
 define([
-    'src/date/convert/toIso8601'
+    'date/convert/toIso8601'
 ], function (toIso8601) {
     module('date/convert/toIso8601');
 

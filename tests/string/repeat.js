@@ -1,10 +1,10 @@
 /**
  * Tests for string/repeat
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/string/repeat
+ * @requires string/repeat
  */
 define([
-    'src/string/repeat'
+    'string/repeat'
 ], function (repeat) {
     module('string/repeat');
 

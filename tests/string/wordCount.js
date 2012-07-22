@@ -1,10 +1,10 @@
 /**
  * Tests for string/wordCount
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/string/wordCount
+ * @requires string/wordCount
  */
 define([
-    'src/string/wordCount'
+    'string/wordCount'
 ], function (wordCount) {
     module('string/wordCount');
 

@@ -1,10 +1,10 @@
 /**
  * Tests for string/upperCaseWords
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/string/upperCaseWords
+ * @requires string/upperCaseWords
  */
 define([
-    'src/string/upperCaseWords'
+    'string/upperCaseWords'
 ], function (upperCaseWords) {
     module('string/upperCaseWords');
 

@@ -2,10 +2,10 @@
  * Tests for useragent
  * @author Rob Taylor <manix84@gmail.com>
  * @module tests/useragentTest
- * @requires src/useragent
+ * @requires useragent
  */
 define('tests/useragentTest', [
-    'src/useragent'
+    'useragent'
 ], function (useragent) {
     module('Utils.Useragent');
 

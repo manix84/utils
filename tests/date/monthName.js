@@ -1,10 +1,10 @@
 /**
  * Tests for date/monthName
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/monthName
+ * @requires date/monthName
  */
 define([
-    'src/date/monthName'
+    'date/monthName'
 ], function (monthName) {
     module('date/monthName');
 

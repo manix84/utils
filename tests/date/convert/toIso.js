@@ -1,10 +1,10 @@
 /**
  * Tests for date/convert/toIso
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/convert/toIso
+ * @requires date/convert/toIso
  */
 define([
-    'src/date/convert/toIso'
+    'date/convert/toIso'
 ], function (toIso) {
     module('date/convert/toIso');
 

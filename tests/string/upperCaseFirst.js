@@ -1,10 +1,10 @@
 /**
  * Tests for string/upperCaseFirst
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/string/upperCaseFirst
+ * @requires string/upperCaseFirst
  */
 define([
-    'src/string/upperCaseFirst'
+    'string/upperCaseFirst'
 ], function (upperCaseFirst) {
     module('string/upperCaseFirst');
 

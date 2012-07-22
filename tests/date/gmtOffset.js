@@ -1,10 +1,10 @@
 /**
  * Tests for date/gmtOffset
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/gmtOffset
+ * @requires date/gmtOffset
  */
 define([
-    'src/date/gmtOffset'
+    'date/gmtOffset'
 ], function (gmtOffset) {
     module('date/gmtOffset');
 
