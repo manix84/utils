@@ -79,6 +79,18 @@
                         });
                     </script>
                 </div>
+                <div id='stripTags'>
+                    <h3>stripTags</h3>
+                    <pre>stripTags("&lt;strong&gt;Hello world&lt;/strong&gt;");<br />// Result: <span id='result-4-1'></span></pre>
+
+                    <script>
+                        require([
+                            'string/stripTags'
+                        ], function (stripTags) {
+                            document.getElementById('result-4-1').innerText = stripTags("<strong>Hello world</strong>");
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
