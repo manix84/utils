@@ -152,6 +152,18 @@ example.getProperty(); // Returns: "cat"</pre>
                         });
                     </script>
                 </div>
+                <div id='keys'>
+                    <h3>keys</h3>
+                    <pre>keys({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-6-1'></span></pre>
+
+                    <script>
+                        require([
+                            'object/keys'
+                        ], function (keys) {
+                            document.getElementById('result-6-1').innerText = JSON.stringify(keys({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'}));
+                        });
+                    </script>
+                </div>
                         });
                     </script>
                 </div>
