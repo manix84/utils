@@ -44,9 +44,8 @@ addListener(document.getElementById('clickable-1'), 'click', function (event) {
 });<br />// Result: <a id='clickable-1' href='#fail'>Click Here</a></pre>
                     <script>
                         require([
-                            'jquery',
                             'events/addListener'
-                        ], function ($, addListener) {
+                        ], function (addListener) {
                             var counter = 0;
                             addListener(document.getElementById('clickable-1'), 'click', function (event) {
                                 event.preventDefault();
@@ -65,10 +64,9 @@ addListener(document.getElementById('clickable-1'), 'click', function (event) {
 });<br />// Result: <a id='clickable-2' href='http://github.com'>Click to remove listener</a></pre>
                     <script>
                         require([
-                            'jquery',
                             'events/addListener',
                             'events/removeListener'
-                        ], function ($, addListener, removeListener) {
+                        ], function (addListener, removeListener) {
                             addListener(document.getElementById('clickable-2'), 'click', function (event) {
                                 event.preventDefault();
                                 document.getElementById('clickable-2').innerText = 'Listener removed. Click again to goto GitHub.com';
@@ -88,10 +86,9 @@ addListener(document.getElementById('listener-1'), 'timedEvent', function (event
 });<br />// Result: <span id='listener-1'>Listening for timed event</span></pre>
                     <script>
                         require([
-                            'jquery',
                             'events/addListener',
                             'events/trigger'
-                        ], function ($, addListener, trigger) {
+                        ], function (addListener, trigger) {
                             window.setTimeout(function () {
                                 trigger(document.getElementById('listener-1'), 'timedEvent');
                             }, 1000);
