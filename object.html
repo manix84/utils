@@ -176,6 +176,17 @@ example.getProperty(); // Returns: "cat"</pre>
                         });
                     </script>
                 </div>
+                <div id='toArray'>
+                    <h3>toArray</h3>
+                    <pre>toArray({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-8-1'></span></pre>
+
+                        require([
+                            'object/toArray'
+                        ], function (toArray) {
+                            document.getElementById('result-8-1').innerText = JSON.stringify(toArray({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'}));
+                        });
+                    </script>
+                </div>
                         });
                     </script>
                 </div>
