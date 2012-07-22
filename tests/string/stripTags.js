@@ -1,10 +1,10 @@
 /**
  * Tests for string/stripTags
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/string/stripTags
+ * @requires string/stripTags
  */
 define([
-    'src/string/stripTags'
+    'string/stripTags'
 ], function (stripTags) {
     module('string/stripTags');
 

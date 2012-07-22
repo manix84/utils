@@ -1,10 +1,10 @@
 /**
  * Tests for string/sprintf
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/string/sprintf
+ * @requires string/sprintf
  */
 define([
-    'src/string/sprintf'
+    'string/sprintf'
 ], function (sprintf) {
     module('string/sprintf');
 

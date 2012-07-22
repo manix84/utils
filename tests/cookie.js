@@ -5,7 +5,7 @@
  * @requires cookie
  */
 define('tests/cookie', [
-    'src/cookie'
+    'cookie'
 ], function (cookie) {
     module('cookie');
 

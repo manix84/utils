@@ -1,10 +1,10 @@
 /**
  * Tests for date/convert/toRFC2822
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/convert/toRFC2822
+ * @requires date/convert/toRFC2822
  */
 define([
-    'src/date/convert/toRFC2822'
+    'date/convert/toRFC2822'
 ], function (toRFC2822) {
     module('date/convert/toRFC2822');
 

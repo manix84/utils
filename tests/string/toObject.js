@@ -1,10 +1,10 @@
 /**
  * Tests for string/toObject
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/string/toObject
+ * @requires string/toObject
  */
 define([
-    'src/string/toObject'
+    'string/toObject'
 ], function (toObject) {
     module('string/toObject');
 

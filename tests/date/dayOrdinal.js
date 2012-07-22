@@ -1,10 +1,10 @@
 /**
  * Tests for date/dayOrdinal
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/dayOrdinal
+ * @requires date/dayOrdinal
  */
 define([
-    'src/date/dayOrdinal'
+    'date/dayOrdinal'
 ], function (dayOrdinal) {
     module('date/dayOrdinal');
 

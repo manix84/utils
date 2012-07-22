@@ -1,10 +1,10 @@
 /**
  * Tests for date/dayName
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/dayName
+ * @requires date/dayName
  */
 define([
-    'src/date/dayName'
+    'date/dayName'
 ], function (dayName) {
     module('date/dayName');
 

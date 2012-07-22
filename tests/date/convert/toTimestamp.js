@@ -1,10 +1,10 @@
 /**
  * Tests for date/convert/toTimestamp
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/date/convert/toTimestamp
+ * @requires date/convert/toTimestamp
  */
 define([
-    'src/date/convert/toTimestamp'
+    'date/convert/toTimestamp'
 ], function (toTimestamp) {
     module('date/convert/toTimestamp');
 

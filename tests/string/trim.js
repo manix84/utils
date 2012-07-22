@@ -1,10 +1,10 @@
 /**
  * Tests for string/trim
  * @author Rob Taylor [manix84@gmail.com]
- * @requires src/string/trim
+ * @requires string/trim
  */
 define([
-    'src/string/trim'
+    'string/trim'
 ], function (trim) {
     module('string/trim');
 

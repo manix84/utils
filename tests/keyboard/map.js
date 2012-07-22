@@ -4,7 +4,7 @@
  * @requires keyboard/map
  */
 define([
-    'src/keyboard/map'
+    'keyboard/map'
 ], function (keyboardMap) {
     module('keyboard/map');
     var tmp = {
