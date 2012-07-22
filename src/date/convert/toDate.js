@@ -25,12 +25,15 @@ define('date/convert/toDate', function () {
                 dateYMD[1] = dateYMD[1] - 1;
                 date = dateYMD.concat(date[1].slice(0, 8).split(':'));
 
-                if (value.charAt(19) === 'Z') {
+                switch (value.charAt(19)) {
+                case 'Z':
+                case '+':
                     // Get local time offset from user
                     offSet = (new Date(date[0], date[1], date[2]).getTimezoneOffset() / 60);
                     // Offest is the differnce of user's local to GMT
                     // Therefore BST will be GMT - -1
                     date[3] = parseInt(date[3], 10) - offSet;
+                    break;
                 }
 
                 return new Date(date[0], date[1], date[2], date[3], date[4], date[5]);
