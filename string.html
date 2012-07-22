@@ -173,6 +173,28 @@
                         });
                     </script>
                 </div>
+                <div id='wordwrap'>
+                    <h3>wordwrap</h3>
+                    <strong>Setup</strong>
+                    <pre>Var string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque tempus mauris quis amet.";</pre><br />
+                    <strong>Examples</strong>
+                    <pre>wordwrap(string);<br />// Result: <span id='result-11-1'></span></pre><br />
+                    <pre>wordwrap(string, 10);<br />// Result: <span id='result-11-2'></span></pre><br />
+                    <pre>wordwrap(string, 10, '>>>');<br />// Result: <span id='result-11-3'></span></pre><br />
+                    <pre>wordwrap(string, 10, '>>>', true);<br />// Result: <span id='result-11-4'></span></pre>
+
+                    <script>
+                        require([
+                            'string/wordwrap'
+                        ], function (wordwrap) {
+                            var string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque tempus mauris quis amet.";
+                            document.getElementById('result-11-1').innerText = wordwrap(string);
+                            document.getElementById('result-11-2').innerText = wordwrap(string, 10);
+                            document.getElementById('result-11-3').innerText = wordwrap(string, 10, '>>>');
+                            document.getElementById('result-11-4').innerText = wordwrap(string, 10, '>>>', true);
+                        });
+                    </script>
+                </div>
             </section>
         </div>
 
