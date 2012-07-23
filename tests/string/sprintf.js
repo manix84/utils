@@ -9,6 +9,10 @@ define([
     module('string/sprintf');
 
     test('sprintf', function () {
-        equal(sprintf("Integer: %d, String: %s, Not A Float: \\%f, Float: %f", ["String", 1.2, 3]), "Integer: 3, String: String Not A Float: \\%f, Float: 1.2", "SprintF Has Replaced The Special Characters");
+        equal(
+            sprintf("Integer: %d, String: %s, Not A Float: \\%f, Float: %f", ["String", 1.2, 3]),
+            "Integer: 3, String: String, Not A Float: \\%f, Float: 1.2",
+            "SprintF Has Replaced The Special Characters"
+        );
     });
 });
