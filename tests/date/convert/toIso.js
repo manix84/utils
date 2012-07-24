@@ -14,8 +14,8 @@ define([
 
         // These can't be done by JS natively.
         isoExample = '2010-10-19T13:51:29Z',
-        iso8601Example = '2010-10-19T13:51:29+01:00',
-        rfc2822Example = 'Tue, 19 Oct 2010 13:51:29 +0100';
+        iso8601Example = '2010-10-19T14:51:29+01:00',
+        rfc2822Example = 'Tue, 19 Oct 2010 14:51:29 +0100';
 
     test('toIso', function () {
 
