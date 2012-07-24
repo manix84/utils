@@ -33,7 +33,7 @@ define('date/convert/toDate', function () {
                         break;
                     }
                 }
-                return new Date(
+                return new Date(Date.UTC(
                     parseInt(date[1], 10),              // Year
                     (parseInt(date[2], 10) - 1),        // Months
                     parseInt(date[3], 10),              // Days
@@ -41,7 +41,7 @@ define('date/convert/toDate', function () {
                     parseInt(date[5], 10),              // Minutes
                     parseInt(date[6], 10),              // Seconds
                     (date[7] || 0)                      // Milliseconds
-                );
+                ));
             }
             // Else assume it's a number ...
             return convertToDate(parseInt(value, 10));
