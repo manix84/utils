@@ -10,12 +10,16 @@ define('array/inArray', function () {
      * @returns {boolean}
      */
     var inArray = function (value, arrayObj) {
-        var i = 0,
-            isArray = (Object.prototype.toString.call(arrayObj) === '[objecy Array]');
+        var i = 0;
 
+        if (Object.prototype.toString.call(arrayObj) !== '[objecy Array]') {
+            throw new Error('Second argument must be an array.');
+        }
         for (; i < arrayObj.length; i++) {
-            if ((isArray && inArray(value, arrayObj[i])) ||
-                    (!isArray && arrayObj[i] === value)) {
+            if (
+                (Object.prototype.toString.call(arrayObj[i]) === '[object Array]' && inArray(value, arrayObj[i])) ||
+                (Object.prototype.toString.call(arrayObj[i]) !== '[object Array]' && arrayObj[i] === value)
+            ) {
                 return true;
             }
         }
