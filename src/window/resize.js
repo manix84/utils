@@ -6,7 +6,7 @@
  */
 /*jslint evil: true */
 
-define('windowResize', [
+define('window/resize', [
     'jquery'
 ], function ($) {
     /**

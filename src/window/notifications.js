@@ -5,7 +5,7 @@
  * @author Rob Taylor [manix84@gmail.com]
  */
 
-define('notifications', function () {
+define('window/notifications', function () {
 
     /**
      * @exports notifications
