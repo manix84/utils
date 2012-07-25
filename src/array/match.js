@@ -11,8 +11,7 @@ define('array/match', function () {
      * @returns {boolean}
      */
     var match = function (arrayObjA, arrayObjB) {
-        var i = 0,
-            isArray = (Object.prototype.toString.call(arrayObjA) === '[object Array]');
+        var i = 0;
 
         if (Object.prototype.toString.call(arrayObjA) !== '[object Array]' ||
             Object.prototype.toString.call(arrayObjB) !== '[object Array]') {
@@ -20,8 +19,8 @@ define('array/match', function () {
         }
 
         for (; i < arrayObjA.length; i++) {
-            if ((isArray && !match(arrayObjA[i], arrayObjB[i])) ||
-                    (isArray && arrayObjA[i] !== arrayObjB[i])) {
+            if ((Object.prototype.toString.call(arrayObjA[i]) === '[object Array]' && !match(arrayObjA[i], arrayObjB[i])) ||
+                    (Object.prototype.toString.call(arrayObjA[i]) !== '[object Array]' && arrayObjA[i] !== arrayObjB[i])) {
                 return false;
             }
         }
