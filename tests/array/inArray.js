@@ -11,6 +11,6 @@ define([
     test('inArray', function () {
         equal(inArray('bird', ['cat', 'dog', 'bird']), true, 'Array item "bird" was found.');
         equal(inArray('fish', ['cat', 'dog', 'bird']), false, 'Array item "fish" was not found.');
-        throws(inArray('fish', {1: 'cat', 2: 'dog', 3: 'bird'}), 'Object should cause an exception.');
+        throws(inArray('cat', {1: 'cat', 2: 'dog', 3: 'bird'}), 'Object should cause an exception.');
     });
 });
