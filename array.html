@@ -47,14 +47,13 @@
                     <p>Both are identified as Objects</p>
                     <script>
                         require([
-                            'jquery',
                             'array/isArray'
-                        ], function ($, isArray) {
-                            $('#result-1-1').text(isArray([1, 2, 3]));
-                            $('#result-1-2').text(isArray(new Array(1, 2, 3)));
-                            $('#result-1-3').text(isArray({0: 1, 1: 2, 2: 3}));
-                            $('#result-1-4').text(typeof [1, 2, 3] == 'array');
-                            $('#result-1-5').text(typeof new Array(1, 2, 3) == 'array');
+                        ], function (isArray) {
+                            document.getElementById('result-1-1').innerText = (isArray([1, 2, 3]));
+                            document.getElementById('result-1-2').innerText = (isArray(new Array(1, 2, 3)));
+                            document.getElementById('result-1-3').innerText = (isArray({0: 1, 1: 2, 2: 3}));
+                            document.getElementById('result-1-4').innerText = (typeof [1, 2, 3] == 'array');
+                            document.getElementById('result-1-5').innerText = (typeof new Array(1, 2, 3) == 'array');
                         });
                     </script>
                 </div>
@@ -64,11 +63,10 @@
                     <pre>indexOf('bird', new Array('cat', 'dog', 'bird'));<br />// Result: <span id='result-2-2'></span></pre><br />
                     <script>
                         require([
-                            'jquery',
                             'array/indexOf'
-                        ], function ($, arrayIndexOf) {
-                            $('#result-2-1').text(arrayIndexOf('cat', ['cat', 'dog', 'bird']));
-                            $('#result-2-2').text(arrayIndexOf('bird', new Array('cat', 'dog', 'bird')));
+                        ], function (arrayIndexOf) {
+                            document.getElementById('result-2-1').innerText = (arrayIndexOf('cat', ['cat', 'dog', 'bird']));
+                            document.getElementById('result-2-2').innerText = (arrayIndexOf('bird', new Array('cat', 'dog', 'bird')));
                         });
                     </script>
                 </div>
@@ -78,12 +76,11 @@
                     <pre>toObject(new Array('cat', 'dog', 'bird'));<br />// Result: <span id='result-3-2'></span></pre><br />
                     <script>
                         require([
-                            'jquery',
                             'array/toObject',
                             'object/toString'
-                        ], function ($, arrayToObject, objectToString) {
-                            $('#result-3-1').text(objectToString(arrayToObject(['cat', 'dog', 'bird'])));
-                            $('#result-3-2').text(objectToString(arrayToObject(new Array('cat', 'dog', 'bird'))));
+                        ], function (arrayToObject, objectToString) {
+                            document.getElementById('result-3-1').innerText = (objectToString(arrayToObject(['cat', 'dog', 'bird'])));
+                            document.getElementById('result-3-2').innerText = (objectToString(arrayToObject(new Array('cat', 'dog', 'bird'))));
                         });
                     </script>
                 </div>
@@ -93,11 +90,10 @@
                     <pre>match(['cat', 'dog', 'bird'], new Array('dog', 'bird', 'cat'))<br />// Result: <span id='result-4-2'></span></pre><br />
                     <script>
                         require([
-                            'jquery',
                             'array/match'
-                        ], function ($, arrayMatch) {
-                            $('#result-4-1').text(arrayMatch(['cat', 'dog', 'bird'], new Array('cat', 'dog', 'bird')));
-                            $('#result-4-2').text(arrayMatch(['cat', 'dog', 'bird'], new Array('dog', 'bird', 'cat')));
+                        ], function (arrayMatch) {
+                            document.getElementById('result-4-1').innerText = (arrayMatch(['cat', 'dog', 'bird'], new Array('cat', 'dog', 'bird')));
+                            document.getElementById('result-4-2').innerText = (arrayMatch(['cat', 'dog', 'bird'], new Array('dog', 'bird', 'cat')));
                         });
                     </script>
                 </div>
@@ -106,10 +102,9 @@
                     <pre>rand(['cat', 'dog', 'bird']);<br />// Result: <span id='result-5-1'></span></pre><br />
                     <script>
                         require([
-                            'jquery',
                             'array/rand'
-                        ], function ($, arrayRand) {
-                            $('#result-5-1').text(arrayRand(['cat', 'dog', 'bird']));
+                        ], function (arrayRand) {
+                            document.getElementById('result-5-1').innerText = (arrayRand(['cat', 'dog', 'bird']));
                         });
                     </script>
                 </div>
@@ -118,10 +113,9 @@
                     <pre>inArray(['cat', 'dog', 'bird'], "dog");<br />// Result: <span id='result-6-1'></span></pre><br />
                     <script>
                         require([
-                            'jquery',
                             'array/inArray'
-                        ], function ($, arrayInArray) {
-                            $('#result-6-1').text(arrayInArray(['cat', 'dog', 'bird'], "dog"));
+                        ], function (arrayInArray) {
+                            document.getElementById('result-6-1').innerText = (arrayInArray(['cat', 'dog', 'bird'], "dog"));
                         });
                     </script>
                 </div>
@@ -130,11 +124,10 @@
                     <pre>upperCase(['cat', 'dog', 'bird']);<br />// Result: <span id='result-7-1'></span></pre><br />
                     <script>
                         require([
-                            'jquery',
                             'array/upperCase',
                             'object/toString'
-                        ], function ($, arrayUpperCase, objectToString) {
-                            $('#result-7-1').text(objectToString(arrayUpperCase(['cat', 'dog', 'bird'])));
+                        ], function (arrayUpperCase, objectToString) {
+                            document.getElementById('result-7-1').innerText = (objectToString(arrayUpperCase(['cat', 'dog', 'bird'])));
                         });
                     </script>
                 </div>
@@ -143,11 +136,10 @@
                     <pre>lowerCase(['CAT', 'DOG', 'BIRD']);<br />// Result: <span id='result-8-1'></span></pre><br />
                     <script>
                         require([
-                            'jquery',
                             'array/lowerCase',
                             'object/toString'
-                        ], function ($, arrayLowerCase, objectToString) {
-                            $('#result-8-1').text(objectToString(arrayLowerCase(['CAT', 'DOG', 'BIRD'])));
+                        ], function (arrayLowerCase, objectToString) {
+                            document.getElementById('result-8-1').innerText = (objectToString(arrayLowerCase(['CAT', 'DOG', 'BIRD'])));
                         });
                     </script>
                 </div>

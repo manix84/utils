@@ -43,9 +43,8 @@
                     <pre>alert('Alerting the user, test 2', document.getElementById('result-1-2'), 2);<br />// Result: <code id='result-1-2'></code></pre>
                     <script>
                         require([
-                            'jquery',
                             'accessibility/alert'
-                        ], function ($, accessibilityAlert) {
+                        ], function (accessibilityAlert) {
                             accessibilityAlert('Alerting the user, test 1', document.getElementById('result-1-1'));
                             accessibilityAlert('Alerting the user, test 2', document.getElementById('result-1-2'), 2);
                         });

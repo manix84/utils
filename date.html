@@ -41,11 +41,10 @@
                     <pre>date('D, d M Y H:i:s', new Date(1320892242000));<br />// Result: <span id='result-1-2'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date'
-                        ], function ($, dateUtil) {
-                            $('#result-1-1').text(dateUtil('D, d M Y H:i:s'));
-                            $('#result-1-2').text(dateUtil('D, d M Y H:i:s', new Date(1320892242000)));
+                        ], function (dateUtil) {
+                            document.getElementById('result-1-1').innerText = (dateUtil('D, d M Y H:i:s'));
+                            document.getElementById('result-1-2').innerText = (dateUtil('D, d M Y H:i:s', new Date(1320892242000)));
                         });
                     </script>
                 </div>
@@ -55,11 +54,10 @@
                     <pre>beatTime(new Date(1320892242000));<br />// Result: <span id='result-2-2'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/beatTime'
-                        ], function ($, beatTime) {
-                            $('#result-2-1').text(beatTime());
-                            $('#result-2-2').text(beatTime(new Date(1320892242000)));
+                        ], function (beatTime) {
+                            document.getElementById('result-2-1').innerText = (beatTime());
+                            document.getElementById('result-2-2').innerText = (beatTime(new Date(1320892242000)));
                         });
                     </script>
                 </div>
@@ -69,11 +67,10 @@
                     <pre>daylightSavings(new Date(1320892242000));<br />// Result: <span id='result-3-2'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/daylightSavings'
-                        ], function ($, daylightSavings) {
-                            $('#result-3-1').text(daylightSavings());
-                            $('#result-3-2').text(daylightSavings(new Date(1320892242000)));
+                        ], function (daylightSavings) {
+                            document.getElementById('result-3-1').innerText = (daylightSavings());
+                            document.getElementById('result-3-2').innerText = (daylightSavings(new Date(1320892242000)));
                         });
                     </script>
                 </div>
@@ -83,11 +80,10 @@
                     <pre>dayName(new Date(1320892242000));<br />// Result: <span id='result-4-2'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/dayName'
-                        ], function ($, dayName) {
-                            $('#result-4-1').text(dayName());
-                            $('#result-4-2').text(dayName(new Date(1320892242000)));
+                        ], function (dayName) {
+                            document.getElementById('result-4-1').innerText = (dayName());
+                            document.getElementById('result-4-2').innerText = (dayName(new Date(1320892242000)));
                         });
                     </script>
                 </div>
@@ -97,11 +93,10 @@
                     <pre>dayOrdinal(new Date(1320892242000));<br />// Result: <span id='result-5-2'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/dayOrdinal'
-                        ], function ($, dayOrdinal) {
-                            $('#result-5-1').text(dayOrdinal());
-                            $('#result-5-2').text(dayOrdinal(new Date(1320892242000)));
+                        ], function (dayOrdinal) {
+                            document.getElementById('result-5-1').innerText = (dayOrdinal());
+                            document.getElementById('result-5-2').innerText = (dayOrdinal(new Date(1320892242000)));
                         });
                     </script>
                 </div>
@@ -112,12 +107,11 @@
                     <pre>gmtOffset(new Date(1320892242000), true);<br />// Result: <span id='result-6-3'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/gmtOffset'
-                        ], function ($, gmtOffset) {
-                            $('#result-6-1').text(gmtOffset());
-                            $('#result-6-2').text(gmtOffset(new Date(1320892242000)));
-                            $('#result-6-3').text(gmtOffset(new Date(1320892242000), true));
+                        ], function (gmtOffset) {
+                            document.getElementById('result-6-1').innerText = (gmtOffset());
+                            document.getElementById('result-6-2').innerText = (gmtOffset(new Date(1320892242000)));
+                            document.getElementById('result-6-3').innerText = (gmtOffset(new Date(1320892242000), true));
                         });
                     </script>
                 </div>
@@ -128,12 +122,11 @@
                     <pre>meridiem(new Date(1320892242000), true);<br />// Result: <span id='result-7-3'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/meridiem'
-                        ], function ($, meridiem) {
-                            $('#result-7-1').text(meridiem());
-                            $('#result-7-2').text(meridiem(new Date(1320892242000)));
-                            $('#result-7-3').text(meridiem(new Date(1320892242000), true));
+                        ], function (meridiem) {
+                            document.getElementById('result-7-1').innerText = (meridiem());
+                            document.getElementById('result-7-2').innerText = (meridiem(new Date(1320892242000)));
+                            document.getElementById('result-7-3').innerText = (meridiem(new Date(1320892242000), true));
                         });
                     </script>
                 </div>
@@ -144,12 +137,11 @@
                     <pre>monthName(new Date(1320892242000), true);<br />// Result: <span id='result-8-3'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/monthName'
-                        ], function ($, monthName) {
-                            $('#result-8-1').text(monthName());
-                            $('#result-8-2').text(monthName(new Date(1320892242000)));
-                            $('#result-8-3').text(monthName(new Date(1320892242000), true));
+                        ], function (monthName) {
+                            document.getElementById('result-8-1').innerText = (monthName());
+                            document.getElementById('result-8-2').innerText = (monthName(new Date(1320892242000)));
+                            document.getElementById('result-8-3').innerText = (monthName(new Date(1320892242000), true));
                         });
                     </script>
                 </div>
@@ -160,12 +152,11 @@
                     <pre>twelveHourTime(new Date(1320892242000), true);<br />// Result: <span id='result-9-3'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/twelveHourTime'
-                        ], function ($, twelveHourTime) {
-                            $('#result-9-1').text(twelveHourTime());
-                            $('#result-9-2').text(twelveHourTime(new Date(1320892242000)));
-                            $('#result-9-3').text(twelveHourTime(new Date(1320892242000), true));
+                        ], function (twelveHourTime) {
+                            document.getElementById('result-9-1').innerText = (twelveHourTime());
+                            document.getElementById('result-9-2').innerText = (twelveHourTime(new Date(1320892242000)));
+                            document.getElementById('result-9-3').innerText = (twelveHourTime(new Date(1320892242000), true));
                         });
                     </script>
                 </div>
@@ -176,12 +167,11 @@
                     <pre>yearShort(new Date(1320892242000), true);<br />// Result: <span id='result-10-3'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/yearShort'
-                        ], function ($, yearShort) {
-                            $('#result-10-1').text(yearShort());
-                            $('#result-10-2').text(yearShort(new Date(1320892242000)));
-                            $('#result-10-3').text(yearShort(new Date(1320892242000), true));
+                        ], function (yearShort) {
+                            document.getElementById('result-10-1').innerText = (yearShort());
+                            document.getElementById('result-10-2').innerText = (yearShort(new Date(1320892242000)));
+                            document.getElementById('result-10-3').innerText = (yearShort(new Date(1320892242000), true));
                         });
                     </script>
                 </div>
@@ -194,14 +184,13 @@
                     <pre>toDate('2011-11-10T02:30:42+00:00');<br />// Result: <span id='result-11-5'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/convert/toDate'
-                        ], function ($, convertToDate) {
-                            $('#result-11-1').text(String(convertToDate(1320892242)));
-                            $('#result-11-2').text(String(convertToDate(1320892242000)));
-                            $('#result-11-3').text(String(convertToDate(new Date(1320892242000))));
-                            $('#result-11-4').text(String(convertToDate('2011-11-10T02:30:42Z')));
-                            $('#result-11-5').text(String(convertToDate('2011-11-10T02:30:42+00:00')));
+                        ], function (convertToDate) {
+                            document.getElementById('result-11-1').innerText = (String(convertToDate(1320892242)));
+                            document.getElementById('result-11-2').innerText = (String(convertToDate(1320892242000)));
+                            document.getElementById('result-11-3').innerText = (String(convertToDate(new Date(1320892242000))));
+                            document.getElementById('result-11-4').innerText = (String(convertToDate('2011-11-10T02:30:42Z')));
+                            document.getElementById('result-11-5').innerText = (String(convertToDate('2011-11-10T02:30:42+00:00')));
                         });
                     </script>
                 </div>
@@ -214,14 +203,13 @@
                     <pre>toEpoch('2011-11-10T02:30:42+00:00');<br />// Result: <span id='result-12-5'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/convert/toEpoch'
-                        ], function ($, convertToEpoch) {
-                            $('#result-12-1').text(String(convertToEpoch(1320892242)));
-                            $('#result-12-2').text(String(convertToEpoch(1320892242000)));
-                            $('#result-12-3').text(String(convertToEpoch(new Date(1320892242000))));
-                            $('#result-12-4').text(String(convertToEpoch('2011-11-10T02:30:42Z')));
-                            $('#result-12-5').text(String(convertToEpoch('2011-11-10T02:30:42+00:00')));
+                        ], function (convertToEpoch) {
+                            document.getElementById('result-12-1').innerText = (String(convertToEpoch(1320892242)));
+                            document.getElementById('result-12-2').innerText = (String(convertToEpoch(1320892242000)));
+                            document.getElementById('result-12-3').innerText = (String(convertToEpoch(new Date(1320892242000))));
+                            document.getElementById('result-12-4').innerText = (String(convertToEpoch('2011-11-10T02:30:42Z')));
+                            document.getElementById('result-12-5').innerText = (String(convertToEpoch('2011-11-10T02:30:42+00:00')));
                         });
                     </script>
                 </div>
@@ -234,14 +222,13 @@
                     <pre>toIso('2011-11-10T02:30:42+00:00');<br />// Result: <span id='result-13-5'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/convert/toIso'
-                        ], function ($, convertToIso) {
-                            $('#result-13-1').text(String(convertToIso(1320892242)));
-                            $('#result-13-2').text(String(convertToIso(1320892242000)));
-                            $('#result-13-3').text(String(convertToIso(new Date(1320892242000))));
-                            $('#result-13-4').text(String(convertToIso('2011-11-10T02:30:42Z')));
-                            $('#result-13-5').text(String(convertToIso('2011-11-10T02:30:42+00:00')));
+                        ], function (convertToIso) {
+                            document.getElementById('result-13-1').innerText = (String(convertToIso(1320892242)));
+                            document.getElementById('result-13-2').innerText = (String(convertToIso(1320892242000)));
+                            document.getElementById('result-13-3').innerText = (String(convertToIso(new Date(1320892242000))));
+                            document.getElementById('result-13-4').innerText = (String(convertToIso('2011-11-10T02:30:42Z')));
+                            document.getElementById('result-13-5').innerText = (String(convertToIso('2011-11-10T02:30:42+00:00')));
                         });
                     </script>
                 </div>
@@ -254,14 +241,13 @@
                     <pre>toIso8601('2011-11-10T02:30:42+00:00');<br />// Result: <span id='result-14-5'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/convert/toIso8601'
-                        ], function ($, convertToIso8601) {
-                            $('#result-14-1').text(String(convertToIso8601(1320892242)));
-                            $('#result-14-2').text(String(convertToIso8601(1320892242000)));
-                            $('#result-14-3').text(String(convertToIso8601(new Date(1320892242000))));
-                            $('#result-14-4').text(String(convertToIso8601('2011-11-10T02:30:42Z')));
-                            $('#result-14-5').text(String(convertToIso8601('2011-11-10T02:30:42+00:00')));
+                        ], function (convertToIso8601) {
+                            document.getElementById('result-14-1').innerText = (String(convertToIso8601(1320892242)));
+                            document.getElementById('result-14-2').innerText = (String(convertToIso8601(1320892242000)));
+                            document.getElementById('result-14-3').innerText = (String(convertToIso8601(new Date(1320892242000))));
+                            document.getElementById('result-14-4').innerText = (String(convertToIso8601('2011-11-10T02:30:42Z')));
+                            document.getElementById('result-14-5').innerText = (String(convertToIso8601('2011-11-10T02:30:42+00:00')));
                         });
                     </script>
                 </div>
@@ -274,14 +260,13 @@
                     <pre>toRFC2822('2011-11-10T02:30:42+00:00');<br />// Result: <span id='result-15-5'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/convert/toRFC2822'
-                        ], function ($, convertToRFC2822) {
-                            $('#result-15-1').text(String(convertToRFC2822(1320892242)));
-                            $('#result-15-2').text(String(convertToRFC2822(1320892242000)));
-                            $('#result-15-3').text(String(convertToRFC2822(new Date(1320892242000))));
-                            $('#result-15-4').text(String(convertToRFC2822('2011-11-10T02:30:42Z')));
-                            $('#result-15-5').text(String(convertToRFC2822('2011-11-10T02:30:42+00:00')));
+                        ], function (convertToRFC2822) {
+                            document.getElementById('result-15-1').innerText = (String(convertToRFC2822(1320892242)));
+                            document.getElementById('result-15-2').innerText = (String(convertToRFC2822(1320892242000)));
+                            document.getElementById('result-15-3').innerText = (String(convertToRFC2822(new Date(1320892242000))));
+                            document.getElementById('result-15-4').innerText = (String(convertToRFC2822('2011-11-10T02:30:42Z')));
+                            document.getElementById('result-15-5').innerText = (String(convertToRFC2822('2011-11-10T02:30:42+00:00')));
                         });
                     </script>
                 </div>
@@ -294,14 +279,13 @@
                     <pre>toTimestamp('2011-11-10T02:30:42+00:00');<br />// Result: <span id='result-16-5'></span></pre>
                     <script>
                         require([
-                            'jquery',
                             'date/convert/toTimestamp'
-                        ], function ($, convertToTimestamp) {
-                            $('#result-16-1').text(String(convertToTimestamp(1320892242)));
-                            $('#result-16-2').text(String(convertToTimestamp(1320892242000)));
-                            $('#result-16-3').text(String(convertToTimestamp(new Date(1320892242000))));
-                            $('#result-16-4').text(String(convertToTimestamp('2011-11-10T02:30:42Z')));
-                            $('#result-16-5').text(String(convertToTimestamp('2011-11-10T02:30:42+00:00')));
+                        ], function (convertToTimestamp) {
+                            document.getElementById('result-16-1').innerText = (String(convertToTimestamp(1320892242)));
+                            document.getElementById('result-16-2').innerText = (String(convertToTimestamp(1320892242000)));
+                            document.getElementById('result-16-3').innerText = (String(convertToTimestamp(new Date(1320892242000))));
+                            document.getElementById('result-16-4').innerText = (String(convertToTimestamp('2011-11-10T02:30:42Z')));
+                            document.getElementById('result-16-5').innerText = (String(convertToTimestamp('2011-11-10T02:30:42+00:00')));
                         });
                     </script>
                 </div>

@@ -44,8 +44,8 @@
                             'jquery',
                             'number/pad'
                         ], function ($, pad) {
-                            $('#result-1-1').text(pad(1));
-                            $('#result-1-2').text(pad(1, 5));
+                            document.getElementById('result-1-1').innerText = (pad(1));
+                            document.getElementById('result-1-2').innerText = (pad(1, 5));
                         });
                     </script>
                 </div>
@@ -58,8 +58,8 @@
                             'jquery',
                             'number/round'
                         ], function ($, round) {
-                            $('#result-2-1').text(round(1.234567891));
-                            $('#result-2-2').text(round(1.234567891, 5));
+                            document.getElementById('result-2-1').innerText = (round(1.234567891));
+                            document.getElementById('result-2-2').innerText = (round(1.234567891, 5));
                         });
                     </script>
                 </div>
