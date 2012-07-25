@@ -6,7 +6,7 @@
 define([
     'date/convert/toDate'
 ], function (toDate) {
-    module('date/convert/toDate');
+    module('date/convert');
 
     var timestampExample = 1287496289, // Tue, 19 Oct 2010 14:51:29
         epochExample = timestampExample * 1000,

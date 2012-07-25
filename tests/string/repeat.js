@@ -6,7 +6,7 @@
 define([
     'string/repeat'
 ], function (repeat) {
-    module('string/repeat');
+    module('string');
 
     test('repeat', function () {
         equal(repeat("-="), "", 'A String Repeated, With No Repeats Specified.');

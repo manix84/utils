@@ -6,7 +6,7 @@
 define([
     'string/truncate'
 ], function (truncate) {
-    module('string/truncate');
+    module('string');
 
     test('truncate', function () {
         equal(truncate('A semi long string to be truncated.', 15), "A semi long&hellip;", 'A &hellip; should be added in the middle of the string, while trying to preserve words.');

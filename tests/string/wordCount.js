@@ -6,7 +6,7 @@
 define([
     'string/wordCount'
 ], function (wordCount) {
-    module('string/wordCount');
+    module('string');
 
     test('wordCount', function () {
         equal(wordCount('a string with a few words in it.'), 8, 'Their Are 8 Words That Should Be Counted.');

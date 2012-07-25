@@ -7,7 +7,7 @@
 define('tests/useragentTest', [
     'useragent'
 ], function (useragent) {
-    module('Utils.Useragent');
+    module('Useragent');
 
     test('browser', function () {
         equal(Object.prototype.toString.call(useragent.browser), '[object Object]', 'Useragent.Browser should be an object');

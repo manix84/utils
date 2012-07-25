@@ -6,7 +6,7 @@
 define([
     'date/daylightSavings'
 ], function (daylightSavings) {
-    module('date/daylightSavings');
+    module('date');
 
     test('daylightSavings', function () {
         equal(daylightSavings(new Date(1287496289000)), 1, 'Is it daylight savings time?');

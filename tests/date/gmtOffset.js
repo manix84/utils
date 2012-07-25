@@ -6,7 +6,7 @@
 define([
     'date/gmtOffset'
 ], function (gmtOffset) {
-    module('date/gmtOffset');
+    module('date');
 
     test('gmtOffset', function () {
         equal(gmtOffset(new Date(1287496289000)), '+0100', "GMT Offset (without delimiter)");

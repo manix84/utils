@@ -6,7 +6,7 @@
 define([
     'string/upperCaseFirst'
 ], function (upperCaseFirst) {
-    module('string/upperCaseFirst');
+    module('string');
 
     test('upperCaseFirst', function () {
         equal(upperCaseFirst('a string with a few words in it.'), 'A string with a few words in it.', 'The First Letter In The String Should Be Capitalised.');

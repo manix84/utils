@@ -6,7 +6,7 @@
 define([
     'date/dayOrdinal'
 ], function (dayOrdinal) {
-    module('date/dayOrdinal');
+    module('date');
 
     test('dayOrdinal', function () {
         equal(dayOrdinal(new Date(1287496289000)), 'th', "Day Ordinal (EG: 'th', 'st', 'rd')");

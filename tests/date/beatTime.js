@@ -6,7 +6,7 @@
 define([
     'date/beatTime'
 ], function (beatTime) {
-    module('date/beatTime');
+    module('date');
 
     test('beatTime', function () {
         equal(beatTime(new Date(1287496289000)), 619, 'Swatch Beat Time');

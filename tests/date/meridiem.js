@@ -6,7 +6,7 @@
 define([
     'date/meridiem'
 ], function (meridiem) {
-    module('date/meridiem');
+    module('date');
 
     test('meridiem', function () {
         equal(meridiem(new Date(1287496289000)), 'pm', 'Time meridiem (EG: am/pm)');

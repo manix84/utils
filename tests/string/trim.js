@@ -6,7 +6,7 @@
 define([
     'string/trim'
 ], function (trim) {
-    module('string/trim');
+    module('string');
 
     test('trim', function () {
         equal(trim('  A String       '), "A String", 'All space before and after the string should be removed.');
