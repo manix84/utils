@@ -13,6 +13,8 @@ define([
     test('rand', function () {
         random = rand(testArray);
         equal((testArray.indexOf(random) >= 0), true, 'The random array item should be from the provided array.');
-        throws(rand({1: 'cat', 2: 'dog', 3: 'bird'}), 'Object should cause an exception.');
+        throws(function () {
+            rand({1: 'cat', 2: 'dog', 3: 'bird'});
+        }, 'Object should cause an exception.');
     });
 });
