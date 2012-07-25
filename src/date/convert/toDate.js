@@ -19,19 +19,10 @@ define('date/convert/toDate', function () {
         case '[object String]':
             if (isNaN(value)) {
                 date = value.match(isoCheck);
-                if (!!date[8]) {
-                    switch (date[8].charAt(0)) {
-                    case 'Z':
-                        // Get local time offset from user
-                        offset = -(new Date(date[1], (date[2] - 1), date[3]).getTimezoneOffset() / 60);
-                        break;
-                    case '+':
-                    case '-':
-                        offsetTmp = date[8].slice(1, 8).split(':');
-                        offset = parseInt(offsetTmp[0], 10);
-                        offset = (date[8].charAt(0) === '-') ? -offset : offset;
-                        break;
-                    }
+                if (!!date[8] && '+-'.indexOf(date[8].charAt(0)) !== -1) {
+                    offsetTmp = date[8].slice(1, 8).split(':');
+                    offset = parseInt(offsetTmp[0], 10);
+                    offset = (date[8].charAt(0) === '-') ? -offset : offset;
                 }
                 return new Date(Date.UTC(
                     parseInt(date[1], 10),              // Year
