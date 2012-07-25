@@ -18,10 +18,10 @@ define('date/convert/toRFC2822', [
             output = dayName(dateValue, true) + ', ' +
                 dateValue.getDate() + ' ' +
                 monthName(dateValue, true) + ' ' +
-                dateValue.getUTCFullYear() + ' ' +
-                pad(dateValue.getUTCHours()) + ':' +
-                pad(dateValue.getUTCMinutes()) + ':' +
-                pad(dateValue.getUTCSeconds()) + ' ' +
+                dateValue.getFullYear() + ' ' +
+                pad(dateValue.getHours()) + ':' +
+                pad(dateValue.getMinutes()) + ':' +
+                pad(dateValue.getSeconds()) + ' ' +
                 offset(dateValue);
 
         return output;
