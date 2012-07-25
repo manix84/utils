@@ -9,7 +9,7 @@ define([
     module('string/toObject');
 
     test('toObject', function () {
-        equal(Object.prototype.toString.call(toObject('{"1": "2"}')), "[object Object]", 'String should be converted to a valid object.');
-        equal(toObject('{"1": "2"}'), {"1": "2"}, 'String should be converted an object that matches the original string.');
+        equal(Object.prototype.toString.call(toObject('{"1":"2"}')), "[object Object]", 'String should be converted to a valid object.');
+        deepEqual(toObject('{"1":"2"}'), {1: "2"}, 'String should be converted an object that matches the original string.');
     });
 });
