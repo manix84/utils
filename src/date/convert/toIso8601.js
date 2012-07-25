@@ -12,12 +12,12 @@ define('date/convert/toIso8601', [
      */
     var convertToIso8601 = function (value) {
         var dateValue = convertToDate(value),
-            output = dateValue.getUTCFullYear() + '-' +
-                pad(dateValue.getUTCMonth() + 1) + '-' +
-                pad(dateValue.getUTCDate()) + 'T' +
-                pad(dateValue.getUTCHours()) + ':' +
-                pad(dateValue.getUTCMinutes()) + ':' +
-                pad(dateValue.getUTCSeconds()) +
+            output = dateValue.getFullYear() + '-' +
+                pad(dateValue.getMonth() + 1) + '-' +
+                pad(dateValue.getDate()) + 'T' +
+                pad(dateValue.getHours()) + ':' +
+                pad(dateValue.getMinutes()) + ':' +
+                pad(dateValue.getSeconds()) +
                 offset(dateValue);
 
         return output;
