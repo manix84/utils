@@ -11,6 +11,10 @@ define('array/upperCase', function () {
     var upperCase = function (arrayObj) {
         var i = 0;
 
+        if (Object.prototype.toString.call(arrayObj) !== '[object Array]') {
+            throw new Error('First argument must be an array.');
+        }
+
         for (; i < arrayObj.length; i++) {
             switch (Object.prototype.toString.call(arrayObj[i])) {
             case '[object Array]':

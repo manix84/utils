@@ -12,7 +12,7 @@ define('array/inArray', function () {
     var inArray = function (value, arrayObj) {
         var i = 0;
 
-        if (Object.prototype.toString.call(arrayObj) !== '[objecy Array]') {
+        if (Object.prototype.toString.call(arrayObj) !== '[object Array]') {
             throw new Error('Second argument must be an array.');
         }
         for (; i < arrayObj.length; i++) {
