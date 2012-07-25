@@ -13,6 +13,10 @@ define('array/indexOf', function () {
     var indexOf = function (value, arrayObj) {
         var i = 0;
 
+        if (Object.prototype.toString.call(arrayObj) !== '[objecy Array]') {
+            throw new Error('Second argument must be an array.');
+        }
+
         // if indexOf is supported we will use the native functionality
         if (!!arrayObj.indexOf) {
             return arrayObj.indexOf(value);
