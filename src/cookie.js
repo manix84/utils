@@ -27,7 +27,7 @@ define('cookie', function () {
          * @private
          * @type {string}
          */
-        _domain: location.hostname,
+        _domain: (location.hostname === 'localhost' ? false : location.hostname),
 
         /**
          * Cookies path, realive to it's domain
