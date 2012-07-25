@@ -6,7 +6,7 @@
 define([
     'date/dayName'
 ], function (dayName) {
-    module('date/dayName');
+    module('date');
 
     test('dayName', function () {
         equal(dayName(new Date(1287496289000)), 'Tuesday', 'Day Name');

@@ -6,7 +6,7 @@
 define([
     'string/isString'
 ], function (isString) {
-    module('string/isString');
+    module('string');
 
     test('isString', function () {
         equal(isString("A String"), true, 'Is A Native String');

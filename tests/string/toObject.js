@@ -6,7 +6,7 @@
 define([
     'string/toObject'
 ], function (toObject) {
-    module('string/toObject');
+    module('string');
 
     test('toObject', function () {
         equal(Object.prototype.toString.call(toObject('{"1":"2"}')), "[object Object]", 'String should be converted to a valid object.');

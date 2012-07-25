@@ -6,7 +6,7 @@
 define([
     'string/sprintf'
 ], function (sprintf) {
-    module('string/sprintf');
+    module('string');
 
     test('sprintf', function () {
         equal(

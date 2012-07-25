@@ -6,7 +6,7 @@
 define([
     'string/stripTags'
 ], function (stripTags) {
-    module('string/stripTags');
+    module('string');
 
     test('stripTags', function () {
         equal(stripTags("<span><a href='link.html'>A</a> Str</span>ing"), "A String", 'All Tags Should Be Stripped From The String.');

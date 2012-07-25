@@ -6,7 +6,7 @@
 define([
     'date/monthName'
 ], function (monthName) {
-    module('date/monthName');
+    module('date');
 
     test('monthName', function () {
         equal(monthName(new Date(1287496289000)), 'October', 'Month Name');

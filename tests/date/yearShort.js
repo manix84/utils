@@ -6,7 +6,7 @@
 define([
     'date/yearShort'
 ], function (yearShort) {
-    module('date/yearShort');
+    module('date');
 
     test('yearShort', function () {
         equal(yearShort(new Date(1287496289000)), '10', 'Year Short');

@@ -6,7 +6,7 @@
 define([
     'string/wordwrap'
 ], function (wordwrap) {
-    module('string/wordwrap');
+    module('string');
 
     test('wordwrap', function () {
         equal(wordwrap('a string with a few words in it.', 10), "a string \nwith a few \nwords in \nit.", 'String Should Be Cut Every 10 Characters, While Trying To Preserve Words.');
