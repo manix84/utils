@@ -4,7 +4,7 @@
  * @module tests/useragent/engine
  * @requires useragent/engine
  */
-define('tests/useragent/engine', [
+define([
     'useragent/engine'
 ], function (engine) {
     module('useragent');

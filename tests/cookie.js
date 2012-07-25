@@ -4,7 +4,7 @@
  * @module tests/cookie
  * @requires cookie
  */
-define('tests/cookie', [
+define([
     'cookie'
 ], function (cookie) {
     module('cookie');

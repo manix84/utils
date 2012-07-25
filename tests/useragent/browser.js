@@ -4,7 +4,7 @@
  * @module tests/useragent/browser
  * @requires useragent/browser
  */
-define('tests/useragent/browser', [
+define([
     'useragent/browser'
 ], function (browser) {
     module('useragent');

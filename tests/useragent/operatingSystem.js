@@ -4,7 +4,7 @@
  * @module tests/useragent/operatingSystem
  * @requires useragent/operatingSystem
  */
-define('tests/useragent/operatingSystem', [
+define([
     'useragent/operatingSystem'
 ], function (operatingSystem) {
     module('useragent');

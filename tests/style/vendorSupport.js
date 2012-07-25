@@ -4,7 +4,7 @@
  * @module tests/style/vendorSupport
  * @requires style/vendorSupport
  */
-define('tests/vendorSupport', [
+define([
     'style/vendorSupport'
 ], function (vendorSupport) {
     module('style');
