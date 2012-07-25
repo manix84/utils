@@ -17,6 +17,10 @@ define('array/toObject', function () {
         var i = 0,
             outputObj = {};
 
+        if (Object.prototype.toString.call(arrayObj) !== '[object Array]') {
+            throw new Error('First argument must be an array.');
+        }
+
         for (; i < arrayObj.length; i++) {
             outputObj[arrayObj[i]] = '';
         }

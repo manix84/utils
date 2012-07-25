@@ -12,7 +12,12 @@ define('array/match', function () {
      */
     var match = function (arrayObjA, arrayObjB) {
         var i = 0,
-            isArray = (Object.prototype.toString.call(arrayObjA) === '[objecy Array]');
+            isArray = (Object.prototype.toString.call(arrayObjA) === '[object Array]');
+
+        if (Object.prototype.toString.call(arrayObjA) !== '[object Array]' ||
+            Object.prototype.toString.call(arrayObjB) !== '[object Array]') {
+            throw new Error('First and second arguments must be a arrays.');
+        }
 
         for (; i < arrayObjA.length; i++) {
             if ((isArray && !match(arrayObjA[i], arrayObjB[i])) ||

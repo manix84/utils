@@ -11,9 +11,12 @@ define('array/rand', function () {
      * @todo Add functionality for the second parameter.
      */
     var rand = function (arrayObj, reqNum) {
-        var index = Math.floor(Math.random() * arrayObj.length);
 
-        return arrayObj[index];
+        if (Object.prototype.toString.call(arrayObj) !== '[object Array]') {
+            throw new Error('First argument must be an array.');
+        }
+
+        return arrayObj[Math.floor(Math.random() * arrayObj.length)];
     };
 
     return rand;
