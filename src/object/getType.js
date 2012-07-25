@@ -1,7 +1,7 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('getType', function () {
+define('object/getType', function () {
 
     /**
      * Finds and reports the object type, rather than just
