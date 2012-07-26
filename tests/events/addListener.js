@@ -21,6 +21,7 @@ define([
         }, 100);
 
         addListener(linkElem, 'click', function (event) {
+            event.preventDefault();
             window.clearTimeout(failEventTest);
             ok(true, 'Click event heard on test element.');
             start();
