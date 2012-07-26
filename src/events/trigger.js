@@ -12,7 +12,8 @@ define('events/trigger', function () {
      * @param {Object} objectData - The function to be called when the event fires. NOTE: I'm still working on this.
      */
     var trigger = function (element, eventName, objectData) {
-        var event;
+        var event,
+            prop;
         if (!!document.createEvent) {
             event = document.createEvent('HTMLEvents');
             event.initEvent(eventName, true, true);
@@ -22,19 +23,19 @@ define('events/trigger', function () {
         }
 
         event.eventName = eventName;
-        event.data = objectData || {};
+        for (prop in objectData) {
+            if (objectData.hasOwnProperty(prop)) {
+                event[prop] = objectData[prop];
+            }
+        }
         if (!!element.dispatchEvent) {
             return element.dispatchEvent(event);
         } else if (!!element.fireEvent) {
             return element.fireEvent('on' + event.eventType, event);
         } else if (!!element[eventName]) {
-            return element[eventName]({
-                data: objectData
-            });
+            return element[eventName](objectData);
         } else if (!!element['on' + eventName]) {
-            return element['on' + eventName]({
-                data: objectData
-            });
+            return element['on' + eventName](objectData);
         }
     };
 
