@@ -10,7 +10,6 @@ define([
     module('events');
 
     var linkElem = document.createElement('a');
-    linkElem.setAttribute('href', '#success');
     linkElem.innerText = ('test');
     document.getElementById('qunit-fixture').appendChild(linkElem);
 
