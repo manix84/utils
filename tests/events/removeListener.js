@@ -4,30 +4,28 @@
  * @requires event/addListener
  */
 define([
+    'events/removeListener',
     'events/addListener'
-], function (addListener) {
+], function (removeListener, addListener) {
     module('events');
 
     var linkElem = document.createElement('a');
-    linkElem.setAttribute('href', '#failed');
     linkElem.innerText = ('test');
     document.getElementById('qunit-fixture').appendChild(linkElem);
 
-    asyncTest('addListener', function () {
+    asyncTest('removeListener', function () {
 
-        var failEventTest = window.setTimeout(function () {
-            ok(false, 'Click event failed.');
+        var removeEventTest = window.setTimeout(function () {
+            ok(true, 'Click event was not heard - Success.');
             start();
         }, 100);
 
         addListener(linkElem, 'click', function (event) {
-            event.preventDefault();
-            window.clearTimeout(failEventTest);
-            ok(true, 'Click event heard on test element.');
+            window.clearTimeout(removeEventTest);
+            ok(false, 'Click event heard on test element - Fail.');
             start();
         });
-
-        ok(!!linkElem.eventStore.click, 'EventStore has "click" event stored.');
+        removeListener(linkElem, 'click');
 
         linkElem.click();
     });
