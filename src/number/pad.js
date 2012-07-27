@@ -12,6 +12,9 @@ define('number/pad', function () {
      * @return {String} (EG: "01")
      */
     var pad = function (input, padLength) {
+        if (isNaN(input)) {
+            throw new Error('Second argument must be an array.');
+        }
         input = String(input);
         padLength = padLength || 2;
 
