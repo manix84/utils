@@ -21,7 +21,6 @@ define([
         }, 100);
 
         addListener(linkElem, 'click', function (event) {
-            console.log('args', arguments);
             window.clearTimeout(removeEventTest);
             ok(true, 'Click event heard on test element.');
             equal(event.testProperty, 'a String', 'Object returned contained "a String" as expected');
