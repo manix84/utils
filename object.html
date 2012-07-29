@@ -121,81 +121,116 @@
                         });
                     </script>
                 </div>
+                <div id='getType'>
+                    <h3>getType</h3>
+                    <pre>getType({'cat': 'Felix', 'dog': 'Spot'})<br />// Result: <span id='result-4-1'></span></pre><br />
+                    <pre>getType(Array('cat', 'dog', 'bird'))<br />// Result: <span id='result-4-2'></span></pre><br />
+                    <pre>getType(['cat', 'dog', 'bird'])<br />// Result: <span id='result-4-3'></span></pre><br />
+                    <pre>getType(String('cat'))<br />// Result: <span id='result-4-4'></span></pre><br />
+                    <pre>getType('cat')<br />// Result: <span id='result-4-5'></span></pre><br />
+                    <pre>getType(true)<br />// Result: <span id='result-4-6'></span></pre><br />
+                    <pre>getType(false)<br />// Result: <span id='result-4-7'></span></pre><br />
+                    <pre>getType(0)<br />// Result: <span id='result-4-8'></span></pre><br />
+                    <pre>getType(1)<br />// Result: <span id='result-4-9'></span></pre><br />
+                    <pre>getType(1.23456789)<br />// Result: <span id='result-4-10'></span></pre><br />
+                    <pre>getType(new Date())<br />// Result: <span id='result-4-11'></span></pre><br />
+                    <pre>getType(function () {})<br />// Result: <span id='result-4-12'></span></pre><br />
+                    <pre>getType(null)<br />// Result: <span id='result-4-13'></span></pre><br />
+                    <script>
+                        require([
+                            'object/getType'
+                        ], function (getType) {
+                            document.getElementById('result-4-1').innerText = getType({'cat': 'Felix', 'dog': 'Spot'});
+                            document.getElementById('result-4-2').innerText = getType(Array('cat', 'dog', 'bird'));
+                            document.getElementById('result-4-3').innerText = getType(['cat', 'dog', 'bird']);
+                            document.getElementById('result-4-4').innerText = getType(String('cat'));
+                            document.getElementById('result-4-5').innerText = getType('cat');
+                            document.getElementById('result-4-6').innerText = getType(true);
+                            document.getElementById('result-4-7').innerText = getType(false);
+                            document.getElementById('result-4-8').innerText = getType(0);
+                            document.getElementById('result-4-9').innerText = getType(1);
+                            document.getElementById('result-4-10').innerText = getType(1.23456789);
+                            document.getElementById('result-4-11').innerText = getType(new Date());
+                            document.getElementById('result-4-12').innerText = getType(function () {});
+                            document.getElementById('result-4-13').innerText = getType(null);
+                        });
+                    </script>
+                </div>
                 <div id='isEmpty'>
                     <h3>isEmpty</h3>
-                    <pre>isEmpty({})<br />// Result: <span id='result-4-1'></span></pre><br />
-                    <pre>isEmpty({'cat': 'Felix'})<br />// Result: <span id='result-4-2'></span></pre>
+                    <pre>isEmpty({})<br />// Result: <span id='result-5-1'></span></pre><br />
+                    <pre>isEmpty({'cat': 'Felix'})<br />// Result: <span id='result-5-2'></span></pre>
 
                     <script>
                         require([
                             'object/isEmpty'
                         ], function (isEmpty) {
-                            document.getElementById('result-4-1').innerText = isEmpty({});
-                            document.getElementById('result-4-2').innerText = isEmpty({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'});
+                            document.getElementById('result-5-1').innerText = isEmpty({});
+                            document.getElementById('result-5-2').innerText = isEmpty({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'});
                         });
                     </script>
                 </div>
                 <div id='isObject'>
                     <h3>isObject</h3>
-                    <pre>isObject({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-5-1'></span></pre><br />
-                    <pre>isObject(['Felix', 'Rex', 'Polly'])<br />// Result: <span id='result-5-2'></span></pre><br />
-                    <pre>isObject(new Date())<br />// Result: <span id='result-5-3'></span></pre>
+                    <pre>isObject({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-6-1'></span></pre><br />
+                    <pre>isObject(['Felix', 'Rex', 'Polly'])<br />// Result: <span id='result-6-2'></span></pre><br />
+                    <pre>isObject(new Date())<br />// Result: <span id='result-6-3'></span></pre>
 
                     <script>
                         require([
                             'object/isObject'
                         ], function (isObject) {
-                            document.getElementById('result-5-1').innerText = isObject({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'});
-                            document.getElementById('result-5-2').innerText = isObject(['Felix', 'Rex', 'Polly']);
-                            document.getElementById('result-5-3').innerText = isObject(new Date());
+                            document.getElementById('result-6-1').innerText = isObject({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'});
+                            document.getElementById('result-6-2').innerText = isObject(['Felix', 'Rex', 'Polly']);
+                            document.getElementById('result-6-3').innerText = isObject(new Date());
                         });
                     </script>
                 </div>
                 <div id='keys'>
                     <h3>keys</h3>
-                    <pre>keys({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-6-1'></span></pre>
+                    <pre>keys({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-7-1'></span></pre>
 
                     <script>
                         require([
                             'object/keys'
                         ], function (keys) {
-                            document.getElementById('result-6-1').innerText = JSON.stringify(keys({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'}));
+                            document.getElementById('result-7-1').innerText = JSON.stringify(keys({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'}));
                         });
                     </script>
                 </div>
                 <div id='length'>
                     <h3>length</h3>
-                    <pre>length({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-7-1'></span></pre>
+                    <pre>length({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-8-1'></span></pre>
 
                     <script>
                         require([
                             'object/length'
                         ], function (length) {
-                            document.getElementById('result-7-1').innerText = JSON.stringify(length({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'}));
+                            document.getElementById('result-8-1').innerText = JSON.stringify(length({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'}));
                         });
                     </script>
                 </div>
                 <div id='toArray'>
                     <h3>toArray</h3>
-                    <pre>toArray({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-8-1'></span></pre>
+                    <pre>toArray({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-9-1'></span></pre>
 
                     <script>
                         require([
                             'object/toArray'
                         ], function (toArray) {
-                            document.getElementById('result-8-1').innerText = JSON.stringify(toArray({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'}));
+                            document.getElementById('result-9-1').innerText = JSON.stringify(toArray({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'}));
                         });
                     </script>
                 </div>
                 <div id='toString'>
                     <h3>toString</h3>
-                    <pre>toString({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-9-1'></span></pre>
+                    <pre>toString({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'})<br />// Result: <span id='result-10-1'></span></pre>
 
                     <script>
                         require([
                             'object/toString'
                         ], function (toString) {
-                            document.getElementById('result-9-1').innerText = toString({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'});
+                            document.getElementById('result-10-1').innerText = toString({'cat': 'Felix', 'dog': 'Rex', 'bird': 'Polly'});
                         });
                     </script>
                 </div>
