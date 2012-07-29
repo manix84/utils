@@ -64,30 +64,30 @@
                 <div id='extend'>
                     <h3>extend</h3>
                     <pre>function TheClass(value) {
-    this._property = value;
-}
-TheClass.prototype = {
-    getProperty: function() {
-        return this._property;
+        this._property = value;
     }
-};
+    TheClass.prototype = {
+        getProperty: function() {
+            return this._property;
+        }
+    };
 
-function TheNewClass(value) {
-    // Call the TheClass's constructor
-    arguments.callee.base.apply(this, arguments);
-}
-
-extend(TheNewClass, MyClass, {
-    setProperty: function(newValue) {
-        this._property = newValue;
+    function TheNewClass(value) {
+        arguments.callee.base.apply(this, arguments);
     }
-});
 
-var example = new TheNewClass("dog");
-example.getProperty(); // Returns: "dog"
+    extend(TheNewClass, TheClass, {
+        setProperty: function(newValue) {
+            this._property = newValue;
+        }
+    });
 
-example.setProperty("cat");
-example.getProperty(); // Returns: "cat"</pre>
+    var example = new TheNewClass("dog");
+    example.getProperty(); // Returns: "dog"
+
+    example.setProperty("cat");
+    example.getProperty(); // Returns: "cat"
+});</pre>
                     <strong>Results</strong>
                     <pre>Result 1: <span id='result-3-1'></span><br />Result 2: <span id='result-3-2'></span></pre>
                     <script>
@@ -104,7 +104,6 @@ example.getProperty(); // Returns: "cat"</pre>
                             };
 
                             function TheNewClass(value) {
-                                // Call the TheClass's constructor
                                 arguments.callee.base.apply(this, arguments);
                             }
 
