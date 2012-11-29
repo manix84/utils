@@ -16,12 +16,12 @@ define('events', function () {
         add: function (element, eventName, callback) {
             element.eventStore = element.eventStore || {};
 
-            if (typeof element.addEventListener === 'function') {
+            if (typeof element.addEventListener === "function") {
                 element.addEventListener(eventName, callback, false);
             } else if (!!element.attachEvent) {
-                element.attachEvent('on' + eventName, callback);
+                element.attachEvent("on" + eventName, callback);
             } else {
-                element['on' + eventName] = callback;
+                element["on" + eventName] = callback;
             }
 
             // Attaching callback event to the prototype for easy recall.
@@ -43,12 +43,12 @@ define('events', function () {
                 if (element.removeEventListener) {
                     element.removeEventListener(eventName, callback, false);
                 } else if (element.detachEvent) {
-                    element.detachEvent('on' + eventName, callback);
+                    element.detachEvent("on" + eventName, callback);
                 }
-                element['on' + eventName] = null;
+                element["on" + eventName] = null;
                 element.eventStore[eventName] = null;
             } else {
-                // console.warn('"' + eventName + '" not attached to specified element.', element);
+                // console.warn("\"" + eventName + "\" not attached to specified element.", element);
             }
         },
 
@@ -61,7 +61,7 @@ define('events', function () {
         removeAll: function (element) {
             var eventName;
             if (element.eventStore !== "object") {
-                // console.warn(element, ' does not have recognisable events attached to it.);
+                // console.warn(element, " does not have recognisable events attached to it.);
                 return;
             }
 
@@ -85,7 +85,7 @@ define('events', function () {
                 prop;
 
             if (!!document.createEvent) {
-                event = document.createEvent('HTMLEvents');
+                event = document.createEvent("HTMLEvents");
                 event.initEvent(eventName, true, true);
             } else if (!!document.createEventObject) {
                 event = document.createEventObject();
@@ -102,11 +102,11 @@ define('events', function () {
             if (!!element.dispatchEvent) {
                 return element.dispatchEvent(event);
             } else if (!!element.fireEvent) {
-                return element.fireEvent('on' + event.eventType, event);
+                return element.fireEvent("on" + event.eventType, event);
             } else if (!!element[eventName]) {
                 return element[eventName](objectData);
-            } else if (!!element['on' + eventName]) {
-                return element['on' + eventName](objectData);
+            } else if (!!element["on" + eventName]) {
+                return element["on" + eventName](objectData);
             }
         }
     };
