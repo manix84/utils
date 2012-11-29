@@ -28,7 +28,6 @@ define('events', function () {
             element.eventStore[eventName] = callback;
         },
 
-
         /**
          * Removes an event listener from a DOM Element.
          * @exports events.remove
@@ -50,6 +49,26 @@ define('events', function () {
                 element.eventStore[eventName] = null;
             } else {
                 // console.warn('"' + eventName + '" not attached to specified element.', element);
+            }
+        },
+
+        /**
+         * Removes all events listener from a DOM Element.
+         * @exports events.removeAll
+         *
+         * @param {HTMLElement} element - The element the event is attached too.
+         */
+        removeAll: function (element) {
+            var eventName;
+            if (element.eventStore !== "object") {
+                // console.warn(element, ' does not have recognisable events attached to it.);
+                return;
+            }
+
+            for (eventName in element.eventStore) {
+                if (element.eventStore.hasOwnProperty(eventName)) {
+                    this.remove(element, eventName, element.eventStor[eventName]);
+                }
             }
         },
 
