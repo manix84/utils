@@ -1,13 +1,17 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-define('events', function () {
+(function () {
+    var utils = window.utils || {};
 
-    var elementRegistry = {},
-        events = {
+    /**
+     * Adds event listener management to the window.utils object.
+     * @exports utils.events
+     */
+    utils.events = {
         /**
          * Adds an event listener to a DOM Element.
-         * @exports events.add
+         * @exports utils.events.add
          *
          * @param {HTMLElement} element - The object to attach the event listener to.
          * @param {String} name - The event name.
@@ -30,7 +34,7 @@ define('events', function () {
 
         /**
          * Removes an event listener from a DOM Element.
-         * @exports events.remove
+         * @exports utils.events.remove
          *
          * @param {HTMLElement} element - The element the event is attached too.
          * @param {String} name - The name of the event you wish to remove.
@@ -54,7 +58,7 @@ define('events', function () {
 
         /**
          * Removes all events listener from a DOM Element.
-         * @exports events.removeAll
+         * @exports utils.events.removeAll
          *
          * @param {HTMLElement} element - The element the event is attached too.
          */
@@ -74,7 +78,7 @@ define('events', function () {
 
         /**
          * Trigger an event listener to a DOM Element.
-         * @exports events.trigger
+         * @exports utils.events.trigger
          *
          * @param {HTMLElement} element - The object to attach the event listener to.
          * @param {String} eventName - The event name.
@@ -111,5 +115,5 @@ define('events', function () {
         }
     };
 
-    return events;
-});
+    window.utils = utils;
+}());
