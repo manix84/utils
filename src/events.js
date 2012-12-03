@@ -1,14 +1,13 @@
 /**
  * @author Rob Taylor [manix84@gmail.com]
  */
-(function () {
-    var utils = window.utils || {};
+define("events", function () {
 
     /**
-     * Adds event listener management to the window.utils object.
-     * @exports utils.events
+     * Adds event listener management util.
+     * @exports events
      */
-    utils.events = {
+    var events = {
         /**
          * Adds an event listener to a DOM Element.
          * @exports utils.events.add
@@ -29,7 +28,8 @@
             }
 
             // Attaching callback event to the prototype for easy recall.
-            element.eventStore[eventName] = callback;
+            element.eventStore[eventName] = element.eventStore[eventName] || [];
+            element.eventStore[eventName].push(callback);
         },
 
         /**
@@ -41,18 +41,29 @@
          * @param {Function} [callback] - Function you with to remove from the event.
          *      If event.addListener is used to attach the listener, this param is not necessary.
          */
-        remove: function (element, eventName, callback) {
-            callback = callback || (!!element.eventStore ? element.eventStore[eventName] : false);
-            if (!!callback) {
-                if (element.removeEventListener) {
-                    element.removeEventListener(eventName, callback, false);
-                } else if (element.detachEvent) {
-                    element.detachEvent("on" + eventName, callback);
+        remove: function (element, eventName, callbacks) {
+            var i = 0;
+            if (!callbacks) {
+                callbacks = (!!element.eventStore ? element.eventStore[eventName] : false);
+            } else if (!(callbacks instanceof Array)) {
+                callbacks = [callbacks];
+            }
+
+            for (; i < callbacks.length; ++i) {
+                if (!!callbacks[i]) {
+                    if (element.removeEventListener) {
+                        element.removeEventListener(eventName, callbacks[i], false);
+                    } else if (element.detachEvent) {
+                        element.detachEvent("on" + eventName, callbacks[i]);
+                    }
+                    element.eventStore[eventName].splice(i, 1);
+                    if (callbacks.length === 0) {
+                        element["on" + eventName] = null;
+                        delete element.eventStore;
+                    }
+                } else {
+                    // console.warn("\"" + eventName + "\" not attached to specified element.", element);
                 }
-                element["on" + eventName] = null;
-                element.eventStore[eventName] = null;
-            } else {
-                // console.warn("\"" + eventName + "\" not attached to specified element.", element);
             }
         },
 
@@ -62,17 +73,20 @@
          *
          * @param {HTMLElement} element - The element the event is attached too.
          */
-        removeAll: function (element) {
-            var eventName;
+        removeAll: function (element, eventName) {
             if (element.eventStore !== "object") {
                 // console.warn(element, " does not have recognisable events attached to it.);
                 return;
             }
 
-            for (eventName in element.eventStore) {
-                if (element.eventStore.hasOwnProperty(eventName)) {
-                    this.remove(element, eventName, element.eventStor[eventName]);
+            if (eventName) {
+                for (eventName in element.eventStore) {
+                    if (element.eventStore.hasOwnProperty(eventName)) {
+                        this.remove(element, eventName, element.eventStore[eventName]);
+                    }
                 }
+            } else {
+                this.remove(element, eventName, element.eventStore[eventName]);
             }
         },
 
@@ -115,5 +129,5 @@
         }
     };
 
-    window.utils = utils;
+    return events;
 }());
