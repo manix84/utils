@@ -130,4 +130,4 @@ define("events", function () {
     };
 
     return events;
-}());
+});
