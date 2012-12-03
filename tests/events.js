@@ -4,76 +4,76 @@
  * @requires events
  */
 define([
-    'events'
-], function (events) {
+    "events"
+], function (eventListener) {
     var linkElem;
-    module('eventListener', {
+    module("eventListener", {
         setup: function () {
-            linkElem = document.createElement('a');
-            linkElem.setAttribute('href', '#failed');
-            linkElem.innerText = ('test');
-            document.getElementById('qunit-fixture').appendChild(linkElem);
+            linkElem = document.createElement("a");
+            linkElem.setAttribute("href", "#failed");
+            linkElem.innerText = ("test");
+            document.getElementById("qunit-fixture").appendChild(linkElem);
         },
         teardown: function () {
             if (linkElem) {
-                document.getElementById('qunit-fixture').removeChild(linkElem);
+                document.getElementById("qunit-fixture").removeChild(linkElem);
             }
         }
     });
 
 
-    asyncTest('eventListener.add', function () {
+    asyncTest("eventListener.add", function () {
         var failEventTest = window.setTimeout(function () {
-            ok(false, 'Click event failed.');
+            ok(false, "Click event failed.");
             start();
         }, 100);
 
-        eventListener.add(linkElem, 'click', function (event) {
+        eventListener.add(linkElem, "click", function (event) {
             event.preventDefault();
             window.clearTimeout(failEventTest);
-            ok(true, 'Click event heard on test element.');
+            ok(true, "Click event heard on test element.");
             start();
         });
 
-        ok(!!linkElem.eventStore.click, 'EventStore has "click" event stored.');
+        ok(!!linkElem.eventStore.click, "EventStore has \"click\" event stored.");
 
         linkElem.click();
     });
-    module('events');
+    module("events");
 
 
-    asyncTest('eventListener.remove', function () {
+    asyncTest("eventListener.remove", function () {
         var removeEventTest = window.setTimeout(function () {
-            ok(true, 'Click event was not heard - Success.');
+            ok(true, "Click event was not heard - Success.");
             start();
         }, 100);
 
-        eventListener.add(linkElem, 'click', function (event) {
+        eventListener.add(linkElem, "click", function (event) {
             window.clearTimeout(removeEventTest);
-            ok(false, 'Click event heard on test element - Fail.');
+            ok(false, "Click event heard on test element - Fail.");
             start();
         });
-        eventListener.remove(linkElem, 'click');
+        eventListener.remove(linkElem, "click");
 
         linkElem.click();
     });
 
 
-    asyncTest('trigger', function () {
+    asyncTest("trigger", function () {
 
         var removeEventTest = window.setTimeout(function () {
-            ok(false, 'Click event failed.');
+            ok(false, "Click event failed.");
             start();
         }, 100);
 
-        eventListener.add(linkElem, 'click', function (event) {
+        eventListener.add(linkElem, "click", function (event) {
             window.clearTimeout(removeEventTest);
-            ok(true, 'Click event heard on test element.');
-            equal(event.testProperty, 'a String', 'Object returned contained "a String" as expected');
+            ok(true, "Click event heard on test element.");
+            equal(event.testProperty, "a String", "Object returned contained \"a String\" as expected");
             start();
         });
-        eventListener.trigger(linkElem, 'click', {
-            testProperty: 'a String'
+        eventListener.trigger(linkElem, "click", {
+            testProperty: "a String"
         });
     });
 
