@@ -36,18 +36,18 @@
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
                 <div id='addListener'>
-                    <h3>addListener</h3>
+                    <h3>events.add</h3>
                     <pre>var counter = 0;
-addListener(document.getElementById('clickable-1'), 'click', function (event) {
+eventListener.add(document.getElementById('clickable-1'), 'click', function (event) {
     event.preventDefault();
     document.getElementById('clickable-1').innerText = 'Clicked ' + (++counter) + ' times';
 });<br />// Result: <a id='clickable-1' href='#fail'>Click Here</a></pre>
                     <script>
                         require([
-                            'events/addListener'
-                        ], function (addListener) {
+                            'events'
+                        ], function (eventListener) {
                             var counter = 0;
-                            addListener(document.getElementById('clickable-1'), 'click', function (event) {
+                            eventListener.add(document.getElementById('clickable-1'), 'click', function (event) {
                                 event.preventDefault();
                                 document.getElementById('clickable-1').innerText = 'Clicked ' + (++counter) + ' times';
                             });
@@ -55,44 +55,42 @@ addListener(document.getElementById('clickable-1'), 'click', function (event) {
                     </script>
                 </div>
                 <div id='removeListener'>
-                    <h3>removeListener</h3>
-                    <pre>addListener(document.getElementById('clickable-2'), 'click', function (event) {
+                    <h3>events.remove</h3>
+                    <pre>eventListener.add(document.getElementById('clickable-2'), 'click', function (event) {
     event.preventDefault();
     document.getElementById('clickable-2').innerText = 'Listener removed. Click again to goto GitHub.com';
     document.getElementById('clickable-2').target = '_blank';
-    removeListener(document.getElementById('clickable-2'), 'click');
+    eventListener.remove(document.getElementById('clickable-2'), 'click');
 });<br />// Result: <a id='clickable-2' href='http://github.com'>Click to remove listener</a></pre>
                     <script>
                         require([
-                            'events/addListener',
-                            'events/removeListener'
-                        ], function (addListener, removeListener) {
-                            addListener(document.getElementById('clickable-2'), 'click', function (event) {
+                            'events'
+                        ], function (eventListener) {
+                            eventListener.add(document.getElementById('clickable-2'), 'click', function (event) {
                                 event.preventDefault();
                                 document.getElementById('clickable-2').innerText = 'Listener removed. Click again to goto GitHub.com';
                                 document.getElementById('clickable-2').target = '_blank';
-                                removeListener(document.getElementById('clickable-2'), 'click');
+                                eventListener.remove(document.getElementById('clickable-2'), 'click');
                             });
                         });
                     </script>
                 </div>
                 <div id='trigger'>
-                    <h3>trigger</h3>
+                    <h3>events.trigger</h3>
                     <pre>window.setTimeout(function () {
-    trigger(document.getElementById('listener-1'), 'timedEvent');
+    eventListener.trigger(document.getElementById('listener-1'), 'timedEvent');
 }, 1000);
-addListener(document.getElementById('listener-1'), 'timedEvent', function (event) {
+eventListener.add(document.getElementById('listener-1'), 'timedEvent', function (event) {
     document.getElementById('listener-1').innerText = 'Heard timed event, yay!';
 });<br />// Result: <span id='listener-1'>Listening for timed event</span></pre>
                     <script>
                         require([
-                            'events/addListener',
-                            'events/trigger'
-                        ], function (addListener, trigger) {
+                            'events'
+                        ], function (eventListener) {
                             window.setTimeout(function () {
-                                trigger(document.getElementById('listener-1'), 'timedEvent');
+                                eventListener.trigger(document.getElementById('listener-1'), 'timedEvent');
                             }, 1000);
-                            addListener(document.getElementById('listener-1'), 'timedEvent', function (event) {
+                            eventListener.add(document.getElementById('listener-1'), 'timedEvent', function (event) {
                                 document.getElementById('listener-1').innerText = 'Heard timed event, yay!';
                             });
                         });
