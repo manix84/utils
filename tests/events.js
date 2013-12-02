@@ -1,3 +1,4 @@
+/*globals asyncTest, module, ok, start, equal */
 /**
  * Tests for event/eventListener.add
  * @author Rob Taylor [manix84@gmail.com]
@@ -6,27 +7,19 @@
 define([
     "events"
 ], function (eventListener) {
-    var linkElem;
-    module("eventListener", {
-        setup: function () {
-            linkElem = document.createElement("a");
-            linkElem.setAttribute("href", "#failed");
-            linkElem.innerText = ("test");
-            document.getElementById("qunit-fixture").appendChild(linkElem);
-        },
-        teardown: function () {
-            if (linkElem) {
-                document.getElementById("qunit-fixture").removeChild(linkElem);
-            }
-        }
-    });
+    module("eventListener");
 
 
     asyncTest("eventListener.add", function () {
         var failEventTest = window.setTimeout(function () {
-            ok(false, "Click event failed.");
-            start();
-        }, 100);
+                ok(false, "Click event failed.");
+                start();
+            }, 100),
+            linkElem = document.createElement("a");
+
+        linkElem.setAttribute("href", "#failed");
+        linkElem.innerText = ("test");
+        document.getElementById("qunit-fixture").appendChild(linkElem);
 
         eventListener.add(linkElem, "click", function (event) {
             event.preventDefault();
@@ -38,17 +31,26 @@ define([
         ok(!!linkElem.eventStore.click, "EventStore has \"click\" event stored.");
 
         linkElem.click();
+
+        if (linkElem) {
+            document.getElementById("qunit-fixture").removeChild(linkElem);
+        }
     });
     module("events");
 
 
     asyncTest("eventListener.remove", function () {
         var removeEventTest = window.setTimeout(function () {
-            ok(true, "Click event was not heard - Success.");
-            start();
-        }, 100);
+                ok(true, "Click event was not heard - Success.");
+                start();
+            }, 100),
+            linkElem = document.createElement("a");
 
-        eventListener.add(linkElem, "click", function (event) {
+        linkElem.setAttribute("href", "#failed");
+        linkElem.innerText = ("test");
+        document.getElementById("qunit-fixture").appendChild(linkElem);
+
+        eventListener.add(linkElem, "click", function () {
             window.clearTimeout(removeEventTest);
             ok(false, "Click event heard on test element - Fail.");
             start();
@@ -56,15 +58,23 @@ define([
         eventListener.remove(linkElem, "click");
 
         linkElem.click();
+
+        if (linkElem) {
+            document.getElementById("qunit-fixture").removeChild(linkElem);
+        }
     });
 
 
     asyncTest("trigger", function () {
-
         var removeEventTest = window.setTimeout(function () {
-            ok(false, "Click event failed.");
-            start();
-        }, 100);
+                ok(false, "Click event failed.");
+                start();
+            }, 100),
+            linkElem = document.createElement("a");
+
+        linkElem.setAttribute("href", "#failed");
+        linkElem.innerText = ("test");
+        document.getElementById("qunit-fixture").appendChild(linkElem);
 
         eventListener.add(linkElem, "click", function (event) {
             window.clearTimeout(removeEventTest);
@@ -75,6 +85,10 @@ define([
         eventListener.trigger(linkElem, "click", {
             testProperty: "a String"
         });
+
+        if (linkElem) {
+            document.getElementById("qunit-fixture").removeChild(linkElem);
+        }
     });
 
 
