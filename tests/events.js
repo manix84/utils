@@ -6,11 +6,11 @@
  */
 define([
     "events"
-], function (eventListener) {
-    module("eventListener");
+], function (events) {
+    module("events");
 
 
-    asyncTest("eventListener.add", function () {
+    asyncTest("add", function () {
         var failEventTest = window.setTimeout(function () {
                 ok(false, "Click event failed.");
                 start();
@@ -21,7 +21,7 @@ define([
         linkElem.innerText = ("test");
         document.getElementById("qunit-fixture").appendChild(linkElem);
 
-        eventListener.add(linkElem, "click", function (event) {
+        events.add(linkElem, "click", function (event) {
             event.preventDefault();
             window.clearTimeout(failEventTest);
             ok(true, "Click event heard on test element.");
@@ -36,10 +36,9 @@ define([
             document.getElementById("qunit-fixture").removeChild(linkElem);
         }
     });
-    module("events");
 
 
-    asyncTest("eventListener.remove", function () {
+    asyncTest("remove", function () {
         var removeEventTest = window.setTimeout(function () {
                 ok(true, "Click event was not heard - Success.");
                 start();
@@ -50,12 +49,12 @@ define([
         linkElem.innerText = ("test");
         document.getElementById("qunit-fixture").appendChild(linkElem);
 
-        eventListener.add(linkElem, "click", function () {
+        events.add(linkElem, "click", function () {
             window.clearTimeout(removeEventTest);
             ok(false, "Click event heard on test element - Fail.");
             start();
         });
-        eventListener.remove(linkElem, "click");
+        events.remove(linkElem, "click");
 
         linkElem.click();
 
@@ -76,13 +75,13 @@ define([
         linkElem.innerText = ("test");
         document.getElementById("qunit-fixture").appendChild(linkElem);
 
-        eventListener.add(linkElem, "click", function (event) {
+        events.add(linkElem, "click", function (event) {
             window.clearTimeout(removeEventTest);
             ok(true, "Click event heard on test element.");
             equal(event.testProperty, "a String", "Object returned contained \"a String\" as expected");
             start();
         });
-        eventListener.trigger(linkElem, "click", {
+        events.trigger(linkElem, "click", {
             testProperty: "a String"
         });
 
