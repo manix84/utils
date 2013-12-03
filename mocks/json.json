@@ -1,0 +1,96 @@
+{
+    "fathers": [
+        {
+            "married": true,
+            "name": "Michael Rodriguez",
+            "sons": null,
+            "daughters": [{
+                "age": 23,
+                "name": "Dorothy"
+            }, {
+                "age": 15,
+                "name": "Melissa"
+            }, {
+                "age": 1,
+                "name": "Linda"
+            }]
+        }, {
+            "married": true,
+            "name": "Brian Hernandez",
+            "sons": null,
+            "daughters": [{
+                "age": 21,
+                "name": "Barbara"
+            }]
+        }, {
+            "married": true,
+            "name": "Timothy Garcia",
+            "sons": null,
+            "daughters": [{
+                "age": 24,
+                "name": "Michelle"
+            }]
+        }, {
+            "married": false,
+            "name": "Brian Rodriguez",
+            "sons": null,
+            "daughters": [{
+                "age": 5,
+                "name": "Elizabeth"
+            }, {
+                "age": 22,
+                "name": "Linda"
+            }, {
+                "age": 28,
+                "name": "Linda"
+            }]
+        }, {
+            "married": false,
+            "name": "Jason Hall",
+            "sons": null,
+            "daughters": [{
+                "age": 9,
+                "name": "Melissa"
+            }, {
+                "age": 4,
+                "name": "Barbara"
+            }]
+        }, {
+            "married": true,
+            "name": "James Brown",
+            "sons": null,
+            "daughters": [{
+                "age": 10,
+                "name": "Ruth"
+            }, {
+                "age": 5,
+                "name": "Jennifer"
+            }]
+        }, {
+            "married": false,
+            "name": "Larry Young",
+            "sons": null,
+            "daughters": [{
+                "age": 11,
+                "name": "Sandra"
+            }, {
+                "age": 20,
+                "name": "Karen"
+            }, {
+                "age": 10,
+                "name": "Betty"
+            }]
+        }, {
+            "married": true,
+            "name": "Jose Anderson",
+            "sons": null,
+            "daughters": [{
+                "age": 7,
+                "name": "Maria"
+            }, {
+                "age": 0,
+                "name": "Susan"
+            }]
+        }
+    ]
+}
